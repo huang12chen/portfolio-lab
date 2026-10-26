@@ -1,10 +1,16 @@
+<p align="center">
+  <a href="README.md" title="简体中文"><img src="docs/images/chinese.svg" alt="简体中文" width="112" height="44"></a>
+  &nbsp;
+  <a href="README.en.md" title="English"><img src="docs/images/english-active.svg" alt="English (current)" width="96" height="44"></a>
+</p>
+
 # Portfolio Lab
 
 A portfolio Skill, with a bilingual website example you can run.
 
-Give your coding agent a résumé, work samples, and the role you want. [portfolio-website](skills/portfolio-website/SKILL.md) helps it choose the work to show, explain your contribution, and build the site. The style and project count follow your material.
+Give your coding agent a résumé, work samples, and the role you want. [portfolio-website](skills/portfolio-website/SKILL.md) helps it choose the work to show, explain your contribution, and build the site. The style and project count follow your material. Deliverables include website source, a runnable preview, and notes for editing and deployment.
 
-[简体中文](README.md) · [Install](docs/install.md) · [Troubleshooting](docs/faq.md)
+[Install](docs/install.md) · [Troubleshooting](docs/faq.md)
 
 ![Switching project categories and expanding a card](docs/media/gallery.gif)
 
