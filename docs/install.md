@@ -1,6 +1,6 @@
 # Install / 安装
 
-[English README](../README.md) · [中文说明](../README.zh-CN.md) · [FAQ](faq.md)
+[English README](../README.en.md) · [中文说明](../README.md) · [FAQ](faq.md)
 
 ## Ask your coding tool / 让编码工具安装
 

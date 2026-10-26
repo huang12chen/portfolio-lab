@@ -1,6 +1,6 @@
 # Troubleshooting and FAQ / 常见问题
 
-[Start here / 从这里开始](install.md) · [Installation / 安装](install.md) · [English README](../README.md) · [中文说明](../README.zh-CN.md)
+[Start here / 从这里开始](install.md) · [Installation / 安装](install.md) · [English README](../README.en.md) · [中文说明](../README.md)
 
 ## Is this a template or a website generator?
 

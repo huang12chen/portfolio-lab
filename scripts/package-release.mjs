@@ -8,7 +8,7 @@ import { checkSite } from './check.mjs';
 const projectRoot = fileURLToPath(new URL('../', import.meta.url));
 const siteDirectory = 'examples/alex-lin/dist';
 const publicFiles = [
-  '.gitignore', 'LICENSE', 'THIRD_PARTY_NOTICES.md', 'package.json', 'DESIGN.md', 'README.md', 'README.zh-CN.md',
+  '.gitignore', 'LICENSE', 'THIRD_PARTY_NOTICES.md', 'package.json', 'DESIGN.md', 'README.md', 'README.en.md', 'README.zh-CN.md',
   'CONTRIBUTING.md', 'CODE_OF_CONDUCT.md', 'SECURITY.md', 'CHANGELOG.md',
   'docs/install.md', 'docs/examples.md', 'docs/faq.md', 'docs/privacy.md', 'docs/recordings.md',
   'docs/media/gallery.gif', 'docs/media/story.gif', 'docs/media/portfolio-demo.mp4',

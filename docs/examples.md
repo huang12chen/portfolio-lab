@@ -1,6 +1,6 @@
 # Example requests / 使用示例
 
-[README](../README.md) · [中文说明](../README.zh-CN.md) · [安装](install.md)
+[README](../README.en.md) · [中文说明](../README.md) · [安装](install.md)
 
 先提供现有材料，再说明给谁看、希望对方做什么，以及哪些内容需要保密。风格可以指定，也可以让智能体根据作品选择。
 

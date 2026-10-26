@@ -4,7 +4,7 @@
 
 把简历、作品和目标岗位交给编码工具，使用 [portfolio-website](skills/portfolio-website/SKILL.md) 整理案例、写清个人贡献，再设计并实现网站。风格和项目数量按你的材料来定。
 
-[English](README.md) · [安装指南](docs/install.md) · [常见问题](docs/faq.md)
+[English](README.en.md) · [安装指南](docs/install.md) · [常见问题](docs/faq.md)
 
 ![作品分类切换与卡片展开](docs/media/gallery.gif)
 

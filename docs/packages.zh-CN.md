@@ -1,6 +1,6 @@
 # 本地发布包
 
-[English](packages.md) · [部署说明](deploy.zh-CN.md) · [README](../README.zh-CN.md)
+[English](packages.md) · [部署说明](deploy.zh-CN.md) · [README](../README.md)
 
 使用 Node.js 22 或更新版本，在仓库根目录执行：
 

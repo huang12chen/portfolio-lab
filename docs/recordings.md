@@ -1,6 +1,6 @@
 # Demo recordings / 演示录屏
 
-[README](../README.md) · [中文说明](../README.zh-CN.md)
+[README](../README.en.md) · [中文说明](../README.md)
 
 | 文件 / File | 内容 / Contents |
 | --- | --- |

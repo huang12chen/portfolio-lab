@@ -1,6 +1,6 @@
 # Tutorial outline / 教学视频提纲
 
-[README](../README.md) · [中文说明](../README.zh-CN.md) · [录屏素材](recordings.md)
+[README](../README.en.md) · [中文说明](../README.md) · [录屏素材](recordings.md)
 
 可以用 Alex 示例录一个约 7–9 分钟的教程。开头说明人物和数据是虚构的，再按下面的顺序演示。
 

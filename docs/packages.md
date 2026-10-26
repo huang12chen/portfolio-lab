@@ -1,6 +1,6 @@
 # Local release packages
 
-[简体中文](packages.zh-CN.md) · [Deployment](deploy.md) · [README](../README.md)
+[简体中文](packages.zh-CN.md) · [Deployment](deploy.md) · [README](../README.en.md)
 
 Run these commands from the repository root with Node.js 22 or newer:
 

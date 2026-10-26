@@ -22,6 +22,7 @@ async function fixture(name) {
     'LICENSE': 'MIT sample license\n',
     'THIRD_PARTY_NOTICES.md': 'Third-party credits\n',
     'README.md': '# Portfolio Lab\n',
+    'README.en.md': '# Portfolio Lab English\n',
     'README.zh-CN.md': '# 示例\n',
     'CONTRIBUTING.md': '# Public example documentation\n',
     'CODE_OF_CONDUCT.md': '# Public example documentation\n',
