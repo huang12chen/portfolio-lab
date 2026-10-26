@@ -1,5 +1,5 @@
 interface:
-  display_name: "Portfolio Website / 定制作品集"
+  display_name: "作品集 UI 设计 / Portfolio UI Design"
   short_description: "Build a portfolio website from your resume and work"
   default_prompt: "Use $portfolio-website to design and build a portfolio from my work, evidence, and intended audience."
 policy:

@@ -1,4 +1,4 @@
-# Alex Lin — Portfolio Lab
+# Alex Lin — Portfolio UI Design
 
 A fictional bilingual portfolio for an AI Product & Growth Lead. The reader should recognise the person's focus, scan the three distinct cases, and enter one complete case with one click. This is an open-source teaching example, never evidence of a real person's career.
 

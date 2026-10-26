@@ -1,10 +1,6 @@
-<p align="center">
-  <a href="README.md" title="简体中文"><img src="docs/images/chinese.svg" alt="简体中文" width="112" height="44"></a>
-  &nbsp;
-  <a href="README.en.md" title="English"><img src="docs/images/english-active.svg" alt="English (current)" width="96" height="44"></a>
-</p>
+<p align="center"><a href="README.md">中文</a> · <strong>English</strong></p>
 
-<h1 align="center">Portfolio Lab</h1>
+<h1 align="center">Portfolio UI Design</h1>
 
 <p align="center">Build a portfolio website around your résumé and work.</p>
 

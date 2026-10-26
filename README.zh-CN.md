@@ -1,10 +1,6 @@
-<p align="center">
-  <a href="README.md" title="简体中文"><img src="docs/images/chinese-active.svg" alt="简体中文（当前）" width="112" height="44"></a>
-  &nbsp;
-  <a href="README.en.md" title="English"><img src="docs/images/english.svg" alt="English" width="96" height="44"></a>
-</p>
+<p align="center"><strong>中文</strong> · <a href="README.en.md">English</a></p>
 
-<h1 align="center">Portfolio Lab</h1>
+<h1 align="center">作品集 UI 设计</h1>
 
 <p align="center">根据简历和作品，制作适合自己的作品集网站。</p>
 

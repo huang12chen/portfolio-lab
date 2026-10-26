@@ -3,7 +3,7 @@ name: portfolio-website
 description: Build or improve personal portfolio websites from work, evidence, and audience needs; also supports explicitly authorized fictional teaching examples. 定制作品集与经授权的虚构教学示例。
 ---
 
-# Portfolio Website
+# Portfolio UI Design
 
 Build a portfolio that helps its intended reader understand what a person can do, what they did, their contribution, and the evidence. Let the material and reader shape the story, visual direction, media, and navigation.
 

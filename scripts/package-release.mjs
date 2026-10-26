@@ -11,7 +11,6 @@ const publicFiles = [
   '.gitignore', 'LICENSE', 'THIRD_PARTY_NOTICES.md', 'package.json', 'DESIGN.md', 'README.md', 'README.en.md', 'README.zh-CN.md',
   'CONTRIBUTING.md', 'CODE_OF_CONDUCT.md', 'SECURITY.md', 'CHANGELOG.md',
   'docs/install.md', 'docs/examples.md', 'docs/faq.md', 'docs/privacy.md', 'docs/recordings.md',
-  'docs/images/chinese.svg', 'docs/images/chinese-active.svg', 'docs/images/english.svg', 'docs/images/english-active.svg',
   'docs/media/gallery.gif', 'docs/media/story.gif', 'docs/media/portfolio-demo.mp4',
   'docs/deploy.md', 'docs/deploy.zh-CN.md', 'docs/recording-guide.md', 'docs/sample-resume.md',
   'docs/packages.md', 'docs/packages.zh-CN.md',

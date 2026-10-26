@@ -21,8 +21,8 @@ async function fixture(name) {
     '.gitignore': 'release/\n',
     'LICENSE': 'MIT sample license\n',
     'THIRD_PARTY_NOTICES.md': 'Third-party credits\n',
-    'README.md': '# Portfolio Lab\n',
-    'README.en.md': '# Portfolio Lab English\n',
+    'README.md': '# Portfolio UI Design\n',
+    'README.en.md': '# Portfolio UI Design English\n',
     'README.zh-CN.md': '# 示例\n',
     'CONTRIBUTING.md': '# Public example documentation\n',
     'CODE_OF_CONDUCT.md': '# Public example documentation\n',
@@ -70,7 +70,6 @@ async function fixture(name) {
     'authoring-evidence.md': 'PRIVATE_SENTINEL',
     'docs/owner-session.json': 'PRIVATE_SENTINEL'
   };
-  for (const name of ['chinese.svg', 'chinese-active.svg', 'english.svg', 'english-active.svg']) files['docs/images/' + name] = '<svg xmlns="http://www.w3.org/2000/svg">Language</svg>';
   for (const name of ['growth-demo.png', 'brief-demo.png', 'home-mobile.png', 'about-desktop.png', 'story-desktop.png']) files['docs/screenshots/' + name] = Buffer.from([137, 80, 78, 71, 0, 255, 1]);
   for (const [relative, content] of Object.entries(files)) {
     const file = join(root, relative);
@@ -101,7 +100,7 @@ test('release creates allowlisted source and flat site archives with verified ha
   }
   const source = readZipEntries(await readFile(join(root, 'release', 'portfolio-lab-source.zip')));
   const site = readZipEntries(await readFile(join(root, 'release', 'portfolio-lab-site.zip')));
-  for (const path of ['portfolio-lab/README.md', 'portfolio-lab/docs/images/english.svg', 'portfolio-lab/docs/deploy.md', 'portfolio-lab/docs/screenshots/home-desktop.png', 'portfolio-lab/skills/portfolio-website/SKILL.md', 'portfolio-lab/deploy/nginx.conf', 'portfolio-lab/.github/workflows/pages.yml']) assert.ok(source.has(path), path);
+  for (const path of ['portfolio-lab/README.md', 'portfolio-lab/docs/media/gallery.gif', 'portfolio-lab/docs/deploy.md', 'portfolio-lab/docs/screenshots/home-desktop.png', 'portfolio-lab/skills/portfolio-website/SKILL.md', 'portfolio-lab/deploy/nginx.conf', 'portfolio-lab/.github/workflows/pages.yml']) assert.ok(source.has(path), path);
   assert.equal([...source.keys()].some(path => path.startsWith('portfolio-lab/skills/unpublished-draft/')), false);
   assert.ok(site.has('index.html'));
   assert.ok(site.has('LICENSE.txt'));
