@@ -4,13 +4,23 @@
   <a href="README.en.md" title="English"><img src="docs/images/english.svg" alt="English" width="96" height="44"></a>
 </p>
 
-# Portfolio Lab
+<h1 align="center">Portfolio Lab</h1>
 
-根据简历和作品制作个人作品集的 Skill，附一个中英文网站示例。
+<p align="center">根据简历和作品，制作适合自己的作品集网站。</p>
 
-把简历、作品和目标岗位交给编码工具，使用 [portfolio-website](skills/portfolio-website/SKILL.md) 整理案例、写清个人贡献，再设计并实现网站。风格和项目数量按你的材料来定。交付内容包括网站源码、可运行的预览，以及替换内容和部署的说明。
+<p align="center">
+  <a href="https://github.com/huang12chen/portfolio-lab/actions/workflows/ci.yml"><img src="https://github.com/huang12chen/portfolio-lab/actions/workflows/ci.yml/badge.svg" alt="构建检查"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-24292f.svg" alt="MIT 许可"></a>
+</p>
 
-[安装指南](docs/install.md) · [常见问题](docs/faq.md)
+<p align="center">
+  <a href="#安装">安装</a> ·
+  <a href="#网站示例">网站示例</a> ·
+  <a href="docs/deploy.zh-CN.md">部署</a> ·
+  <a href="docs/faq.md">常见问题</a>
+</p>
+
+把简历、作品和目标岗位交给 Codex、Claude Code 或 Cursor，使用 [portfolio-website](skills/portfolio-website/SKILL.md) 整理案例、写清个人贡献，再设计并实现网站。风格和项目数量按你的材料来定。附可运行的中英文示例、网站源码及修改和部署说明。
 
 ![作品分类切换与卡片展开](docs/media/gallery.gif)
 

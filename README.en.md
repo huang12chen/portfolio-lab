@@ -4,13 +4,23 @@
   <a href="README.en.md" title="English"><img src="docs/images/english-active.svg" alt="English (current)" width="96" height="44"></a>
 </p>
 
-# Portfolio Lab
+<h1 align="center">Portfolio Lab</h1>
 
-A portfolio Skill, with a bilingual website example you can run.
+<p align="center">Build a portfolio website around your résumé and work.</p>
 
-Give your coding agent a résumé, work samples, and the role you want. [portfolio-website](skills/portfolio-website/SKILL.md) helps it choose the work to show, explain your contribution, and build the site. The style and project count follow your material. Deliverables include website source, a runnable preview, and notes for editing and deployment.
+<p align="center">
+  <a href="https://github.com/huang12chen/portfolio-lab/actions/workflows/ci.yml"><img src="https://github.com/huang12chen/portfolio-lab/actions/workflows/ci.yml/badge.svg" alt="Build checks"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-24292f.svg" alt="MIT license"></a>
+</p>
 
-[Install](docs/install.md) · [Troubleshooting](docs/faq.md)
+<p align="center">
+  <a href="#install">Install</a> ·
+  <a href="#example-website">Example website</a> ·
+  <a href="docs/deploy.md">Deploy</a> ·
+  <a href="docs/faq.md">Troubleshooting</a>
+</p>
+
+Give Codex, Claude Code, or Cursor your résumé, work samples, and target role. [portfolio-website](skills/portfolio-website/SKILL.md) helps it choose the work to show, explain your contribution, and build the site. The style and project count follow your material. Includes a runnable bilingual example, website source, and editing and deployment notes.
 
 ![Switching project categories and expanding a card](docs/media/gallery.gif)
 
