@@ -1,6 +1,6 @@
 # 虚构演示与公开交付
 
-[English version](../fictional-demos-and-release.md)
+[English version](../demo-projects.md)
 
 用户已授权虚构教学作品集、互动演示或可分发示例时按需阅读。本参考补充通常的真实材料流程，不要求每个作品集都变成演示包或双语站。
 

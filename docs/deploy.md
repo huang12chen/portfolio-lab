@@ -1,6 +1,6 @@
 # Deploy the static demo
 
-[简体中文](DEPLOYMENT.zh-CN.md) · [README](../README.md)
+[简体中文](deploy.zh-CN.md) · [README](../README.md)
 
 The deployable directory is **`examples/alex-lin/dist/`**. Its `index.html` must appear at the published site root, alongside `project.html`, `story.html`, `about.html`, scripts, styles, and assets. No build command, application server, environment variables, or API keys are required for the site itself.
 

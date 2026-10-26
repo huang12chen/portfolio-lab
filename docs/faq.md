@@ -1,6 +1,6 @@
 # Troubleshooting and FAQ / 常见问题
 
-[Start here / 从这里开始](QUICK_START.md) · [Installation / 安装](INSTALLATION.md) · [English README](../README.md) · [中文说明](../README.zh-CN.md)
+[Start here / 从这里开始](install.md) · [Installation / 安装](install.md) · [English README](../README.md) · [中文说明](../README.zh-CN.md)
 
 ## Is this a template or a website generator?
 
@@ -22,7 +22,7 @@ The original project is MIT-licensed. The included website runs locally without 
 
 ## The page is blank after double-clicking the HTML file
 
-Run `npm run dev` from the repository root and use the printed HTTP address. ES modules should be served over HTTP instead of opened as a `file:` document. For a ZIP upload, the site's `index.html` and sibling assets must be at the hosting root; see [deployment](DEPLOYMENT.md).
+Run `npm run dev` from the repository root and use the printed HTTP address. ES modules should be served over HTTP instead of opened as a `file:` document. For a ZIP upload, the site's `index.html` and sibling assets must be at the hosting root; see [deployment](deploy.md).
 
 请在仓库根目录运行本地服务，使用它打印的 HTTP 地址，不要直接双击 HTML。上传站点 ZIP 时，入口与相邻素材应放在正确的托管根目录。
 
@@ -41,13 +41,13 @@ Open `http://localhost:4181/` after the server starts. `PORT` is set for that te
 
 ## Installation says the GitHub repository cannot be found
 
-Check the repository URL and whether it is published and reachable with your account/network. When using a downloaded copy, install its complete `skills/` folders manually as described in [installation](INSTALLATION.md), or use the CLI's supported local-directory source. Never put a token in a public issue.
+Check the repository URL and whether it is published and reachable with your account/network. When using a downloaded copy, install its complete `skills/` folders manually as described in [installation](install.md), or use the CLI's supported local-directory source. Never put a token in a public issue.
 
 先检查地址、仓库是否已发布、账号权限和网络。已下载的源码可以完整复制技能文件夹，不必依赖远程安装。
 
 ## I installed a Skill but the agent does not show it
 
-Confirm the complete folder is in that host's supported discovery path, with `SKILL.md` at its root and references present. In Codex, project Skills live under `.agents/skills/`. Refresh or restart the host if necessary. Do not install nested copies such as `bespoke-portfolio/bespoke-portfolio/SKILL.md`, and avoid duplicate same-name installations. [Installation](INSTALLATION.md) explains updates and removal.
+Confirm the complete folder is in that host's supported discovery path, with `SKILL.md` at its root and references present. In Codex, project Skills live under `.agents/skills/`. Refresh or restart the host if necessary. Do not install nested copies such as `portfolio-website/portfolio-website/SKILL.md`, and avoid duplicate same-name installations. [Installation](install.md) explains updates and removal.
 
 检查宿主的发现目录、入口层级及完整参考文件，必要时刷新或重启。不要多套一层同名文件夹，也不要重复安装造成混淆。
 

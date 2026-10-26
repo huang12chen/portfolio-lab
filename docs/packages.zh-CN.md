@@ -1,6 +1,6 @@
 # 本地发布包
 
-[English](RELEASE.md) · [部署说明](DEPLOYMENT.zh-CN.md) · [README](../README.zh-CN.md)
+[English](packages.md) · [部署说明](deploy.zh-CN.md) · [README](../README.zh-CN.md)
 
 使用 Node.js 22 或更新版本，在仓库根目录执行：
 
@@ -27,6 +27,6 @@ npm run release
 
 上传前检查生成清单与两个压缩包。个人原稿和托管身份保存在仓库外。生成发布包不会新建 GitHub 仓库、推送代码、修改网站访问范围或向外部发布。
 
-按[部署说明](DEPLOYMENT.zh-CN.md)使用自己的托管平台。作品索引版入口为 `index.html?lang=zh`，连续滚动版为 `story.html?lang=zh`；两版也支持 `lang=en`。
+按[部署说明](deploy.zh-CN.md)使用自己的托管平台。作品索引版入口为 `index.html?lang=zh`，连续滚动版为 `story.html?lang=zh`；两版也支持 `lang=en`。
 
 源码包包含安装、使用与社区指南，以及 README 引用的 GIF 和 MP4 真实录屏。静态站点 ZIP 仅包含可部署网页及其许可。两者均按当前白名单重新生成。

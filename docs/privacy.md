@@ -15,7 +15,7 @@ This repository's persona, résumé, case narratives, business numbers, and rese
 
 公开前检查文件、历史、媒体画面和元数据。已忽略文件可能仍在 Git 历史中。私人材料留在共享目录外；若秘密已公开，先撤销或轮换，不能只删除最新版本。
 
-The included release packager uses a public-file allowlist and rejects recognizable credentials, local private paths, and forbidden private file types. It cannot recognize every person's private information and does not replace review of your content. See [release packages](RELEASE.md).
+The included release packager uses a public-file allowlist and rejects recognizable credentials, local private paths, and forbidden private file types. It cannot recognize every person's private information and does not replace review of your content. See [release packages](packages.md).
 
 ## What the example sends
 

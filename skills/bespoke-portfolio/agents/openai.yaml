@@ -1,6 +1,0 @@
-interface:
-  display_name: "Bespoke Portfolio / 定制作品集"
-  short_description: "Evidence-led portfolios shaped to the person and audience"
-  default_prompt: "Use $bespoke-portfolio to design and build a portfolio from my work, evidence, and intended audience."
-policy:
-  allow_implicit_invocation: true

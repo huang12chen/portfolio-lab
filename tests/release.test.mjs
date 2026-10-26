@@ -27,12 +27,11 @@ async function fixture(name) {
     'CODE_OF_CONDUCT.md': '# Public example documentation\n',
     'SECURITY.md': '# Public example documentation\n',
     'CHANGELOG.md': '# Public example documentation\n',
-    'docs/INSTALLATION.md': '# Public example documentation\n',
-    'docs/QUICK_START.md': '# Quick start\n',
-    'docs/TROUBLESHOOTING.md': '# Troubleshooting\n',
-    'docs/USAGE.md': '# Public example documentation\n',
-    'docs/SHARING.md': '# Public example documentation\n',
-    'docs/MEDIA.md': '# Public example documentation\n',
+    'docs/install.md': '# Public example documentation\n',
+    'docs/faq.md': '# Troubleshooting\n',
+    'docs/examples.md': '# Public example documentation\n',
+    'docs/privacy.md': '# Public example documentation\n',
+    'docs/recordings.md': '# Public example documentation\n',
     '.github/workflows/ci.yml': '# Public example documentation\n',
     '.github/ISSUE_TEMPLATE/bug_report.yml': '# Public example documentation\n',
     '.github/ISSUE_TEMPLATE/feature_request.yml': '# Public example documentation\n',
@@ -44,12 +43,12 @@ async function fixture(name) {
     'examples/alex-lin/dist/project.html': '<!doctype html><html><body>Case</body></html>',
     'examples/alex-lin/dist/about.html': '<!doctype html><html><body>About</body></html>',
     'examples/alex-lin/dist/assets/shape.svg': '<svg xmlns="http://www.w3.org/2000/svg">示例</svg>',
-    'docs/DEPLOYMENT.md': '# Deployment\n',
-    'docs/DEPLOYMENT.zh-CN.md': '# 部署\n',
-    'docs/TEACHING.md': '# Teaching\n',
-    'docs/fictional-resume.md': '# Fiction\n',
-    'docs/RELEASE.md': '# Release\n',
-    'docs/RELEASE.zh-CN.md': '# 发布\n',
+    'docs/deploy.md': '# Deployment\n',
+    'docs/deploy.zh-CN.md': '# 部署\n',
+    'docs/recording-guide.md': '# Teaching\n',
+    'docs/sample-resume.md': '# Fiction\n',
+    'docs/packages.md': '# Release\n',
+    'docs/packages.zh-CN.md': '# 发布\n',
     'DESIGN.md': '# Design\n',
     'scripts/serve.mjs': 'export {};\n',
     'scripts/check.mjs': 'export {};\n',
@@ -58,9 +57,9 @@ async function fixture(name) {
     'tests/site.test.mjs': 'export {};\n',
     'tests/release.test.mjs': 'export {};\n',
     'docs/screenshots/home-desktop.png': Buffer.from([137, 80, 78, 71, 0, 255, 1]),
-    'skills/bespoke-portfolio/SKILL.md': '---\nname: bespoke-portfolio\ndescription: Example\n---\n',
-    'skills/bespoke-portfolio/references/example.md': '# Reference\n',
-    'skills/bespoke-portfolio/agents/openai.yaml': 'interface: {}\n',
+    'skills/portfolio-website/SKILL.md': '---\nname: portfolio-website\ndescription: Example\n---\n',
+    'skills/portfolio-website/references/example.md': '# Reference\n',
+    'skills/portfolio-website/agents/openai.yaml': 'interface: {}\n',
     'skills/unpublished-draft/SKILL.md': 'PRIVATE_SENTINEL',
     '.github/workflows/pages.yml': 'name: Example\n',
     'deploy/nginx.conf': 'server { listen 80; }\n',
@@ -100,7 +99,7 @@ test('release creates allowlisted source and flat site archives with verified ha
   }
   const source = readZipEntries(await readFile(join(root, 'release', 'portfolio-lab-source.zip')));
   const site = readZipEntries(await readFile(join(root, 'release', 'portfolio-lab-site.zip')));
-  for (const path of ['portfolio-lab/README.md', 'portfolio-lab/docs/DEPLOYMENT.md', 'portfolio-lab/docs/screenshots/home-desktop.png', 'portfolio-lab/skills/bespoke-portfolio/SKILL.md', 'portfolio-lab/deploy/nginx.conf', 'portfolio-lab/.github/workflows/pages.yml']) assert.ok(source.has(path), path);
+  for (const path of ['portfolio-lab/README.md', 'portfolio-lab/docs/deploy.md', 'portfolio-lab/docs/screenshots/home-desktop.png', 'portfolio-lab/skills/portfolio-website/SKILL.md', 'portfolio-lab/deploy/nginx.conf', 'portfolio-lab/.github/workflows/pages.yml']) assert.ok(source.has(path), path);
   assert.equal([...source.keys()].some(path => path.startsWith('portfolio-lab/skills/unpublished-draft/')), false);
   assert.ok(site.has('index.html'));
   assert.ok(site.has('LICENSE.txt'));
@@ -128,7 +127,7 @@ test('identical source bytes produce identical archives across repeated releases
 test('release rejects private paths inside an included tree', async () => {
   const { createRelease } = await import('../scripts/package-release.mjs');
   const root = await fixture('private-tree');
-  await writeFile(join(root, 'skills/bespoke-portfolio/.env'), 'not public');
+  await writeFile(join(root, 'skills/portfolio-website/.env'), 'not public');
   await assert.rejects(createRelease({ root }), /private|hidden|forbidden/i);
 });
 
@@ -193,7 +192,7 @@ test('source release carries its onboarding, community files, and actual demo me
   await createRelease({ root });
   const source = readZipEntries(await readFile(join(root, 'release/portfolio-lab-source.zip')));
   const site = readZipEntries(await readFile(join(root, 'release/portfolio-lab-site.zip')));
-  for (const name of ['docs/INSTALLATION.md', 'docs/USAGE.md', 'docs/QUICK_START.md', 'docs/TROUBLESHOOTING.md', 'docs/SHARING.md', 'docs/MEDIA.md', 'CONTRIBUTING.md', 'SECURITY.md', '.github/workflows/ci.yml', '.github/ISSUE_TEMPLATE/bug_report.yml', 'docs/media/gallery.gif', 'docs/media/story.gif', 'docs/media/portfolio-demo.mp4']) {
+  for (const name of ['docs/install.md', 'docs/examples.md', 'docs/install.md', 'docs/faq.md', 'docs/privacy.md', 'docs/recordings.md', 'CONTRIBUTING.md', 'SECURITY.md', '.github/workflows/ci.yml', '.github/ISSUE_TEMPLATE/bug_report.yml', 'docs/media/gallery.gif', 'docs/media/story.gif', 'docs/media/portfolio-demo.mp4']) {
     assert.deepEqual(source.get('portfolio-lab/' + name), await readFile(join(root, name)), name);
     assert.equal(site.has(name), false, name);
   }

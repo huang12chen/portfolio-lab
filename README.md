@@ -2,29 +2,39 @@
 
 A portfolio Skill, with a bilingual website example you can run.
 
-Give your coding agent a résumé, work samples, and the role you want. [bespoke-portfolio](skills/bespoke-portfolio/SKILL.md) helps it choose the work to show, explain your contribution, and build the site. The style and project count follow your material.
+Give your coding agent a résumé, work samples, and the role you want. [portfolio-website](skills/portfolio-website/SKILL.md) helps it choose the work to show, explain your contribution, and build the site. The style and project count follow your material.
 
-[简体中文](README.zh-CN.md) · [Getting started](docs/QUICK_START.md) · [Installation](docs/INSTALLATION.md) · [Troubleshooting](docs/TROUBLESHOOTING.md)
+[简体中文](README.zh-CN.md) · [Install](docs/install.md) · [Troubleshooting](docs/faq.md)
 
 ![Switching project categories and expanding a card](docs/media/gallery.gif)
 
 [Watch the full demo, about 36 seconds](docs/media/portfolio-demo.mp4)
 
-## Install and use
+## Install
 
-Use a coding agent that supports Skills. Installation through the [Skills CLI](https://github.com/vercel-labs/skills) needs Node.js 22.20+:
+Use a coding tool that supports Skills, such as Codex, Claude Code, or Cursor. Send it this request:
 
-```sh
-npx skills add huang12chen/portfolio-lab --skill bespoke-portfolio
+```text
+Install the portfolio-website Skill from
+https://github.com/huang12chen/portfolio-lab/tree/main/skills/portfolio-website
+in this project's Skill directory. Preserve any existing local edits, confirm the Skill is discoverable, and stop after installation.
 ```
 
-The CLI asks which agent to install to. If you have downloaded the source, you can copy the complete Skill folder instead; see [installation](docs/INSTALLATION.md). To let your agent handle setup, give it the repository URL or folder and [this prompt](docs/QUICK_START.md#portfolio).
+Or run this in your project terminal, then choose your coding tool. Requires [Node.js 22.20+](https://github.com/vercel-labs/skills#install-a-skill):
 
-Then send your materials with a request such as:
+```sh
+npx skills add huang12chen/portfolio-lab --skill portfolio-website
+```
 
-> Use $bespoke-portfolio. Here are my résumé and work samples. Build a portfolio for the role I am applying for. Choose the projects to show, explain what I did, and design the site around that work. Open the specific pages in my references. Give me a preview and check the mobile layout and main controls.
+The command installs to this project by default; add `-g` to use it across projects. For manual installation, confirmation, or updates, see [the install guide](docs/install.md).
 
-[More examples](docs/USAGE.md)
+## Make your portfolio
+
+Send your résumé, work samples, and intended audience, then ask:
+
+> Use the portfolio-website Skill. Build a portfolio for the role I am applying for. Choose which projects to show, explain my contribution, then design and build the site. Give me a preview and check the mobile layout and main controls.
+
+In Codex you can invoke `$portfolio-website`; in Claude Code use `/portfolio-website`. [More requests](docs/examples.md)
 
 ## Example website
 
@@ -59,7 +69,7 @@ The three projects include these working controls:
 
 ## Run the example
 
-Download or clone the source and run this from the repository root. You need Node.js 22+; there is no npm install step.
+[Download the source ZIP](https://github.com/huang12chen/portfolio-lab/archive/refs/heads/main.zip), unzip it, and open the `portfolio-lab-main` folder. Run the command below there. The example needs Node.js 22+ and has no npm dependencies.
 
 ```sh
 npm run dev
@@ -77,11 +87,11 @@ The example lives in `examples/alex-lin/dist/`:
 
 Replace the sample career, projects, and numbers with your own material. For a different profession, ask the Skill to reconsider the pages as well as the writing; you do not need to keep Alex's role or style.
 
-Images, fonts, and scripts are included locally. The site can use a static hosting provider or your own server. [Deployment guide](docs/DEPLOYMENT.md)
+Images, fonts, and scripts are included locally. The site can use a static hosting provider or your own server. [Deployment guide](docs/deploy.md)
 
 ## Docs and development
 
-[Usage examples](docs/USAGE.md) · [Teaching outline](docs/TEACHING.md) · [Recordings](docs/MEDIA.md) · [Release packages](docs/RELEASE.md) · [Reviewing files before sharing](docs/SHARING.md)
+[Usage examples](docs/examples.md) · [Teaching outline](docs/recording-guide.md) · [Recordings](docs/recordings.md) · [Release packages](docs/packages.md) · [Reviewing files before sharing](docs/privacy.md)
 
 ```sh
 npm test

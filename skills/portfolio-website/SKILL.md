@@ -1,9 +1,9 @@
 ---
-name: bespoke-portfolio
+name: portfolio-website
 description: Build or improve personal portfolio websites from work, evidence, and audience needs; also supports explicitly authorized fictional teaching examples. 定制作品集与经授权的虚构教学示例。
 ---
 
-# Bespoke Portfolio
+# Portfolio Website
 
 Build a portfolio that helps its intended reader understand what a person can do, what they did, their contribution, and the evidence. Let the material and reader shape the story, visual direction, media, and navigation.
 
@@ -13,13 +13,13 @@ Build a portfolio that helps its intended reader understand what a person can do
 
 Use the supplied résumé, work, links, images, video, and feedback. Extract the purpose, audience, strengths, responsibilities, available material, publication scope, and maintenance constraints. Reuse confirmed information and authorization; leave identity or contact fields empty when requested. Ask only for gaps that change the result, and continue independent work.
 
-Read [intake and evidence](references/intake-and-evidence.md) when organizing claims or uncertain contributions. Separate original material, edited copy, and design assumptions. A résumé copied into web sections is not a complete portfolio.
+Read [intake and evidence](references/content.md) when organizing claims or uncertain contributions. Separate original material, edited copy, and design assumptions. A résumé copied into web sections is not a complete portfolio.
 
-Real-person portfolios use supported facts. For an explicitly authorized fictional teaching example, interactive demonstration, or public sample package, read [fictional demos and release](references/fictional-demos-and-release.md). Keep invented identities, employment, metrics, and research labeled and separate from real-person claims.
+Real-person portfolios use supported facts. For an explicitly authorized fictional teaching example, interactive demonstration, or public sample package, read [fictional demos and release](references/demo-projects.md). Keep invented identities, employment, metrics, and research labeled and separate from real-person claims.
 
 ## Shape the reading path
 
-Use [adaptive structure](references/adaptive-structure.md) to choose curation, project depth, and a useful index. Project count, profession, and material vary; do not impose three projects or a signature color palette.
+Use [adaptive structure](references/structure.md) to choose curation, project depth, and a useful index. Project count, profession, and material vary; do not impose three projects or a signature color palette.
 
 Give the first screen a clear position and useful overview. Use concrete project names. Let one meaningful selection open a full case with its core material visible; image enlargement and supplementary documents can be optional. Explain context, individual role, work, decisions, results, and limits in an order appropriate to the evidence, rather than filling a rigid case-study template.
 
@@ -27,7 +27,7 @@ Write or update a proportionate `DESIGN.md`. Trace relevant articles to specific
 
 ## Present the work and implement
 
-Read [media and navigation](references/media-and-navigation.md) for images, documents, code, and the reader's route. Use [portfolio refinements](references/lessons-from-practice.md) when improving an existing portfolio. Read the references needed for the task rather than loading the whole collection.
+Read [media and navigation](references/images-and-links.md) for images, documents, code, and the reader's route. Use [portfolio refinements](references/review.md) when improving an existing portfolio. Read the references needed for the task rather than loading the whole collection.
 
 Show representative work, screenshots, excerpts, code, or methods directly. Respect image proportions and composition; keep long text readable and metrics adjacent to their definition and evidence. Organize the material available now without inventing empty future slots. Choose motion for a useful purpose, with stable hit areas and touch and keyboard alternatives.
 

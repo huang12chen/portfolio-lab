@@ -1,6 +1,6 @@
 # Material, Contribution, and Evidence
 
-[简体中文](zh-CN/intake-and-evidence.md)
+[简体中文](zh-CN/content.md)
 
 ## Extract a useful profile
 
@@ -34,7 +34,7 @@ Do not infer authorship from an asset's presence in a project: organizing produc
 - Preserve originals when redacting. Export a presentation copy and record cropping or masking; do not alter metrics or reconstruct screenshots. Unrelated notifications, birthdays, or recommendations need not appear.
 - Synthetic illustrations can explain a concept but cannot substitute for real outcomes. Label concept projects and self-directed practice so they do not resemble client delivery.
 
-For an explicitly authorized fictional teaching portfolio, use the separate [fictional-demo guidance](fictional-demos-and-release.md). Its invented material must not become evidence for a real person.
+For an explicitly authorized fictional teaching portfolio, use the separate [fictional-demo guidance](demo-projects.md). Its invented material must not become evidence for a real person.
 
 ## Continue when material is incomplete
 

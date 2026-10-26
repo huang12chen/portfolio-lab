@@ -1,6 +1,6 @@
 # 部署静态示例
 
-[English](DEPLOYMENT.md) · [README](../README.zh-CN.md)
+[English](deploy.md) · [README](../README.zh-CN.md)
 
 部署目录为 **`examples/alex-lin/dist/`**。发布后，`index.html` 应位于站点根目录，与 `project.html`、`story.html`、`about.html`、脚本、样式和素材同级。网站本身不需要构建命令、应用服务器、环境变量或 API Key。
 

@@ -1,6 +1,6 @@
 # Local release packages
 
-[简体中文](RELEASE.zh-CN.md) · [Deployment](DEPLOYMENT.md) · [README](../README.md)
+[简体中文](packages.zh-CN.md) · [Deployment](deploy.md) · [README](../README.md)
 
 Run these commands from the repository root with Node.js 22 or newer:
 
@@ -27,6 +27,6 @@ The normal command refuses an incomplete teaching bundle: the portfolio Skill en
 
 Check the generated manifest and inspect both archives before uploading. Keep private originals and hosting identities outside this repository. Creating these packages does not create a GitHub repository, push commits, change a site's audience, or publish anything.
 
-Use the [deployment guide](DEPLOYMENT.md) for a host you control. The gallery view starts at `index.html?lang=en`; the continuous-scroll view starts at `story.html?lang=en`. Both also support `lang=zh`.
+Use the [deployment guide](deploy.md) for a host you control. The gallery view starts at `index.html?lang=en`; the continuous-scroll view starts at `story.html?lang=en`. Both also support `lang=zh`.
 
 The source package includes the installation/usage/community guides and the GIF/MP4 browser recordings referenced by the README. The flat site ZIP includes only the deployable website and its licenses. Both are regenerated from the current allowlist.

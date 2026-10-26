@@ -1,6 +1,6 @@
 # Adapt Structure to the Work
 
-[简体中文](zh-CN/adaptive-structure.md)
+[简体中文](zh-CN/structure.md)
 
 These are decision starting points, not profession templates. The same field can call for different sites when the material and audience differ.
 

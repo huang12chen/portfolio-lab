@@ -1,6 +1,6 @@
 # Media, Navigation, and Reading Checks
 
-[简体中文](zh-CN/media-and-navigation.md)
+[简体中文](zh-CN/images-and-links.md)
 
 ## Arrange images around what the reader needs to see
 

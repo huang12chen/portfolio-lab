@@ -2,29 +2,39 @@
 
 根据简历和作品制作个人作品集的 Skill，附一个中英文网站示例。
 
-把简历、作品和目标岗位交给编码工具，使用 [bespoke-portfolio](skills/bespoke-portfolio/SKILL.md) 整理案例、写清个人贡献，再设计并实现网站。风格和项目数量按你的材料来定。
+把简历、作品和目标岗位交给编码工具，使用 [portfolio-website](skills/portfolio-website/SKILL.md) 整理案例、写清个人贡献，再设计并实现网站。风格和项目数量按你的材料来定。
 
-[English](README.md) · [第一次使用](docs/QUICK_START.md) · [安装说明](docs/INSTALLATION.md) · [常见问题](docs/TROUBLESHOOTING.md)
+[English](README.md) · [安装指南](docs/install.md) · [常见问题](docs/faq.md)
 
 ![作品分类切换与卡片展开](docs/media/gallery.gif)
 
 [观看完整演示，约 36 秒](docs/media/portfolio-demo.mp4)
 
-## 安装和使用
+## 安装
 
-在支持 Skill 的编码工具中使用。通过 [Skills CLI](https://github.com/vercel-labs/skills) 安装，需要 Node.js 22.20+：
+在支持 Skills 的编码工具中使用，例如 Codex、Claude Code 或 Cursor。可以直接把下面这段话发给它：
 
-```sh
-npx skills add huang12chen/portfolio-lab --skill bespoke-portfolio
+```text
+请从下面的地址安装 portfolio-website 这个 Skill：
+https://github.com/huang12chen/portfolio-lab/tree/main/skills/portfolio-website
+安装到当前项目的技能目录，保留已有修改。装好后确认工具能找到它，先不要开始制作网站。
 ```
 
-CLI 会让你选择安装到哪个工具。已下载源码时，也可以直接复制完整的 Skill 文件夹，见[安装说明](docs/INSTALLATION.md)。想让 AI 帮你处理安装，就把仓库地址或文件夹交给它，使用[这段提示词](docs/QUICK_START.md#portfolio)。
+会使用终端的话，也可以在自己的项目目录运行下面这条命令，按提示选择工具。需要 [Node.js 22.20+](https://github.com/vercel-labs/skills#install-a-skill)：
 
-装好后，把自己的材料发过去，例如：
+```sh
+npx skills add huang12chen/portfolio-lab --skill portfolio-website
+```
 
-> 使用 $bespoke-portfolio。这是我的简历和作品，请帮我制作求职作品集。先挑选值得展示的项目，写清我做了什么，再根据目标岗位设计网站。参考链接请进入具体页面查看。做完后给我预览地址，并检查手机排版和主要按钮。
+默认只在当前项目使用；加上 `-g` 可安装到用户目录，供多个项目使用。手动安装、装好后的确认和更新都在[安装指南](docs/install.md)。
 
-[更多使用示例](docs/USAGE.md)
+## 制作自己的作品集
+
+发送简历、作品和目标读者，再提出需求，例如：
+
+> 使用 portfolio-website 这个 Skill。我想制作求职作品集，这是我的简历和作品。请先挑选展示内容，写清每个项目里我做了什么，再设计并实现网站。做完给我预览地址，检查手机排版和主要按钮。
+
+Codex 中可以直接输入 `$portfolio-website`，Claude Code 中使用 `/portfolio-website`。[更多用法](docs/examples.md)
 
 ## 网站示例
 
@@ -59,7 +69,7 @@ CLI 会让你选择安装到哪个工具。已下载源码时，也可以直接�
 
 ## 本地运行
 
-下载或克隆源码，在仓库根目录运行。需要 Node.js 22+，不用先执行 npm install。
+[下载源码 ZIP](https://github.com/huang12chen/portfolio-lab/archive/refs/heads/main.zip)，解压后打开 `portfolio-lab-main` 文件夹，在其中运行下面的命令。示例需要 Node.js 22+，不用先执行 npm install。
 
 ```sh
 npm run dev
@@ -77,11 +87,11 @@ npm run dev
 
 使用自己的资料时，替换示例履历、项目和数据。换一个行业，也可以让 Skill 重新安排页面，不必保留 Alex 的职业和风格。
 
-图片、字体和脚本都随网站保存。可以放到普通静态托管平台，也可以用自己的服务器。[部署说明](docs/DEPLOYMENT.zh-CN.md)
+图片、字体和脚本都随网站保存。可以放到普通静态托管平台，也可以用自己的服务器。[部署说明](docs/deploy.zh-CN.md)
 
 ## 文档与开发
 
-[使用示例](docs/USAGE.md) · [教学提纲](docs/TEACHING.md) · [录屏](docs/MEDIA.md) · [发布包](docs/RELEASE.zh-CN.md) · [公开前的资料检查](docs/SHARING.md)
+[使用示例](docs/examples.md) · [教学提纲](docs/recording-guide.md) · [录屏](docs/recordings.md) · [发布包](docs/packages.zh-CN.md) · [公开前的资料检查](docs/privacy.md)
 
 ```sh
 npm test

@@ -1,5 +1,5 @@
 // A transient asset error gets one fresh request; a persistent error exposes a real retry action.
-export function watchArtworkImages() {
+export function watchCoverImages() {
   const records = new WeakMap();
   function eligible(image) {
     if (!(image instanceof HTMLImageElement) || !image.src) return false;
@@ -27,14 +27,15 @@ export function watchArtworkImages() {
     if (record.attempts === 0) { retry(image, record); return; }
     const host = hostOf(image);
     if (!host) return;
+    const chinese = document.documentElement.lang.toLowerCase().startsWith('zh');
     host.dataset.imageState = 'error'; host.removeAttribute('aria-busy');
     if (!record.button && host.closest('a[href]')) {
       record.button = document.createElement('span'); record.button.className = 'media-unavailable';
-      record.button.textContent = '画作暂时无法加载'; host.append(record.button); return;
+      record.button.textContent = chinese ? '图片暂时无法加载' : 'Image unavailable'; host.append(record.button); return;
     }
     if (!record.button) {
       record.button = document.createElement('button'); record.button.type = 'button';
-      record.button.className = 'button media-retry'; record.button.textContent = '重新加载画作';
+      record.button.className = 'button media-retry'; record.button.textContent = chinese ? '重新加载图片' : 'Reload image';
       record.button.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); retry(image, record); }); host.append(record.button);
     }
   }
@@ -53,5 +54,5 @@ export function watchArtworkImages() {
   document.querySelectorAll('img').forEach(image => {
     if (eligible(image) && image.complete && !image.naturalWidth) error({ target: image });
   });
-  document.documentElement.dataset.imageRecoveryReady = 'true';
+  document.documentElement.dataset.imageLoadingReady = 'true';
 }

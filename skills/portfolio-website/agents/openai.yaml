@@ -1,0 +1,6 @@
+interface:
+  display_name: "Portfolio Website / 定制作品集"
+  short_description: "Build a portfolio website from your resume and work"
+  default_prompt: "Use $portfolio-website to design and build a portfolio from my work, evidence, and intended audience."
+policy:
+  allow_implicit_invocation: true

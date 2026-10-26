@@ -23,6 +23,6 @@ npm run dev
 npm run release
 ```
 
-If you change interactions or layout, inspect the running page, narrow screens, keyboard access, and reduced motion as relevant. Include what you actually checked. The optional Python log checker is independent of the website. No paid API or personal login should be necessary to reproduce the demo.
+If you change interactions or layout, inspect the running page, narrow screens, keyboard access, and reduced motion as relevant. Include what you actually checked. No paid API or personal login should be necessary to reproduce the demo.
 
 Fork, make a focused branch, and open a pull request using the template. Keep behavioral changes, public docs, screenshots, and asset credits consistent. Contributions you submit must be yours to share and are licensed under this project's MIT license; retain the licenses of third-party material. See [community conduct](CODE_OF_CONDUCT.md) and [security reporting](SECURITY.md).

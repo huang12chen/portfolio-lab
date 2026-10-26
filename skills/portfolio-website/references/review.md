@@ -1,6 +1,6 @@
 # Portfolio Refinements
 
-[简体中文](zh-CN/lessons-from-practice.md)
+[简体中文](zh-CN/review.md)
 
 Use these problem-and-response pairs to improve a portfolio. Choose the relevant checks for the material and audience; individual style preferences remain conditional.
 
@@ -41,4 +41,4 @@ Use these problem-and-response pairs to improve a portfolio. Choose the relevant
 | One desktop size worked but mobile or wide screens did not | Include the reported size, representative widths, long copy, and real media; no overflow does not mean no cropping |
 | A control-looking label was only an illustration | Make illustrations descriptive; primary actions must actually work |
 
-Use these lessons to spot related risks, then choose the implementation for the current reader and material. They do not make one person's layout, palette, project count, or motion preferences a universal template. For authorized fictional demos and public sample releases, use the separately scoped [demo and release reference](fictional-demos-and-release.md).
+Use these lessons to spot related risks, then choose the implementation for the current reader and material. They do not make one person's layout, palette, project count, or motion preferences a universal template. For authorized fictional demos and public sample releases, use the separately scoped [demo and release reference](demo-projects.md).

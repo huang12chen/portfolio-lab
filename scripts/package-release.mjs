@@ -10,17 +10,17 @@ const siteDirectory = 'examples/alex-lin/dist';
 const publicFiles = [
   '.gitignore', 'LICENSE', 'THIRD_PARTY_NOTICES.md', 'package.json', 'DESIGN.md', 'README.md', 'README.zh-CN.md',
   'CONTRIBUTING.md', 'CODE_OF_CONDUCT.md', 'SECURITY.md', 'CHANGELOG.md',
-  'docs/INSTALLATION.md', 'docs/USAGE.md', 'docs/QUICK_START.md', 'docs/TROUBLESHOOTING.md', 'docs/SHARING.md', 'docs/MEDIA.md',
+  'docs/install.md', 'docs/examples.md', 'docs/faq.md', 'docs/privacy.md', 'docs/recordings.md',
   'docs/media/gallery.gif', 'docs/media/story.gif', 'docs/media/portfolio-demo.mp4',
-  'docs/DEPLOYMENT.md', 'docs/DEPLOYMENT.zh-CN.md', 'docs/TEACHING.md', 'docs/fictional-resume.md',
-  'docs/RELEASE.md', 'docs/RELEASE.zh-CN.md',
+  'docs/deploy.md', 'docs/deploy.zh-CN.md', 'docs/recording-guide.md', 'docs/sample-resume.md',
+  'docs/packages.md', 'docs/packages.zh-CN.md',
   'scripts/serve.mjs', 'scripts/check.mjs', 'scripts/package-release.mjs',
   'tests/demos.test.mjs', 'tests/site.test.mjs', 'tests/release.test.mjs',
   'deploy/nginx.conf', '.github/workflows/pages.yml', '.github/workflows/ci.yml',
   '.github/ISSUE_TEMPLATE/bug_report.yml', '.github/ISSUE_TEMPLATE/feature_request.yml', '.github/pull_request_template.md'
 ];
 const screenshotFiles = ['home-desktop.png', 'story-desktop.png', 'growth-demo.png', 'brief-demo.png', 'home-mobile.png', 'about-desktop.png'].map(name => 'docs/screenshots/' + name);
-const skillDirectories = ['skills/bespoke-portfolio'];
+const skillDirectories = ['skills/portfolio-website'];
 const requiredFiles = new Set(publicFiles);
 const optionalScreenshots = [];
 const binaryExtensions = new Set(['.png', '.jpg', '.jpeg', '.webp', '.gif', '.ico', '.woff', '.woff2', '.ttf', '.otf', '.mp4']);

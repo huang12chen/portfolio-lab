@@ -1,6 +1,6 @@
 # Fictional Demos and Public Releases
 
-[简体中文](zh-CN/fictional-demos-and-release.md)
+[简体中文](zh-CN/demo-projects.md)
 
 Read this when the user has authorized a fictional teaching portfolio, an interactive demonstration, or a distributable sample. It supplements the ordinary evidence-based portfolio workflow; it does not require every portfolio to become a demo package or bilingual site.
 

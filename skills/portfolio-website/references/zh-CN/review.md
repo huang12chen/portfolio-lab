@@ -42,4 +42,4 @@
 这些规则不把一位用户的布局、配色、作品数量和动效偏好固定为通用模板。新任务用它们发现类似风险，再按材料与读者决定实现。
 
 
-[English version](../lessons-from-practice.md)
+[English version](../review.md)
