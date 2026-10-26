@@ -1,0 +1,30 @@
+name: Bug report / 问题反馈
+description: Report a reproducible Skill or demo issue / 提交可复现问题
+body:
+  - type: markdown
+    attributes:
+      value: Use synthetic data. Do not attach private résumés, account screenshots, or credentials. / 请使用合成数据，不要附私人简历、账号截图或凭据。
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area / 范围
+      options:
+        - bespoke-portfolio
+        - Gallery demo
+        - Story demo
+        - Documentation or packaging
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction and expected result / 复现与预期
+      description: Include version, agent or browser, route, language, and viewport where relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result and sanitized evidence / 实际结果与脱敏证据
+    validations:
+      required: true
