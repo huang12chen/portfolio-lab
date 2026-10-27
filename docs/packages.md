@@ -16,8 +16,8 @@ A complete release writes these local files to the ignored `release/` directory:
 
 | File | Contents |
 | --- | --- |
-| `portfolio-lab-source.zip` | The allowlisted project beneath a `portfolio-lab/` directory: static site, code, tests, public documentation, actual screenshots, the portfolio Skill, and deployment examples. |
-| `portfolio-lab-site.zip` | The static site with `index.html`, `story.html`, cases, assets, and licenses at its top level. Suitable for a static host's ZIP upload. |
+| `portfolio-ui-design-source.zip` | The allowlisted project beneath a `portfolio-ui-design/` directory: static site, code, tests, public documentation, actual screenshots, the portfolio Skill, and deployment examples. |
+| `portfolio-ui-design-site.zip` | The static site with `index.html`, `story.html`, cases, assets, and licenses at its top level. Suitable for a static host's ZIP upload. |
 | `manifest.json` | Archive sizes and SHA-256 values, plus each archived file's size and SHA-256. |
 | `SHA256SUMS.txt` | Checksums for both archives and the manifest. |
 

@@ -5,7 +5,7 @@
 <p align="center">Build a portfolio website around your résumé and work.</p>
 
 <p align="center">
-  <a href="https://github.com/huang12chen/portfolio-lab/actions/workflows/ci.yml"><img src="https://github.com/huang12chen/portfolio-lab/actions/workflows/ci.yml/badge.svg" alt="Build checks"></a>
+  <a href="https://github.com/huang12chen/portfolio-ui-design/actions/workflows/ci.yml"><img src="https://github.com/huang12chen/portfolio-ui-design/actions/workflows/ci.yml/badge.svg" alt="Build checks"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-24292f.svg" alt="MIT license"></a>
 </p>
 
@@ -28,14 +28,14 @@ Use a coding tool that supports Skills, such as Codex, Claude Code, or Cursor. S
 
 ```text
 Install the portfolio-website Skill from
-https://github.com/huang12chen/portfolio-lab/tree/main/skills/portfolio-website
+https://github.com/huang12chen/portfolio-ui-design/tree/main/skills/portfolio-website
 in this project's Skill directory. Preserve any existing local edits, confirm the Skill is discoverable, and stop after installation.
 ```
 
 Or run this in your project terminal, then choose your coding tool. Requires [Node.js 22.20+](https://github.com/vercel-labs/skills#install-a-skill):
 
 ```sh
-npx skills add huang12chen/portfolio-lab --skill portfolio-website
+npx skills add huang12chen/portfolio-ui-design --skill portfolio-website
 ```
 
 The command installs to this project by default; add `-g` to use it across projects. For manual installation, confirmation, or updates, see [the install guide](docs/install.md).
@@ -81,7 +81,7 @@ The three projects include these working controls:
 
 ## Run the example
 
-[Download the source ZIP](https://github.com/huang12chen/portfolio-lab/archive/refs/heads/main.zip), unzip it, and open the `portfolio-lab-main` folder. Run the command below there. The example needs Node.js 22+ and has no npm dependencies.
+[Download the source ZIP](https://github.com/huang12chen/portfolio-ui-design/archive/refs/heads/main.zip), unzip it, and open the `portfolio-ui-design-main` folder. Run the command below there. The example needs Node.js 22+ and has no npm dependencies.
 
 ```sh
 npm run dev

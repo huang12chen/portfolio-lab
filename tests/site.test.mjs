@@ -10,10 +10,10 @@ import { after, before, test } from 'node:test';
 const siteRoot = fileURLToPath(new URL('../examples/alex-lin/dist/', import.meta.url));
 let fixtures;
 
-before(async () => { fixtures = await mkdtemp(join(tmpdir(), 'portfolio-lab-site-')); });
+before(async () => { fixtures = await mkdtemp(join(tmpdir(), 'portfolio-ui-design-site-')); });
 after(async () => {
   assert.equal(dirname(resolve(fixtures)), resolve(tmpdir()));
-  assert.match(basename(fixtures), /^portfolio-lab-site-/);
+  assert.match(basename(fixtures), /^portfolio-ui-design-site-/);
   await rm(fixtures, { recursive: true, force: true });
 });
 

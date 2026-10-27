@@ -254,7 +254,7 @@ export async function createRelease({ root = projectRoot, allowIncomplete = fals
   const visited = new Set([base]), selected = new Map(), warnings = [];
   const output = join(base, 'release');
   await checkedPath(base, 'release', visited, true);
-  for (const name of ['portfolio-lab-source.zip', 'portfolio-lab-site.zip', 'manifest.json', 'SHA256SUMS.txt']) {
+  for (const name of ['portfolio-ui-design-source.zip', 'portfolio-ui-design-site.zip', 'manifest.json', 'SHA256SUMS.txt']) {
     await checkedPath(base, 'release/' + name, visited, true);
   }
   for (const name of publicFiles) {
@@ -291,11 +291,11 @@ export async function createRelease({ root = projectRoot, allowIncomplete = fals
     verifyPublicText(name, bytes);
     snapshot.set(name, bytes);
   }
-  const source = new Map([...snapshot].map(([name, bytes]) => ['portfolio-lab/' + name, bytes]));
+  const source = new Map([...snapshot].map(([name, bytes]) => ['portfolio-ui-design/' + name, bytes]));
   const site = new Map([...snapshot].filter(([name]) => name.startsWith(siteDirectory + '/')).map(([name, bytes]) => [name.slice(siteDirectory.length + 1), bytes]));
   site.set('LICENSE.txt', snapshot.get('LICENSE'));
   site.set('THIRD_PARTY_NOTICES.md', snapshot.get('THIRD_PARTY_NOTICES.md'));
-  const builds = [['portfolio-lab-source.zip', source], ['portfolio-lab-site.zip', site]];
+  const builds = [['portfolio-ui-design-source.zip', source], ['portfolio-ui-design-site.zip', site]];
   const archives = builds.map(([name, files]) => {
     const bytes = writeZip(files);
     verifyRoundtrip(bytes, files);

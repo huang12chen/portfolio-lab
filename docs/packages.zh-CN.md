@@ -16,8 +16,8 @@ npm run release
 
 | 文件 | 内容 |
 | --- | --- |
-| `portfolio-lab-source.zip` | 顶层为 `portfolio-lab/`，包含白名单内的静态站、代码、测试、公共文档、实际截图、Skill 与部署示例。 |
-| `portfolio-lab-site.zip` | 顶层直接包含 `index.html`、`story.html`、案例、素材和许可，可供静态托管平台上传 ZIP。 |
+| `portfolio-ui-design-source.zip` | 顶层为 `portfolio-ui-design/`，包含白名单内的静态站、代码、测试、公共文档、实际截图、Skill 与部署示例。 |
+| `portfolio-ui-design-site.zip` | 顶层直接包含 `index.html`、`story.html`、案例、素材和许可，可供静态托管平台上传 ZIP。 |
 | `manifest.json` | 两个压缩包及其中每个文件的大小与 SHA-256。 |
 | `SHA256SUMS.txt` | 两个压缩包和清单的校验值。 |
 

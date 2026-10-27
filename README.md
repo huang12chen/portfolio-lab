@@ -5,7 +5,7 @@
 <p align="center">根据简历和作品，制作适合自己的作品集网站。</p>
 
 <p align="center">
-  <a href="https://github.com/huang12chen/portfolio-lab/actions/workflows/ci.yml"><img src="https://github.com/huang12chen/portfolio-lab/actions/workflows/ci.yml/badge.svg" alt="构建检查"></a>
+  <a href="https://github.com/huang12chen/portfolio-ui-design/actions/workflows/ci.yml"><img src="https://github.com/huang12chen/portfolio-ui-design/actions/workflows/ci.yml/badge.svg" alt="构建检查"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-24292f.svg" alt="MIT 许可"></a>
 </p>
 
@@ -28,14 +28,14 @@
 
 ```text
 请从下面的地址安装 portfolio-website 这个 Skill：
-https://github.com/huang12chen/portfolio-lab/tree/main/skills/portfolio-website
+https://github.com/huang12chen/portfolio-ui-design/tree/main/skills/portfolio-website
 安装到当前项目的技能目录，保留已有修改。装好后确认工具能找到它，先不要开始制作网站。
 ```
 
 会使用终端的话，也可以在自己的项目目录运行下面这条命令，按提示选择工具。需要 [Node.js 22.20+](https://github.com/vercel-labs/skills#install-a-skill)：
 
 ```sh
-npx skills add huang12chen/portfolio-lab --skill portfolio-website
+npx skills add huang12chen/portfolio-ui-design --skill portfolio-website
 ```
 
 默认只在当前项目使用；加上 `-g` 可安装到用户目录，供多个项目使用。手动安装、装好后的确认和更新都在[安装指南](docs/install.md)。
@@ -81,7 +81,7 @@ Codex 中可以直接输入 `$portfolio-website`，Claude Code 中使用 `/portf
 
 ## 本地运行
 
-[下载源码 ZIP](https://github.com/huang12chen/portfolio-lab/archive/refs/heads/main.zip)，解压后打开 `portfolio-lab-main` 文件夹，在其中运行下面的命令。示例需要 Node.js 22+，不用先执行 npm install。
+[下载源码 ZIP](https://github.com/huang12chen/portfolio-ui-design/archive/refs/heads/main.zip)，解压后打开 `portfolio-ui-design-main` 文件夹，在其中运行下面的命令。示例需要 Node.js 22+，不用先执行 npm install。
 
 ```sh
 npm run dev

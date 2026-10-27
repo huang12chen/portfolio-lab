@@ -1,6 +1,6 @@
 # Contributing / 贡献指南
 
-English and Chinese issues, documentation, and improvements are welcome. Use [Issues](https://github.com/huang12chen/portfolio-lab/issues) for questions, reproducible bugs, and proposed changes.
+English and Chinese issues, documentation, and improvements are welcome. Use [Issues](https://github.com/huang12chen/portfolio-ui-design/issues) for questions, reproducible bugs, and proposed changes.
 
 欢迎用中英文提交问题、文档与改进。先说明具体需求或可复现行为，再提出相应修改。
 

@@ -6,10 +6,10 @@ import { basename, dirname, join, resolve } from 'node:path';
 import { after, before, test } from 'node:test';
 
 let fixtures;
-before(async () => { fixtures = await mkdtemp(join(tmpdir(), 'portfolio-lab-release-')); });
+before(async () => { fixtures = await mkdtemp(join(tmpdir(), 'portfolio-ui-design-release-')); });
 after(async () => {
   assert.equal(dirname(resolve(fixtures)), resolve(tmpdir()));
-  assert.match(basename(fixtures), /^portfolio-lab-release-/);
+  assert.match(basename(fixtures), /^portfolio-ui-design-release-/);
   await rm(fixtures, { recursive: true, force: true });
 });
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -17,7 +17,7 @@ const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 async function fixture(name) {
   const root = join(fixtures, name);
   const files = {
-    'package.json': '{"name":"portfolio-lab","version":"1.0.0","type":"module"}',
+    'package.json': '{"name":"portfolio-ui-design","version":"1.0.0","type":"module"}',
     '.gitignore': 'release/\n',
     'LICENSE': 'MIT sample license\n',
     'THIRD_PARTY_NOTICES.md': 'Third-party credits\n',
@@ -86,7 +86,7 @@ test('release creates allowlisted source and flat site archives with verified ha
   const manifest = JSON.parse(await readFile(join(root, 'release', 'manifest.json'), 'utf8'));
   assert.equal(manifest.schemaVersion, 1);
   assert.equal(manifest.archives.length, 2);
-  assert.deepEqual(result.archives.map(item => item.name), ['portfolio-lab-source.zip', 'portfolio-lab-site.zip']);
+  assert.deepEqual(result.archives.map(item => item.name), ['portfolio-ui-design-source.zip', 'portfolio-ui-design-site.zip']);
   for (const archive of manifest.archives) {
     const bytes = await readFile(join(root, 'release', archive.name));
     assert.equal(hash(bytes), archive.sha256);
@@ -98,10 +98,10 @@ test('release creates allowlisted source and flat site archives with verified ha
       assert.doesNotMatch(entries.get(file.path).toString(), /PRIVATE_SENTINEL/);
     }
   }
-  const source = readZipEntries(await readFile(join(root, 'release', 'portfolio-lab-source.zip')));
-  const site = readZipEntries(await readFile(join(root, 'release', 'portfolio-lab-site.zip')));
-  for (const path of ['portfolio-lab/README.md', 'portfolio-lab/docs/media/gallery.gif', 'portfolio-lab/docs/deploy.md', 'portfolio-lab/docs/screenshots/home-desktop.png', 'portfolio-lab/skills/portfolio-website/SKILL.md', 'portfolio-lab/deploy/nginx.conf', 'portfolio-lab/.github/workflows/pages.yml']) assert.ok(source.has(path), path);
-  assert.equal([...source.keys()].some(path => path.startsWith('portfolio-lab/skills/unpublished-draft/')), false);
+  const source = readZipEntries(await readFile(join(root, 'release', 'portfolio-ui-design-source.zip')));
+  const site = readZipEntries(await readFile(join(root, 'release', 'portfolio-ui-design-site.zip')));
+  for (const path of ['portfolio-ui-design/README.md', 'portfolio-ui-design/docs/media/gallery.gif', 'portfolio-ui-design/docs/deploy.md', 'portfolio-ui-design/docs/screenshots/home-desktop.png', 'portfolio-ui-design/skills/portfolio-website/SKILL.md', 'portfolio-ui-design/deploy/nginx.conf', 'portfolio-ui-design/.github/workflows/pages.yml']) assert.ok(source.has(path), path);
+  assert.equal([...source.keys()].some(path => path.startsWith('portfolio-ui-design/skills/unpublished-draft/')), false);
   assert.ok(site.has('index.html'));
   assert.ok(site.has('LICENSE.txt'));
   assert.ok(site.has('THIRD_PARTY_NOTICES.md'));
@@ -120,8 +120,8 @@ test('identical source bytes produce identical archives across repeated releases
   const second = await createRelease({ root });
   assert.deepEqual(first.archives, second.archives);
   const sums = await readFile(join(root, 'release', 'SHA256SUMS.txt'), 'utf8');
-  assert.match(sums, /[a-f0-9]{64}  portfolio-lab-source\.zip/);
-  assert.match(sums, /[a-f0-9]{64}  portfolio-lab-site\.zip/);
+  assert.match(sums, /[a-f0-9]{64}  portfolio-ui-design-source\.zip/);
+  assert.match(sums, /[a-f0-9]{64}  portfolio-ui-design-site\.zip/);
   assert.match(sums, /[a-f0-9]{64}  manifest\.json/);
 });
 
@@ -167,7 +167,7 @@ test('ZIP roundtrip reader rejects modified payload bytes', async () => {
   const { createRelease, readZipEntries } = await import('../scripts/package-release.mjs');
   const root = await fixture('corrupt');
   await createRelease({ root });
-  const archive = await readFile(join(root, 'release', 'portfolio-lab-site.zip'));
+  const archive = await readFile(join(root, 'release', 'portfolio-ui-design-site.zip'));
   const altered = Buffer.from(archive);
   const nameLength = altered.readUInt16LE(26);
   const extraLength = altered.readUInt16LE(28);
@@ -191,10 +191,10 @@ test('source release carries its onboarding, community files, and actual demo me
   const { createRelease, readZipEntries } = await import('../scripts/package-release.mjs');
   const root = await fixture('public-onboarding');
   await createRelease({ root });
-  const source = readZipEntries(await readFile(join(root, 'release/portfolio-lab-source.zip')));
-  const site = readZipEntries(await readFile(join(root, 'release/portfolio-lab-site.zip')));
+  const source = readZipEntries(await readFile(join(root, 'release/portfolio-ui-design-source.zip')));
+  const site = readZipEntries(await readFile(join(root, 'release/portfolio-ui-design-site.zip')));
   for (const name of ['docs/install.md', 'docs/examples.md', 'docs/install.md', 'docs/faq.md', 'docs/privacy.md', 'docs/recordings.md', 'CONTRIBUTING.md', 'SECURITY.md', '.github/workflows/ci.yml', '.github/ISSUE_TEMPLATE/bug_report.yml', 'docs/media/gallery.gif', 'docs/media/story.gif', 'docs/media/portfolio-demo.mp4']) {
-    assert.deepEqual(source.get('portfolio-lab/' + name), await readFile(join(root, name)), name);
+    assert.deepEqual(source.get('portfolio-ui-design/' + name), await readFile(join(root, name)), name);
     assert.equal(site.has(name), false, name);
   }
 });

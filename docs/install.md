@@ -9,11 +9,11 @@
 Send this to Codex, Claude Code, or Cursor with access to your project files and the network:
 
 ```text
-请从 https://github.com/huang12chen/portfolio-lab/tree/main/skills/portfolio-website 安装 portfolio-website，放到当前项目的技能目录。保留已有修改，装好后确认能找到它，先不要开始制作网站。
+请从 https://github.com/huang12chen/portfolio-ui-design/tree/main/skills/portfolio-website 安装 portfolio-website，放到当前项目的技能目录。保留已有修改，装好后确认能找到它，先不要开始制作网站。
 ```
 
 ```text
-Install portfolio-website from https://github.com/huang12chen/portfolio-lab/tree/main/skills/portfolio-website into this project's Skill directory. Preserve existing local edits, confirm it is discoverable, and stop after installation.
+Install portfolio-website from https://github.com/huang12chen/portfolio-ui-design/tree/main/skills/portfolio-website into this project's Skill directory. Preserve existing local edits, confirm it is discoverable, and stop after installation.
 ```
 
 ## Use the CLI / 使用终端
@@ -23,7 +23,7 @@ Install portfolio-website from https://github.com/huang12chen/portfolio-lab/tree
 Requires Node.js 22.20+. Run this from your project and choose the coding tool when prompted. The default scope is this project; add `-g` to install for your user.
 
 ```sh
-npx skills add huang12chen/portfolio-lab --skill portfolio-website
+npx skills add huang12chen/portfolio-ui-design --skill portfolio-website
 ```
 
 已明确使用哪个工具时，可以跳过选择：
@@ -31,9 +31,9 @@ npx skills add huang12chen/portfolio-lab --skill portfolio-website
 To select the tool explicitly:
 
 ```sh
-npx skills add huang12chen/portfolio-lab --skill portfolio-website --agent codex
-npx skills add huang12chen/portfolio-lab --skill portfolio-website --agent claude-code
-npx skills add huang12chen/portfolio-lab --skill portfolio-website --agent cursor
+npx skills add huang12chen/portfolio-ui-design --skill portfolio-website --agent codex
+npx skills add huang12chen/portfolio-ui-design --skill portfolio-website --agent claude-code
+npx skills add huang12chen/portfolio-ui-design --skill portfolio-website --agent cursor
 ```
 
 上面三条选自己需要的一条。完整选项见 [Skills CLI](https://github.com/vercel-labs/skills/blob/main/docs/commands.md)。Choose the one for your tool, not all three.
@@ -64,7 +64,7 @@ Look for `portfolio-website`, then confirm it appears in your coding tool's Skil
 
 ## Install manually / 手动安装
 
-[下载源码](https://github.com/huang12chen/portfolio-lab/archive/refs/heads/main.zip)，解压后复制完整的 `skills/portfolio-website/` 文件夹到下面对应的项目目录。保留 `SKILL.md`、`agents/`、`references/` 和许可证；不需要复制网站示例或整个仓库。
+[下载源码](https://github.com/huang12chen/portfolio-ui-design/archive/refs/heads/main.zip)，解压后复制完整的 `skills/portfolio-website/` 文件夹到下面对应的项目目录。保留 `SKILL.md`、`agents/`、`references/` 和许可证；不需要复制网站示例或整个仓库。
 
 Download and unzip the source. Copy the complete `skills/portfolio-website/` folder into the matching project directory below, keeping its instructions, metadata, references, and license. You do not need to copy the example website or the whole repository.
 
