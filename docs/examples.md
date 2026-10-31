@@ -12,6 +12,12 @@ Start with your existing work. Say who the site is for, what they should be able
 
 > Use $portfolio-website. I am a junior architect applying to small studios. I have two built projects, a competition entry, drawings, and process photos. Build a portfolio that shows the drawings clearly and explains my role in each project. Keep client addresses private.
 
+## A visual direction / 定一个视觉方向
+
+> 使用 $portfolio-website。这次重点在页面本身：先看我给的截图和作品，量出里面真实出现的颜色和作品本身的宽高比，再定字号、留白和按钮形状。手机排版和中文标点一起检查。不要套用你上一次做的那套配色。
+
+> Use $portfolio-website. This time the design matters as much as the content: read the colours that actually appear in my screenshots and the aspect ratios of the work itself, then decide the type scale, spacing and control shapes. Check the phone layout and the Chinese punctuation too, and do not reuse the palette from the last site you made.
+
 ## Limited material / 项目不多
 
 > 使用 $portfolio-website。我正在转行，只有一个比较完整的个人项目和几份课程作业。请先把这个项目讲清楚，展示截图和我做过的取舍。没有客户或商业成绩，不要替我补写。

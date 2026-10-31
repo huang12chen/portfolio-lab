@@ -1,8 +1,8 @@
 # Sharing and privacy / 公开分享与隐私
 
-This repository's persona, résumé, case narratives, business numbers, and research are fictional. It deliberately keeps personal originals and hosting administration outside the shared project. Stock photography is attributed in the asset register.
+This repository's persona, résumé, case narratives, business numbers, and research are fictional. It deliberately keeps personal originals and hosting administration outside the shared project. The current site ships no photographs, webfonts, or bundled libraries; the earlier stock photography is attributed in the asset register, and still appears on screen in the archived recordings kept for reference.
 
-本项目使用虚构人物、履历、案例、商业指标与调研，个人原件和托管管理信息保留在共享目录之外；图库照片另有来源与许可。
+本项目使用虚构人物、履历、案例、商业指标与调研，个人原件和托管管理信息保留在共享目录之外；当前站点不含照片、网络字体或第三方库，早期图库照片的来源与许可仍在素材说明中登记，并且只出现在留档的旧录屏画面里。
 
 ## Before publishing your own fork
 

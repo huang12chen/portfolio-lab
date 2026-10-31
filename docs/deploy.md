@@ -2,7 +2,7 @@
 
 [简体中文](deploy.zh-CN.md) · [README](../README.en.md)
 
-The deployable directory is **`examples/alex-lin/dist/`**. Its `index.html` must appear at the published site root, alongside `project.html`, `story.html`, `about.html`, scripts, styles, and assets. No build command, application server, environment variables, or API keys are required for the site itself.
+The deployable directory is **`examples/alex-lin/dist/`**. Its `index.html` must appear at the published site root, alongside `project.html`, `about.html`, scripts, styles, and assets. The three cases share one archive page through a query route — `project.html?id=signal|briefly|fieldwork` — so these three entry pages are the whole site. No build command, application server, environment variables, or API keys are required for the site itself.
 
 Use the steps below with your own hosting account or existing server. Review the files before uploading them; configure domains and HTTPS through the hosting you control.
 
@@ -16,7 +16,7 @@ npm run check
 npm run dev
 ```
 
-Open the local demo at [localhost:4180](http://localhost:4180/index.html?lang=en). Test both languages, all three cases, Signal controls, Briefly editing, the About page, and a mobile viewport. Keep the fictional-content notices and asset credits in the uploaded copy.
+Open the local demo at [localhost:4180](http://localhost:4180/index.html). Test both languages — English at the root, Chinese under `/zh/` — all three cases, Signal controls, Briefly editing, the About page, and a mobile viewport. Keep the fictional-content notices and asset credits in the uploaded copy.
 
 The release consists of the **contents** of `dist/`, not the repository root. Do not expose local notes, source résumés, credentials, or unrelated files.
 
@@ -53,7 +53,7 @@ GitHub's branch source selector supports only **`/`** or **`/docs`** on the chos
 
 Copy the contents of `dist/` to the root of a dedicated publishing branch such as `gh-pages`, include a `.nojekyll` file, then select **Deploy from a branch → gh-pages → /(root)**. Keep repository documentation on the source branch. See [publishing-source settings](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
-A project site normally lives under a repository subdirectory. Keep relative links such as `./project.html?id=signal&lang=en` and `./assets/photos/workspace.jpg`; avoid replacing them with root-relative paths beginning with `/`.
+A project site normally lives under a repository subdirectory. Keep relative links such as `./project.html?id=signal&lang=en` and `./assets/favicon.svg`; avoid replacing them with root-relative paths beginning with `/`.
 
 ## An existing Nginx static site
 
@@ -82,7 +82,7 @@ For subdirectory hosting, copy the files beneath the existing document root, for
 
 Use the actual URL produced by your selected provider.
 
-- Open `index.html?lang=en`, `index.html?lang=zh`, and both languages of `story.html`.
+- Open `index.html` and `zh/index.html`, and one case opened directly, such as `project.html?id=signal`. Upload both trees — `zh/` is a directory of real pages, not a script.
 - Follow each project link, reload its detail page, open About, then return home.
 - Change Signal controls and edit a Briefly brief.
 - Check phone-width layout and keyboard operation.

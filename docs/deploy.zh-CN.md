@@ -2,7 +2,7 @@
 
 [English](deploy.md) · [README](../README.md)
 
-部署目录为 **`examples/alex-lin/dist/`**。发布后，`index.html` 应位于站点根目录，与 `project.html`、`story.html`、`about.html`、脚本、样式和素材同级。网站本身不需要构建命令、应用服务器、环境变量或 API Key。
+部署目录为 **`examples/alex-lin/dist/`**。发布后，`index.html` 应位于站点根目录，与 `project.html`、`about.html`、脚本、样式和素材同级。三个案例共用同一个案例页的查询路由 `project.html?id=signal|briefly|fieldwork`，因此这三个入口页面就是完整站点。网站本身不需要构建命令、应用服务器、环境变量或 API Key。
 
 请使用自己的托管账号或已有服务器，上传前检查发布文件；域名和 HTTPS 按自己的托管环境配置。
 
@@ -16,7 +16,7 @@ npm run check
 npm run dev
 ```
 
-打开[本地中文示例](http://localhost:4180/index.html?lang=zh)，检查两种语言、三个案例、Signal 控件、Briefly 编辑、About 页面和移动端尺寸。上传副本应保留虚构内容标识与素材署名。
+打开[本地示例](http://localhost:4180/index.html)，英文在根目录、中文在 `/zh/` 下，检查两种语言、三个案例、Signal 控件、Briefly 编辑、About 页面和移动端尺寸。上传副本应保留虚构内容标识与素材署名。
 
 发布的是 **`dist/` 内的内容**。不要把整个仓库、本地笔记、原始个人简历、凭据或无关文件当作站点根目录上传。
 
@@ -53,7 +53,7 @@ npm run dev
 
 将 `dist/` 的内容复制到专用发布分支（如 `gh-pages`）的根目录，加入 `.nojekyll`，再选择 **Deploy from a branch → gh-pages → /(root)**。仓库说明文档保留在源码分支。详见 [GitHub 发布源设置](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。
 
-项目站通常位于仓库子路径下。请保留 `./project.html?id=signal&lang=zh`、`./assets/photos/workspace.jpg` 这类相对路径，不要统一改成以 `/` 开头的根路径。
+项目站通常位于仓库子路径下。请保留 `./zh/project.html?id=signal`、`./assets/favicon.svg` 这类相对路径，不要统一改成以 `/` 开头的根路径。
 
 ## 现有 Nginx 静态站点
 
@@ -82,7 +82,7 @@ server {
 
 使用托管平台实际生成的地址进行以下检查。
 
-- 分别打开 `index.html?lang=zh`、`index.html?lang=en`，以及 `story.html` 的两种语言。
+- 分别打开 `index.html` 和 `zh/index.html`，以及直接打开单个案例的 `zh/project.html?id=signal`；上传时要带上整棵 `zh/` 目录。
 - 从首页进入每个案例、刷新详情页、打开 About，再返回首页。
 - 操作 Signal 控件，编辑 Briefly 简报。
 - 检查手机宽度与键盘操作。

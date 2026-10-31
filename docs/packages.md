@@ -17,7 +17,7 @@ A complete release writes these local files to the ignored `release/` directory:
 | File | Contents |
 | --- | --- |
 | `portfolio-ui-design-source.zip` | The allowlisted project beneath a `portfolio-ui-design/` directory: static site, code, tests, public documentation, actual screenshots, the portfolio Skill, and deployment examples. |
-| `portfolio-ui-design-site.zip` | The static site with `index.html`, `story.html`, cases, assets, and licenses at its top level. Suitable for a static host's ZIP upload. |
+| `portfolio-ui-design-site.zip` | The static site with `index.html`, `project.html`, `about.html`, cases, assets, and licenses at its top level. Suitable for a static host's ZIP upload. |
 | `manifest.json` | Archive sizes and SHA-256 values, plus each archived file's size and SHA-256. |
 | `SHA256SUMS.txt` | Checksums for both archives and the manifest. |
 
@@ -27,6 +27,6 @@ The normal command refuses an incomplete teaching bundle: the portfolio Skill en
 
 Check the generated manifest and inspect both archives before uploading. Keep private originals and hosting identities outside this repository. Creating these packages does not create a GitHub repository, push commits, change a site's audience, or publish anything.
 
-Use the [deployment guide](deploy.md) for a host you control. The gallery view starts at `index.html?lang=en`; the continuous-scroll view starts at `story.html?lang=en`. Both also support `lang=zh`.
+Use the [deployment guide](deploy.md) for a host you control. The site reads two ways: the card index starts at `index.html`, and one case opens on its own at `project.html?id=signal`, with `briefly` and `fieldwork` for the other two. Chinese is the same three pages pre-rendered under `zh/`, so a package that leaves that directory out publishes half a site.
 
 The source package includes the installation/usage/community guides and the GIF/MP4 browser recordings referenced by the README. The flat site ZIP includes only the deployable website and its licenses. Both are regenerated from the current allowlist.

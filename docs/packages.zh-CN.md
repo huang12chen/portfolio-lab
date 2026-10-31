@@ -17,7 +17,7 @@ npm run release
 | 文件 | 内容 |
 | --- | --- |
 | `portfolio-ui-design-source.zip` | 顶层为 `portfolio-ui-design/`，包含白名单内的静态站、代码、测试、公共文档、实际截图、Skill 与部署示例。 |
-| `portfolio-ui-design-site.zip` | 顶层直接包含 `index.html`、`story.html`、案例、素材和许可，可供静态托管平台上传 ZIP。 |
+| `portfolio-ui-design-site.zip` | 顶层直接包含 `index.html`、`project.html`、`about.html`、案例、素材和许可，可供静态托管平台上传 ZIP。 |
 | `manifest.json` | 两个压缩包及其中每个文件的大小与 SHA-256。 |
 | `SHA256SUMS.txt` | 两个压缩包和清单的校验值。 |
 
@@ -27,6 +27,6 @@ npm run release
 
 上传前检查生成清单与两个压缩包。个人原稿和托管身份保存在仓库外。生成发布包不会新建 GitHub 仓库、推送代码、修改网站访问范围或向外部发布。
 
-按[部署说明](deploy.zh-CN.md)使用自己的托管平台。作品索引版入口为 `index.html?lang=zh`，连续滚动版为 `story.html?lang=zh`；两版也支持 `lang=en`。
+按[部署说明](deploy.zh-CN.md)使用自己的托管平台。站点有两种读法：卡片索引从 `index.html` 开始，中文在 `zh/index.html`；单个案例用 `project.html?id=signal` 直接打开，另外两个分别是 `briefly` 和 `fieldwork`。中文同样是预先渲染好的三份静态页面，放在 `zh/` 目录里——打包时漏掉这个目录，发布出去的就只有半个站点。
 
 源码包包含安装、使用与社区指南，以及 README 引用的 GIF 和 MP4 真实录屏。静态站点 ZIP 仅包含可部署网页及其许可。两者均按当前白名单重新生成。

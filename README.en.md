@@ -12,6 +12,7 @@
 <p align="center">
   <a href="#install">Install</a> ·
   <a href="#example-website">Example website</a> ·
+  <a href="#self-check">Self-check</a> ·
   <a href="docs/deploy.md">Deploy</a> ·
   <a href="docs/faq.md">Troubleshooting</a>
 </p>
@@ -21,6 +22,8 @@ Give Codex, Claude Code, or Cursor your résumé, work samples, and target role.
 ![Switching project categories and expanding a card](docs/media/gallery.gif)
 
 [Watch the full demo, about 36 seconds](docs/media/portfolio-demo.mp4)
+
+Both recordings were captured before the example site was rebuilt, so their interface differs from today's; they are kept for reference. For the current UI, see the screenshots under [Example website](#example-website) below.
 
 ## Install
 
@@ -48,17 +51,21 @@ Send your résumé, work samples, and intended audience, then ask:
 
 In Codex you can invoke `$portfolio-website`; in Claude Code use `/portfolio-website`. [More requests](docs/examples.md)
 
+Alongside checking what the content is allowed to claim, it decides what the page should look like, and derives that from your material instead of picking a template: the aspect ratios your work already has, the colours that actually appear in it, the hierarchy and density of the information itself. Reference sites get opened and studied down to the specific page and interaction rather than name-dropped. Every claim about the result is then measured in a browser — Chinese letter-spacing, focus rings, and whether anything overflows at 390px.
+
+Motion is derived the same way, and is never a requirement. Depth is only built where the material carries a dimension a still layout cannot show — an order, an elapsed duration, a thickness, a distance, a change of state — and then exactly one showpiece per page, because a second one stops being an argument and becomes decoration. Every animated object has to trace back to a property of the content; reduced motion is a teardown rather than a hiding, so the static state has to pass the same checks; and with JavaScript off the page still has to finish making its point.
+
 ## Example website
 
-The same fictional résumé is presented in two versions so you can compare how they work.
+The same fictional résumé can be read two ways on one site: the card index on the home page, or a single case opened by itself through `project.html?id=…`.
 
-| Gallery | Continuous scroll |
+| Card index | Retired scroll page |
 | --- | --- |
-| ![Gallery home](docs/screenshots/home-desktop.png) | ![Continuous-scroll home](docs/screenshots/story-desktop.png) |
+| ![Home page card index](docs/screenshots/home-desktop.png) | ![Continuous-scroll page that the current site no longer ships](docs/screenshots/story-desktop.png) |
 
-Alex Lin, the employment history, and the business data are fictional. Photo sources are listed in the [asset notes](examples/alex-lin/dist/ASSETS.md).
+Alex Lin, the employment history, and the business data are fictional. The site references no photographs, webfonts, or third-party scripts; each file's origin and licence is listed in the [asset notes](examples/alex-lin/dist/ASSETS.md).
 
-![Continuous-scroll demo](docs/media/story.gif)
+![Recording of the retired scroll page, kept for reference](docs/media/story.gif)
 
 The three projects include these working controls:
 
@@ -87,7 +94,7 @@ The three projects include these working controls:
 npm run dev
 ```
 
-Open the [gallery](http://localhost:4180/index.html?lang=en) or [scroll version](http://localhost:4180/story.html?lang=en). Use the language control at the top right to switch languages. Ctrl+C stops the server.
+Open the [card index](http://localhost:4180/index.html), or [one case on its own](http://localhost:4180/project.html?id=signal) — any of `signal`, `briefly`, `fieldwork` after `?id=`. Chinese is its own copy of all three pages under [`/zh/`](http://localhost:4180/zh/index.html), so the language control at the top right is one link and both languages read with JavaScript switched off; an older `?lang=zh` link still works and redirects. Ctrl+C stops the server.
 
 ## Edit and deploy
 
@@ -95,11 +102,31 @@ The example lives in `examples/alex-lin/dist/`:
 
 - `data.js`: project descriptions and bilingual content.
 - `app.js`: page structure.
-- `demos.js`: project demo behavior.
+- `demos.js`, `demos-brief.js`: interaction logic for the Signal and Briefly demos; their renderers sit in `demo-views.js` and `brief-views.js`, with shared helpers in `demo-core.js`.
 
 Replace the sample career, projects, and numbers with your own material. For a different profession, ask the Skill to reconsider the pages as well as the writing; you do not need to keep Alex's role or style.
 
-Images, fonts, and scripts are included locally. The site can use a static hosting provider or your own server. [Deployment guide](docs/deploy.md)
+Scripts and styles are all local; the site downloads no webfonts, images, or third-party scripts, and text renders in operating-system fallback stacks. The site can use a static hosting provider or your own server. [Deployment guide](docs/deploy.md)
+
+## Self-check
+
+A finished page should not have to be declared correct by eye. The repository ships an auditor, and the example site is its test subject:
+
+```sh
+npm run audit          # 25 rules that need no browser: structure, packaging, links, locale, budget
+npm run audit:browser  # + 13 rules measured in a real browser at 1440 / 768 / 390: layout, contrast, occlusion, states
+npm run audit:craft    # + 8 craft probes: baseline drift, type hierarchy, table cropping, shadow structure, state matrix, press displacement, accessible names
+```
+
+Once the Skill is installed, the same checks run from its own directory against your build:
+
+```sh
+node scripts/selfcheck.mjs <built-site-dir>
+```
+
+The exit code has exactly three meanings: 0 measured and clean, 1 measured and defective, 2 could not measure. That distinction is the point — when a dimension is out of reach the report prints `NOT-MEASURED` with the reason beside it, instead of reading zero measurements as a pass. `--static-only` skips the browser, `--map` lists which reference line states each rule (the checker emits that table, so a rule that moves takes its citation with it), and `--json` prints the full report.
+
+So a report can only be read three ways: `PASS` means it was measured and nothing was found, `FAIL` means it was measured and something was found, `NOT-MEASURED` means the instrument could not reach it. None of the three means the design looks good, and none replaces looking at it yourself.
 
 ## Docs and development
 
@@ -111,4 +138,4 @@ npm run check
 npm run release
 ```
 
-Questions and improvements are welcome; see [Contributing](CONTRIBUTING.md). Original code, Skill, and documentation use the [MIT license](LICENSE). Photo, font, and animation-library licenses are listed in [third-party notices](THIRD_PARTY_NOTICES.md).
+Questions and improvements are welcome; see [Contributing](CONTRIBUTING.md). Original code, Skill, and documentation use the [MIT license](LICENSE). The current release carries no third-party assets; licenses for the fonts, photographs, and animation library that earlier releases bundled are listed in [third-party notices](THIRD_PARTY_NOTICES.md).

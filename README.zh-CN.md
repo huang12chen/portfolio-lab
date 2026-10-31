@@ -12,6 +12,7 @@
 <p align="center">
   <a href="#安装">安装</a> ·
   <a href="#网站示例">网站示例</a> ·
+  <a href="#自检">自检</a> ·
   <a href="docs/deploy.zh-CN.md">部署</a> ·
   <a href="docs/faq.md">常见问题</a>
 </p>
@@ -21,6 +22,8 @@
 ![作品分类切换与卡片展开](docs/media/gallery.gif)
 
 [观看完整演示，约 36 秒](docs/media/portfolio-demo.mp4)
+
+上面两段录像摄于示例站重建之前，界面与现在不同，仅作留存。当前版本的真实界面见下方[网站示例](#网站示例)的截图。
 
 ## 安装
 
@@ -48,17 +51,21 @@ npx skills add huang12chen/portfolio-ui-design --skill portfolio-website
 
 Codex 中可以直接输入 `$portfolio-website`，Claude Code 中使用 `/portfolio-website`。[更多用法](docs/examples.md)
 
+除了内容上的把关，它也负责把页面做成一个有方向的设计。方向不是挑一套模板：先从你已有的材料里量出可读的东西——作品本身的宽高比、材料里真实出现的颜色、信息的层级与密度——再据此决定版式、字阶、留白和控件几何。参考网站会被真的打开，研究到具体的页面和交互，而不是记下一个名字。做完之后每一项都要在浏览器里量一遍，包括中文的字距、焦点环，以及 390 宽度下有没有横向溢出。
+
+动效同样是被推导出来的，不是必选项。只有当材料本身带有静态排版表达不了的维度——顺序、时长、厚度、距离、状态——才做视差或滚动叙事，而且一页只允许一个招牌动作：第二个不再是论点，只是装饰。每一个被动的对象都要能追溯到内容的某个属性；减弱动效是拆解而不是遮掩，静止状态仍要通过同样的检查；关掉 JavaScript，页面还得把话说完。
+
 ## 网站示例
 
-同一份虚构简历做了两个版本，可以比较不同的浏览方式。
+同一份虚构简历在这一个站点里有两种读法：首页的卡片索引，以及用 `project.html?id=…` 单独打开的一个案例。
 
-| 卡片版 | 连续滚动版 |
+| 卡片索引 | 已下线的滚动版 |
 | --- | --- |
-| ![卡片版首页](docs/screenshots/home-desktop.png) | ![连续滚动版首页](docs/screenshots/story-desktop.png) |
+| ![首页卡片索引](docs/screenshots/home-desktop.png) | ![当前站点不再提供的连续滚动页](docs/screenshots/story-desktop.png) |
 
-示例人物 Alex Lin、任职经历和业务数据均为虚构。照片来源见[素材说明](examples/alex-lin/dist/ASSETS.md)。
+示例人物 Alex Lin、任职经历和业务数据均为虚构。站点不引用照片、网络字体或第三方脚本，每个文件的来源与许可见[素材说明](examples/alex-lin/dist/ASSETS.md)。
 
-![连续滚动版演示](docs/media/story.gif)
+![已下线的滚动版录屏，仅作留存](docs/media/story.gif)
 
 三个项目里有这些可以操作的内容：
 
@@ -87,7 +94,7 @@ Codex 中可以直接输入 `$portfolio-website`，Claude Code 中使用 `/portf
 npm run dev
 ```
 
-打开[卡片版](http://localhost:4180/index.html?lang=zh)或[滚动版](http://localhost:4180/story.html?lang=zh)。页面右上角可以切换语言，Ctrl+C 停止服务。
+打开[卡片索引](http://localhost:4180/index.html)，或用 `project.html?id=…` 单独打开一个案例，例如 [Signal 案例](http://localhost:4180/project.html?id=signal)，另外两个是 `briefly` 和 `fieldwork`。中文是 [`/zh/`](http://localhost:4180/zh/index.html) 下同一套三个页面的另一份静态文件，所以右上角的语言切换只是一个链接，关掉 JavaScript 两种语言都照样能读；过去的 `?lang=zh` 链接仍然打得开，会跳转到对应目录。Ctrl+C 停止服务。
 
 ## 修改和部署
 
@@ -95,11 +102,31 @@ npm run dev
 
 - `data.js`：项目介绍和中英文内容。
 - `app.js`：页面结构。
-- `demos.js`：三个项目的演示逻辑。
+- `demos.js`、`demos-brief.js`：Signal 与 Briefly 两个演示各自的交互逻辑；渲染拆在 `demo-views.js`、`brief-views.js`，共用部分在 `demo-core.js`。
 
 使用自己的资料时，替换示例履历、项目和数据。换一个行业，也可以让 Skill 重新安排页面，不必保留 Alex 的职业和风格。
 
-图片、字体和脚本都随网站保存。可以放到普通静态托管平台，也可以用自己的服务器。[部署说明](docs/deploy.zh-CN.md)
+脚本与样式都在本地，站点不下载字体、图片或第三方脚本，文字用系统字体回退栈渲染。可以放到普通静态托管平台，也可以用自己的服务器。[部署说明](docs/deploy.zh-CN.md)
+
+## 自检
+
+做完之后不靠肉眼宣布通过。仓库自带一个检查器，示例站就是它的被测对象：
+
+```sh
+npm run audit          # 25 条不需要浏览器的规则：结构、打包、链接、语言目录、体积
+npm run audit:browser  # 再加 13 条：在 1440 / 768 / 390 真实渲染后量版式、对比度、遮挡与状态
+npm run audit:craft    # 再加 8 条质感探针：基线漂移、字号层级、表格裁切、阴影结构、状态矩阵、按压位移、可访问名称
+```
+
+装好 Skill 之后，同一套检查在技能目录里用一条命令跑，检查你自己的构建产物：
+
+```sh
+node scripts/selfcheck.mjs <构建产物目录>
+```
+
+退出码固定三种：`0` 量到了且干净，`1` 量到了但有缺陷，`2` 没量成。这个区分是重点——某个维度够不着时，它打印 `NOT-MEASURED` 并把原因写在旁边，不会把「零次测量」当成通过。`--static-only` 跳过浏览器，`--map` 列出每条规则对应哪一行参考文档（这张表由检查器自己给出，规则挪走时引用跟着走），`--json` 输出完整报告。
+
+所以一份报告只有三种读法：`PASS` 是量过了没发现问题，`FAIL` 是量出了问题，`NOT-MEASURED` 是仪器够不着。三者都不等于「设计好看」，也都不代替你自己看一遍。
 
 ## 文档与开发
 
@@ -111,4 +138,4 @@ npm run check
 npm run release
 ```
 
-欢迎提交问题或改进，见[贡献指南](CONTRIBUTING.md)。原创代码、Skill 和文档使用 [MIT 许可](LICENSE)；照片、字体与动画库的许可见[第三方说明](THIRD_PARTY_NOTICES.md)。
+欢迎提交问题或改进，见[贡献指南](CONTRIBUTING.md)。原创代码、Skill 和文档使用 [MIT 许可](LICENSE)；当前版本不含第三方素材，早期版本附带过的字体、照片与动画库的许可见[第三方说明](THIRD_PARTY_NOTICES.md)。

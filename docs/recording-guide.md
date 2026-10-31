@@ -8,7 +8,7 @@ You can use the Alex example for a 7–9 minute tutorial. Introduce it as fictio
 
 | 步骤 / Step | 展示什么 / What to show |
 | --- | --- |
-| 看成品 / Show the result | 对比卡片版和滚动版，打开一个项目，切换语言。Compare both homepages, open a case, and switch languages. |
+| 看成品 / Show the result | 演示两种读法：卡片首页，以及用 `project.html?id=…` 直接打开的单个案例；再切换语言。Show both reading paths — the card index, and one case opened straight through `project.html?id=…` — then switch languages. |
 | 安装 / Install | 打开安装说明，把启动提示词交给编码工具，确认装好了作品集 Skill。Use the installation guide and setup prompt, then find portfolio-website in the agent. |
 | 提供材料 / Add the material | 展示简历和作品，说明想投的岗位及本人负责的工作。Show the résumé, samples, target role, and individual contribution. |
 | 操作项目 / Try the projects | 在 Signal 筛选国家和时段、导出 CSV；在 Briefly 修改输入、生成并下载简报；切换 Fieldwork 的方案。Use the dashboard, brief builder, and proposal comparison. |

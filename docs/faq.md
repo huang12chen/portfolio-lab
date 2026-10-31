@@ -10,9 +10,23 @@ The Skill contains instructions and references for a coding agent. The Alex webs
 
 ## Must I have three projects, work in commerce, or use this style?
 
-No. The example uses its own fictional material. A student with one substantial project, a writer with excerpts, or an architect with drawings can need different structure, evidence, typography, and media. Give the agent your audience and real artifacts rather than asking it to preserve Alex's career.
+No. The example uses its own fictional material. A student with one substantial project, a writer with excerpts, or an architect with drawings can need different structure, evidence, typography, and media. Give the agent your audience and real artifacts rather than asking it to preserve Alex's career. The style is derived rather than picked from a menu: the agent measures what your material already contains — the aspect ratios of the work, the colours that actually appear in it, how dense the information is — and writes the result into a `DESIGN.md` you can argue with.
 
-不需要。项目数量、职业和风格由实际材料及目标读者决定，不能把示例人物的经历、成绩和布局强加给别人。
+不需要。项目数量、职业和风格由实际材料及目标读者决定，不能把示例人物的经历、成绩和布局强加给别人。风格是推导出来的，不是从菜单里挑的：智能体会先量你材料里本来就有的东西——作品的宽高比、里面真实出现的颜色、信息的密度——再把结论写进一份可供你反驳的 `DESIGN.md`。
+
+## Does it add parallax or 3D just to look impressive?
+
+No, and the reason is on the reader's side. Depth is only built where the material carries a dimension a still layout cannot show — an order, an elapsed duration, a thickness, a distance, a change of state — and then exactly one showpiece per page, because a second one reads as decoration rather than as an argument. Each animated object has to trace back to a property of the content; reduced motion is a teardown, not a hiding, so the static state has to pass the same checks; and with JavaScript off the page still has to finish making its point. A résumé with nothing sequential in it gets no scroll narrative.
+
+视差和滚动叙事既不是装饰，也不是必选项。只有当材料本身带有静态排版表达不了的维度——顺序、时长、厚度、距离、状态——才做深度，而且一页只允许一个招牌动作，再多一个就只是装饰。每个被动的对象都要能追溯到内容的某个属性；减弱动效是拆解而不是遮掩，静止状态仍要通过同样的检查；关掉 JavaScript 页面还得把话说完。材料里没有这类顺序，就不做滚动叙事。
+
+## Does anything check the finished page, or is it all judgement?
+
+Partly both. `npm run audit`, `npm run audit:browser` and `npm run audit:craft` run 46 measured rules against a build — 25 that need no browser, 13 measured in a real browser at 1440, 768 and 390, and 8 visual-craft probes. Installed as a Skill, the same thing is one command: `node scripts/selfcheck.mjs <built-site-dir>`. Its exit code is 0 measured and clean, 1 measured and defective, 2 could not measure.
+
+Read a report as exactly three states. `PASS` means the property was measured and nothing was found. `FAIL` means it was measured and something was found. `NOT-MEASURED` means the instrument could not reach it — that row is published beside the zero it sits next to, so a dimension nobody measured can never be read as a clean sheet. None of the three is a verdict on whether the design is good, and the remaining Check rows in the references stay judgement on purpose.
+
+这套检查一半是仪器、一半是判断。`npm run audit` / `audit:browser` / `audit:craft` 分别跑 25、13、8 条规则，共 46 条；装成 Skill 后一条命令即可：`node scripts/selfcheck.mjs <构建产物目录>`，退出码 0 是量到了且干净、1 是量到了但有缺陷、2 是没量成。报告只有三种读法：`PASS` 量过了没发现问题，`FAIL` 量出了问题，`NOT-MEASURED` 仪器够不着——最后这种会连同原因印在那个 0 旁边，所以「没人量过」永远不会被当成「全通过」。三者都不评判设计好不好，参考文档里剩下的 Check 行仍然由人判断。
 
 ## Do I need to pay for this or enter an API key?
 
