@@ -1,0 +1,10 @@
+body { margin: 0; font-family: system-ui, sans-serif; color: #1d1f1a; background: #f7f6f1; }
+h1 { font-size: 42px; }
+h2 { font-size: 28px; }
+.lede { font-size: 19px; }
+.eyebrow { font-size: 11px; letter-spacing: 0.18em; }
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible { outline: 3px solid #b3401f; }
+@media (prefers-reduced-motion: reduce) { * { animation: none; } }

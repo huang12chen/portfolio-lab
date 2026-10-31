@@ -1,11 +1,26 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
 
 let demos = {};
 try {
-  const source = await readFile(new URL('../examples/alex-lin/dist/demos.js', import.meta.url), 'utf8');
-  demos = await import(`data:text/javascript;base64,${Buffer.from(source + '\n//# sourceURL=portfolio-demos.js').toString('base64')}`);
+  /* Imported as real modules rather than inlined through a data: URL, because the dataset and the
+     interactive layer are two files and the browser resolves them the same way this does. The two
+     static renderers are asserted from views.js: they build markup at build time and stay out of
+     the bundle the reader downloads to run the controls. */
+  const dist = new URL('../examples/alex-lin/dist/', import.meta.url);
+  const tools = new URL('../examples/alex-lin/tools/', import.meta.url);
+  const growth = await import(new URL('demos.js', dist).href);
+  const brief = await import(new URL('demos-brief.js', dist).href);
+  demos = {
+    ...(await import(new URL('demo-views.js', dist).href)),
+    ...(await import(new URL('brief-views.js', dist).href)),
+    ...(await import(new URL('views.js', tools).href)),
+    initDemos(root) {
+      const stopGrowth = growth.initDemos(root);
+      const stopBrief = brief.initDemos(root);
+      return () => { stopGrowth(); stopBrief(); };
+    },
+  };
 } catch (error) {
   if (error.code !== 'ENOENT') throw error;
 }

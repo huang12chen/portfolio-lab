@@ -1,0 +1,10 @@
+:root { --text-body: 1rem; --text-heading: 2.2rem; }
+body { margin: 0; font-family: system-ui, sans-serif; font-size: var(--text-body); color: #1d1f1a; }
+h1 { font-size: var(--text-heading); }
+h2 { font-size: 27px; }
+.eyebrow { font-size: 12px; }
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible { outline: 3px solid #b3401f; }
+@media (prefers-reduced-motion: reduce) { * { animation: none; } }

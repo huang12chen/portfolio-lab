@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>渲染示例</title>
+<style>
+:root { --text-body: 1rem; --text-label: 0.83rem; --text-heading: 1.9rem; }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 1rem; font-family: system-ui, "Noto Sans SC", sans-serif; font-size: var(--text-body); line-height: 1.7; color: #16181a; background: #ffffff; }
+h1 { font-size: var(--text-heading); }
+p, li, dd, dt, th, td { font-size: var(--text-body); }
+a { color: #14402c; }
+.skip-link { position: absolute; clip-path: inset(50%); width: 1px; height: 1px; overflow: hidden; }
+.skip-link:focus { clip-path: none; position: static; width: auto; height: auto; }
+a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline: 3px solid #b3401f; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; } }
+</style>
+<style>
+.wide { width: 900px; background: #eef; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">跳至主要内容</a>
+<main id="main" tabindex="-1">
+<h1>渲染检查</h1>
+<p class="lede">这一段文字应当全部达到对比度要求。</p>
+<dl>
+<dt>周期</dt>
+<dd>六周</dd>
+</dl>
+<table>
+<caption>交付节奏</caption>
+<thead>
+<tr><th scope="col">阶段</th><th scope="col">周次</th></tr>
+</thead>
+<tbody>
+<tr><td>梳理</td><td>1-2</td></tr>
+</tbody>
+</table>
+<details><summary>技术说明</summary><p>原生实现。</p></details>
+<button type="button">联系</button>
+<div class="wide"><p>这块内容写死了 900px 宽，窄视口下整页横向滚动。</p></div>
+</main>
+<footer><p>示例工作室 · 2026</p></footer>
+</body>
+</html>

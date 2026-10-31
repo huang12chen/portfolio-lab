@@ -1,0 +1,1 @@
+{ "name": "portfolio", "scripts": { "build": "node build.mjs" } }

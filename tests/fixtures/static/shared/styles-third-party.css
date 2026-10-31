@@ -1,0 +1,23 @@
+@import url("https://fonts.example.invalid/css2?family=Serif&display=swap");
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; font-size: var(--text-body); line-height: 1.6; color: #1d1f1a; background: #f7f6f1; }
+main { max-width: 46rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+h1 { font-size: var(--text-heading); }
+h2 { font-size: var(--text-lede); }
+h3 { font-size: var(--text-body); }
+p, li, dd, dt, th, td, figcaption { font-size: var(--text-body); }
+.lede { font-size: var(--text-lede); }
+.eyebrow { font-size: var(--text-label); text-transform: uppercase; }
+table { border-collapse: collapse; width: 100%; }
+a { color: #17482f; }
+.skip-link { position: absolute; clip-path: inset(50%); width: 1px; height: 1px; overflow: hidden; }
+.skip-link:focus { clip-path: none; position: static; width: auto; height: auto; }
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible { outline: 3px solid #b3401f; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+.panel { background-image: url("https://cdn.example.invalid/pattern.svg"); }
