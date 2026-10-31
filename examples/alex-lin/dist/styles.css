@@ -1,28 +1,689 @@
-@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:500;font-display:swap;src:url('./assets/fonts/noto-serif-sc-500.woff2') format('woff2');unicode-range:U+4E00,U+4E0B,U+4E2A,U+4E3A,U+4E4B,U+4E8B,U+4EF6,U+4F4D,U+4F53,U+4F5C,U+505A,U+5177,U+51FA,U+521B,U+5230,U+534A,U+5385,U+540E,U+54C1,U+5730,U+5916,U+597D,U+5B83,U+5B9E,U+5C55,U+5E26,U+5E45,U+60F3,U+6210,U+628A,U+6545,U+65B9,U+662F,U+66F4,U+6709,U+6765,U+6B65,U+6BCF,U+6CA1,U+6CD5,U+753B,U+7684,U+7ED9,U+7F6E,U+80CC,U+8425,U+8BA9,U+8D77,U+8DF5,U+8FD0,U+8FD8,U+8FD9,U+8FDC,U+9020}
-:root{--paper:#f4f5ef;--ink:#233b32;--muted:#59675c;--surface:#e7eadf;--accent:#dfef85;--dark:#20382f;--white:#fff;--focus:#176b50;--sans:'Noto Sans SC','Microsoft YaHei',sans-serif;--serif:'Noto Serif SC','Songti SC',SimSun,serif;--ease:cubic-bezier(.2,.7,.2,1)}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:28px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}button,a{-webkit-tap-highlight-color:transparent}button{border:0}a:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:6px}button:disabled{cursor:default;opacity:.5}img{display:block;width:100%;height:auto}h1,h2,h3,p{margin:0}h1,h2,h3{font-weight:500}::selection{background:var(--accent);color:var(--ink)}[hidden]{display:none!important}.wrap{width:calc(100% - 112px);max-width:1320px;margin-inline:auto}.muted{color:var(--muted)}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.skip-link{position:fixed;top:14px;left:20px;z-index:100;background:var(--ink);color:var(--paper);padding:12px 20px;transform:translateY(-160%)}.skip-link:focus{transform:none}
-.site-header{height:112px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:5}.wordmark{font-family:Georgia,serif;font-size:49px;font-weight:700;letter-spacing:-4px;line-height:1}.desktop-nav{display:flex;align-items:center;gap:44px;font-size:15px}.desktop-nav>a:not(.nav-contact){padding-block:12px;position:relative}.desktop-nav>a:not(.nav-contact):after{content:'';position:absolute;bottom:8px;left:0;width:100%;height:2px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}.desktop-nav>a:hover:after{transform:scaleX(1)}.nav-contact{display:flex;gap:30px;align-items:center;padding:12px 20px;background:var(--surface)}.nav-contact span{font-size:22px;line-height:1}.menu-toggle,.mobile-nav{display:none}
-.hero{display:grid;grid-template-columns:.92fr 1.08fr;gap:50px;align-items:center;min-height:700px;padding-block:28px 94px}.hero-role{font-size:14px;color:var(--muted);margin-bottom:26px}.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(50px,6.85vw,99px);line-height:1.26;letter-spacing:-.055em;white-space:nowrap}.hero-intro{font-size:18px;line-height:1.9;margin-block:28px 32px;max-width:420px}.button{display:inline-flex;min-height:54px;align-items:center;justify-content:space-between;gap:36px;padding:13px 22px;border-radius:3px;font-size:15px;transition:background .22s,transform .22s;line-height:1.8}.button-dark{background:var(--ink);color:var(--paper)}.button-dark:hover{background:#335444;transform:translateY(-2px)}.button:active{transform:translateY(0)}.button span{font-size:23px;line-height:1}.hero-location{margin-top:34px;color:var(--muted);font-size:13px}.hero-visual{min-width:0;animation:arrive .8s var(--ease) both}.hero-copy{animation:arrive .7s var(--ease) both}.gallery-stage{background:#e7e8de;padding:18px;transition:background .5s,color .5s}.gallery-stage[data-tone=sage]{background:#b8c5a9}.gallery-stage[data-tone=ink]{background:var(--ink);color:var(--paper)}.gallery-stage>img{aspect-ratio:1.5;object-fit:cover;object-position:48% 50%}.art-caption{display:flex;justify-content:space-between;align-items:center;font-family:Georgia,serif;font-size:clamp(23px,2.35vw,34px);letter-spacing:-.04em;line-height:1.2;padding:22px 6px 8px}.art-caption>span:last-child{font-family:var(--sans);font-size:32px}.visual-controls{display:flex;align-items:center;justify-content:space-between;margin-top:12px;gap:10px;font-size:12px;color:var(--muted)}.palette-control{display:flex;align-items:center;gap:2px}.palette-control>span{margin-right:7px}.swatch{width:44px;height:44px;position:relative;background:transparent;display:inline-grid;place-items:center}.swatch:before{content:'';width:19px;height:19px;border-radius:50%;transition:transform .2s}.swatch-paper:before{background:#e7e8de;border:1px solid #9ca48f}.swatch-sage:before{background:#b8c5a9}.swatch-ink:before{background:#233b32}.swatch[aria-pressed=true]:after{content:'';position:absolute;inset:8px;border:1px solid var(--ink);border-radius:50%}.swatch:hover:before{transform:scale(1.12)}.visual-note{font-size:11px}
-.work-section{padding-block:46px 120px}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:42px}.section-heading h2{font-family:var(--serif);font-size:40px;line-height:1.35;letter-spacing:-.04em}.section-heading p{font-family:Georgia,serif;font-size:17px;color:var(--muted);margin-top:8px}.filters{display:flex;gap:6px;flex-wrap:wrap;padding-bottom:2px}.filters button{background:transparent;padding:8px 17px;min-height:44px;font-size:14px;border-radius:2px;transition:background .2s}.filters button:hover{background:var(--surface)}.filters button[aria-pressed=true]{background:var(--ink);color:var(--paper)}.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:58px 30px}.project-card:first-child{grid-column:1/-1}.project-card-link{display:block}.project-image{height:385px;position:relative;overflow:hidden;background:var(--surface)}.project-card:first-child .project-image{height:530px}.project-grid[data-filtered=true] .project-card{grid-column:1/-1}.project-grid[data-filtered=true] .project-image{height:530px}.project-image>div{height:100%}.photo-cover{position:relative;overflow:hidden}.photo-cover{display:grid;place-items:center;background:var(--surface)}
-.photo-cover>img{position:absolute;inset:0;width:100%;height:100%;min-width:0;min-height:0;padding:inherit;object-fit:contain;object-position:center}.project-open{position:absolute;right:22px;top:22px;background:var(--paper);color:var(--ink);width:50px;height:50px;display:grid;place-items:center;font-size:25px;border-radius:50%;transition:transform .3s var(--ease)}.cover-footnote{position:absolute;left:18px;bottom:16px;padding:3px 8px;font-size:10px;line-height:1.8;background:var(--paper);color:var(--ink)}.card-meta{display:flex;justify-content:space-between;gap:20px;font-size:12px;color:var(--muted);margin-top:21px}.project-card h3{font-family:var(--serif);font-size:27px;letter-spacing:-.035em;line-height:1.5;margin-top:9px}.project-card h3>span{font-family:var(--sans);font-size:22px;margin-left:7px;display:inline-block;transition:transform .3s}.project-card p{color:var(--muted);font-size:14px;margin-top:11px;max-width:580px;line-height:1.9}.project-card:first-child p{max-width:720px}.project-card:first-child h3{font-size:32px}.project-card-link:hover .project-open{transform:rotate(45deg)}.project-card-link:hover h3>span{transform:translate(3px,-3px)}
-.tool-cover{position:relative;display:grid;place-items:center;background:#dce6d0;padding:40px 45px;overflow:hidden}.tool-window{width:100%;max-width:570px;background:var(--paper);transform:rotate(-3deg);transition:transform .6s var(--ease)}.tool-window-bar,.tool-window-bottom{display:flex;justify-content:space-between;align-items:center;padding:13px 17px;font-size:11px;gap:12px}.tool-window-bar span:first-child{font-weight:600;font-size:14px}.tool-window-bar span:last-child{color:var(--muted)}.tool-preview{display:flex;align-items:center;justify-content:center;gap:21px;padding:24px 20px 27px;background:#ecebe4;min-height:175px}.mini-frame{width:42%;aspect-ratio:.76;border:9px solid #c5a678;background:#d4c7ac;padding:4px;overflow:hidden}.mini-frame>img{height:100%;object-fit:cover}.frame-blue>img{object-position:30% center;width:190%;max-width:none}.frame-green{width:32%;align-self:end}.frame-green>img{object-position:80% center;width:210%;max-width:none;transform:translateX(-48%)}.tool-window-bottom{font-size:10px}.tool-window-bottom>span{white-space:nowrap}.tool-window-bottom>span:last-child{background:var(--ink);color:var(--paper);padding:6px 10px}.tool-window-bottom i{display:inline-block;width:5px;height:5px;background:#597c43;border-radius:50%;margin-right:4px}.project-card-link:hover .tool-window{transform:rotate(0)}.social-cover{background:var(--dark);color:var(--paper);position:relative;padding:36px;overflow:hidden}.social-title{font-family:Georgia,serif;font-size:clamp(54px,5.7vw,85px);line-height:1;letter-spacing:-.06em;position:relative;z-index:1}.social-print{position:absolute;right:4%;top:27%;width:37%;aspect-ratio:.78;border:9px solid #d8c7a0;transform:rotate(12deg);overflow:hidden;transition:transform .6s var(--ease)}.social-print img{height:100%;object-fit:cover;object-position:25% center;width:180%;max-width:none}.social-metric{position:absolute;bottom:52px;left:38px;display:flex;flex-direction:column}.social-metric strong{font-family:Georgia,serif;font-size:37px;line-height:1.1;font-weight:400;letter-spacing:-.04em}.social-metric span{font-size:10px;margin-top:7px;color:#d6decc}.social-cover>.cover-footnote{color:#d6decc;background:transparent;left:30px;bottom:14px}.project-card-link:hover .social-print{transform:rotate(6deg) translateY(-4px)}
-.about-teaser{background:var(--surface)}.teaser-inner{display:grid;grid-template-columns:1fr 1fr;gap:90px;padding-block:100px}.teaser-inner h2{font-family:var(--serif);font-size:clamp(36px,4vw,57px);letter-spacing:-.05em;line-height:1.5;margin-bottom:30px}.text-link{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;font-size:14px;padding-block:10px;min-height:44px;background:transparent}.text-link:hover{color:#176b50}.text-link span{font-size:22px;line-height:1}.teaser-copy{padding-top:8px;font-size:17px;line-height:2}.teaser-copy p+p{margin-top:22px;color:var(--muted)}.teaser-signature{display:block;font-family:Georgia,serif;font-size:25px;letter-spacing:-.025em;margin-top:37px}.site-footer{padding-block:80px 28px}.footer-invitation{display:flex;justify-content:space-between;align-items:center;font-family:Georgia,serif;font-size:clamp(48px,10.55vw,156px);letter-spacing:-.065em;line-height:1.2;white-space:nowrap;gap:25px}.footer-invitation span{font-family:var(--sans);font-weight:400;font-size:.6em;transition:transform .3s}.footer-invitation:hover span{transform:translate(5px,-5px)}.footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:25px;color:var(--muted);font-size:12px;margin-top:61px}.footer-bottom a{padding-block:10px;min-height:44px}.footer-bottom a:hover{text-decoration:underline}
-.back-link{display:inline-flex;align-items:center;gap:12px;min-height:44px;font-size:14px;color:var(--muted)}.project-page{padding-top:36px}.project-title{margin-block:49px 58px}.project-title .hero-role{margin-bottom:22px}.project-title h1{font-family:var(--serif);font-size:clamp(42px,5.3vw,76px);line-height:1.5;letter-spacing:-.05em;max-width:1120px}.project-summary{max-width:740px;margin-top:25px;font-size:18px;line-height:1.9;color:var(--muted)}.detail-cover{height:620px;overflow:hidden}.detail-cover>div{height:100%}.detail-cover .tool-window{max-width:750px}.detail-cover .tool-cover{padding:55px}.detail-cover .tool-preview{min-height:310px;padding-block:36px}.detail-cover .social-title{font-size:clamp(90px,12vw,172px)}.detail-cover .social-cover{padding:55px}.detail-cover .social-print{width:30%;top:17%;right:13%}.detail-cover .social-metric{left:60px;bottom:80px}.detail-cover .social-metric strong{font-size:58px}.detail-cover .social-metric span{font-size:14px}.project-story{display:grid;grid-template-columns:1fr 2fr;gap:100px;padding-block:92px 84px}.project-aside h2{font-size:16px;font-weight:500;margin-bottom:17px}.project-aside>p{color:var(--muted);font-size:13px;max-width:250px}.project-aside dl{margin:35px 0 0;background:var(--surface);padding:27px}.project-aside dl>div+div{margin-top:28px}.project-aside dt{font-size:12px;color:var(--muted)}.project-aside dd{margin:8px 0 0;font-family:Georgia,var(--serif);font-size:25px;line-height:1.4;letter-spacing:-.03em}.project-sections section+section{margin-top:42px}.project-sections h2{font-family:var(--serif);font-size:30px;margin-bottom:18px;letter-spacing:-.025em}.project-sections section p{color:var(--muted);line-height:2;max-width:730px}.project-note{font-size:12px;color:var(--muted);background:var(--surface);padding:18px 22px;margin-top:38px;line-height:1.9}.next-project{background:var(--surface);display:grid;grid-template-columns:1fr auto;align-items:center;padding:40px 46px;gap:10px 30px}.next-project>span:first-child{grid-column:1;font-size:12px;color:var(--muted)}.next-project strong{grid-column:1;font-family:var(--serif);font-size:32px;font-weight:500;line-height:1.5}.next-project>span:last-child{grid-column:2;grid-row:1/3;font-size:40px;transition:transform .3s}.next-project:hover>span:last-child{transform:translate(5px,-5px)}.project-missing{padding-block:75px 110px}.project-missing h1{font-family:var(--serif);font-size:clamp(42px,5.5vw,76px);line-height:1.4;letter-spacing:-.05em}.project-missing p{margin-block:28px;max-width:600px;color:var(--muted)}
-.about-hero{display:grid;grid-template-columns:1.2fr 1fr;gap:100px;padding-block:70px 100px;align-items:center}.about-hero h1{font-family:var(--serif);font-size:clamp(48px,6.3vw,90px);letter-spacing:-.05em;line-height:1.4}.about-lead{padding-top:42px}.about-lead p:first-child{font-size:23px;line-height:1.9}.about-lead p+p{margin-top:27px;color:var(--muted)}.about-lead .muted{font-size:12px}.practice-section{padding-block:20px 100px}.small-heading{font-size:14px;margin-bottom:38px}.practice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:55px}.practice-verb{font-family:var(--serif);font-size:47px;letter-spacing:-.05em}.practice-grid h3{font-size:18px;margin-block:18px 12px}.practice-grid p{font-size:14px;line-height:2;color:var(--muted)}.experience-section{padding-bottom:95px}.experience-row{display:grid;grid-template-columns:1fr 2fr;gap:85px;padding-block:35px}.experience-row:nth-of-type(odd){background:var(--surface);padding-inline:30px;margin-inline:-30px}.experience-date{font-size:13px;color:var(--muted);padding-top:4px}.experience-row h3{font-family:var(--serif);font-size:26px;letter-spacing:-.025em;line-height:1.6}.experience-role{font-size:13px;color:var(--muted);margin-block:8px 18px}.experience-row>div>p:not(.experience-role){font-size:14px;line-height:2;max-width:720px}.experience-row p+p.muted{margin-top:13px}.experience-row .text-link{margin-top:12px}.contact-section{background:var(--surface)}.contact-inner{display:grid;grid-template-columns:1.3fr 1fr;gap:90px;padding-block:87px}.contact-inner h2{font-family:var(--serif);font-size:clamp(35px,3.7vw,54px);line-height:1.5;letter-spacing:-.04em}.contact-inner>div>p{color:var(--muted);font-size:14px;max-width:480px;margin-top:22px}.contact-actions{padding-top:17px;align-self:center;display:flex;flex-direction:column;align-items:flex-start;gap:16px}.contact-actions #contact-address{margin:0;font-size:14px}.contact-actions .copy-status{font-size:12px;max-width:390px;margin:0;min-height:23px}.contact-actions .print-button{padding-block:8px}.credits-section{padding-block:65px 15px}.credits-section h2{font-size:16px;margin-bottom:17px}.credits-section p{font-size:12px;color:var(--muted);max-width:900px;line-height:2}.credits-section p+p{margin-top:12px}.credits-section a{text-decoration:underline;text-underline-offset:4px}.no-script-projects{display:grid;gap:20px;padding-block:30px}.no-script-projects a{text-decoration:underline}
-.will-reveal{transform:translateY(16px);transition:transform .8s var(--ease)}.will-reveal.is-visible{transform:none}@keyframes arrive{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-@media(min-width:1600px){.hero{min-height:745px}.gallery-stage>img{aspect-ratio:1.5}}
-@media(max-width:1100px){.wrap{width:calc(100% - 72px)}.hero{gap:35px;min-height:625px;padding-bottom:70px}.hero-intro{font-size:16px}.hero-location{font-size:12px}.project-image{height:330px}.project-card:first-child .project-image{height:470px}.tool-cover{padding-inline:25px}.social-cover{padding:30px}.project-story{gap:55px}.about-hero{gap:60px}.teaser-inner,.contact-inner{gap:55px}}
-@media(max-width:900px){.hero{grid-template-columns:1fr;gap:42px;padding-block:30px 45px;min-height:0}.hero-copy{max-width:650px}.hero h1{font-size:clamp(60px,9vw,82px)}.hero-intro{font-size:18px;margin-block:24px}.hero-location{margin-top:25px}.hero-visual{max-width:100%;width:100%}.gallery-stage>img{aspect-ratio:1.65}.art-caption{font-size:32px}.work-section{padding-block:60px 90px}.project-grid{gap:42px 24px}.project-image{height:310px}.project-card:first-child .project-image{height:430px}.project-card h3{font-size:23px}.tool-cover{padding:35px 22px}.tool-preview{gap:12px;padding:20px 12px}.mini-frame{border-width:6px;padding:3px}.tool-window-bar,.tool-window-bottom{padding:10px}.tool-window-bottom>span:first-child{font-size:8px}.tool-window-bottom>span:last-child{padding:5px}.social-title{font-size:60px}.social-cover{padding:26px}.social-metric{left:28px;bottom:54px}.social-print{width:39%;top:32%}.teaser-inner{gap:44px;padding-block:75px}.teaser-copy{font-size:15px}.footer-bottom{font-size:11px;gap:20px}.project-story{grid-template-columns:1fr 1.8fr;gap:38px;padding-block:65px}.project-aside dl{padding:20px}.detail-cover{height:480px}.about-hero{grid-template-columns:1fr 1fr;gap:40px;padding-top:48px}.about-hero h1{font-size:60px}.about-lead p:first-child{font-size:20px}.about-lead p+p{font-size:14px}.practice-grid{gap:30px}.experience-row{gap:45px}.contact-inner{gap:40px}.contact-inner h2{font-size:38px}}
-@media(max-width:700px){.wrap{width:calc(100% - 48px)}.site-header{height:92px}.wordmark{font-size:43px}.desktop-nav{display:none}.menu-toggle{display:flex;background:transparent;min-height:44px;align-items:center;gap:17px;padding:9px 0 9px 15px;font-size:14px}.menu-toggle>span{font-size:25px;line-height:1}.menu-toggle[aria-expanded=true]>span{transform:rotate(45deg)}.mobile-nav{display:flex;position:absolute;top:78px;left:0;right:0;background:var(--ink);color:var(--paper);padding:18px 24px;flex-direction:column;gap:2px}.mobile-nav a{min-height:48px;display:flex;align-items:center;font-size:18px}.mobile-nav a:focus-visible{outline-color:var(--accent);outline-offset:0}.section-heading{align-items:start;flex-direction:column;gap:25px;margin-bottom:28px}.section-heading h2{font-size:34px}.section-heading p{font-size:15px}.filters{gap:4px;margin-left:-10px}.filters button{padding-inline:15px}.project-grid{grid-template-columns:1fr;gap:37px}.project-card:first-child .project-image,.project-image,.project-grid[data-filtered=true] .project-image{height:380px}.project-card h3,.project-card:first-child h3{font-size:26px}.project-card p{font-size:14px}.tool-window{max-width:470px}.tool-cover{padding:30px}.tool-preview{padding:20px;min-height:190px}.tool-window-bar{padding:12px 16px}.tool-window-bottom{padding:12px 16px;font-size:10px}.tool-window-bottom>span:first-child{font-size:10px}.tool-window-bottom>span:last-child{padding:6px 9px}.mini-frame{border-width:8px}.social-title{font-size:80px}.social-cover{padding:32px}.social-print{width:34%;top:25%;right:12%}.social-metric{left:35px;bottom:55px}.social-cover>.cover-footnote{left:26px}.teaser-inner{grid-template-columns:1fr;gap:30px}.teaser-inner h2{font-size:43px;line-height:1.5;margin-bottom:19px}.teaser-copy{padding:0;font-size:16px}.teaser-signature{margin-top:25px}.footer-bottom{flex-wrap:wrap;gap:12px 30px;margin-top:34px}.footer-bottom>span:first-child{width:100%}.footer-bottom>span:last-child{margin-left:auto}.site-footer{padding-top:55px}.footer-invitation{font-size:10.3vw;gap:10px}.project-page{padding-top:22px}.project-title{margin-block:36px}.project-title h1{font-size:47px;line-height:1.5}.project-summary{font-size:16px;margin-top:20px}.detail-cover{height:410px}.project-story{grid-template-columns:1fr;gap:38px;padding-block:45px}.project-aside>p{max-width:none}.project-aside dl{display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-top:24px;padding:23px}.project-aside dl>div+div{margin-top:0}.project-aside dd{font-size:24px}.project-sections h2{font-size:27px}.project-sections section p{font-size:15px}.detail-cover .social-title{font-size:85px}.detail-cover .social-cover{padding:32px}.detail-cover .social-metric{left:35px;bottom:55px}.detail-cover .social-metric strong{font-size:40px}.detail-cover .social-metric span{font-size:11px}.detail-cover .social-print{right:9%;top:26%;width:33%}.detail-cover .tool-cover{padding:30px}.detail-cover .tool-preview{min-height:200px;padding:25px 20px}.next-project{padding:29px 25px}.next-project strong{font-size:25px}.next-project>span:last-child{font-size:30px}.about-hero{grid-template-columns:1fr;gap:32px;padding-block:40px 65px}.about-hero h1{font-size:58px}.about-lead{padding:0;max-width:520px}.about-lead p:first-child{font-size:22px}.about-lead p+p{font-size:15px;margin-top:20px}.practice-grid{grid-template-columns:1fr;gap:35px}.practice-section{padding-bottom:70px}.practice-grid article{display:grid;grid-template-columns:80px 1fr;column-gap:26px}.practice-verb{grid-row:1/3;font-size:37px;line-height:1.6}.practice-grid h3{margin:3px 0 10px}.practice-grid p{grid-column:2}.experience-section{padding-bottom:60px}.experience-row{grid-template-columns:1fr;gap:12px;padding-block:27px}.experience-row:nth-of-type(odd){padding-inline:20px;margin-inline:-20px}.experience-row h3{font-size:24px}.experience-role{margin-block:6px 14px}.contact-inner{grid-template-columns:1fr;gap:25px;padding-block:60px}.contact-inner h2{font-size:42px}.contact-actions{padding:0;gap:15px}.contact-inner>div>p{margin-top:19px}.credits-section{padding-top:45px}.credits-section p{font-size:12px}}
-@media(max-width:450px){.wrap{width:calc(100% - 40px)}.site-header{height:84px}.hero{padding-top:24px;gap:34px}.hero-role{font-size:12px;margin-bottom:20px}.hero h1{font-size:clamp(43px,12vw,54px);line-height:1.4;letter-spacing:-.055em}.hero-intro{font-size:15px;line-height:1.9;margin-block:23px 25px}.hero-location{font-size:11px;margin-top:24px}.gallery-stage{padding:11px}.gallery-stage>img{aspect-ratio:1.18}.art-caption{font-size:26px;padding:18px 3px 8px}.art-caption>span:last-child{font-size:26px}.visual-controls{gap:0;margin-top:6px}.palette-control>span{font-size:11px;margin-right:0}.swatch{width:44px}.visual-note{font-size:10px}.work-section{padding-top:42px;padding-bottom:65px}.section-heading h2{font-size:32px}.section-heading p{font-size:14px}.project-card:first-child .project-image,.project-image,.project-grid[data-filtered=true] .project-image{height:315px}.card-meta{margin-top:16px;font-size:11px}.project-card h3,.project-card:first-child h3{font-size:25px}.project-card h3>span{font-size:18px;margin-left:2px}.project-card p{font-size:13px}.project-open{width:42px;height:42px;right:15px;top:15px;font-size:22px}.tool-cover{padding:25px}.tool-preview{padding:17px 12px;min-height:160px}.tool-window-bar{font-size:9px;padding:10px 12px}.tool-window-bar span:first-child{font-size:12px}.tool-window-bottom{padding:10px}.tool-window-bottom>span:first-child{font-size:8px}.tool-window-bottom>span:last-child{font-size:9px;padding:5px 7px}.mini-frame{border-width:6px}.social-cover{padding:28px}.social-title{font-size:65px}.social-print{width:36%;top:30%;right:8%}.social-metric{left:30px;bottom:48px}.social-metric strong{font-size:31px}.social-cover>.cover-footnote{left:21px;bottom:10px;font-size:9px}.cover-footnote{font-size:9px;left:12px;bottom:11px}.teaser-inner{padding-block:55px;gap:23px}.teaser-inner h2{font-size:38px}.teaser-copy{font-size:14px}.teaser-signature{font-size:23px}.footer-invitation{font-size:10.1vw}.footer-bottom{font-size:10px}.project-title h1{font-size:39px}.project-title .hero-role{margin-bottom:14px}.project-summary{font-size:14px}.detail-cover{height:330px}.project-aside dl{padding:18px;gap:16px}.project-aside dd{font-size:21px}.project-aside dt{font-size:11px}.project-sections section p{font-size:14px}.project-sections h2{font-size:25px}.project-note{font-size:11px;padding:16px}.detail-cover .tool-cover{padding:25px}.detail-cover .tool-preview{padding:18px 12px;min-height:160px}.detail-cover .social-title{font-size:68px}.detail-cover .social-cover{padding:27px}.detail-cover .social-metric{left:29px;bottom:46px}.detail-cover .social-metric strong{font-size:32px}.detail-cover .social-metric span{font-size:10px}.next-project strong{font-size:23px}.next-project{padding:24px 20px;gap:8px 15px}.next-project>span:first-child{font-size:11px}.about-hero h1{font-size:48px}.about-lead p:first-child{font-size:21px}.about-lead p+p{font-size:14px}.practice-grid article{grid-template-columns:64px 1fr;gap:0 24px}.practice-verb{font-size:32px}.practice-grid h3{font-size:17px}.practice-grid p{font-size:13px}.experience-row h3{font-size:22px}.experience-row>div>p:not(.experience-role){font-size:13px}.contact-inner h2{font-size:36px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.will-reveal{transform:none}}
-@media print{body{background:#fff;color:#000;font-size:11pt}.wrap{width:100%;max-width:none}.site-header,.site-footer,.contact-section,.credits-section,.back-link,.skip-link,.no-script-projects,.filters,.visual-controls{display:none}.about-hero{padding:15px 0 25px;gap:40px}.about-hero h1{font-size:40pt}.hero-role{margin-bottom:10px}.practice-section,.experience-section{padding-bottom:25px}.practice-grid{grid-template-columns:repeat(3,1fr);gap:25px}.practice-grid article{display:block}.practice-verb{font-size:23pt}.practice-grid p,.experience-row>div>p:not(.experience-role){font-size:9pt}.experience-row{grid-template-columns:1fr 2fr;gap:30px;padding:17px 0!important;margin:0!important;background:none!important;break-inside:avoid}.experience-row h3{font-size:16pt}.will-reveal{transform:none}.text-link{display:none}a:after{content:none}}
+/* Alex Lin demo site — base system. One stylesheet owns tokens, type, layout and components.
+   Floors enforced here: the smallest step in the scale is --fs-micro (12px), and because no text
+   sits inside a scaled SVG viewBox any more, a declared px size is the size that paints at every
+   viewport width. Muted text clears 4.5:1 on paper, surface and white panels; no letter-spacing
+   touches CJK runs. All three are measured by scripts/audit-site.mjs, not asserted. */
+:root {
+  --paper: #f4f5ef;
+  --surface: #e7eadf;
+  --surface-deep: #dcdfcf;
+  --panel: #fffdf8;
+  --band: #20382f;
+  --band-ink: #eef0e4;
+  --ink: #233b32;
+  --muted: #526157;
+  --rule: #cdd6c4;
+  --sage: #788f50;
+  --lilac: #dedcf3;
+  --focus: #14573f;
+  /* Text-safe variants of the three tinted hues. The swatches above are for fills and rules;
+     these are what letters use. Computed against the surfaces they sit on:
+     sage-text 6.23 paper / 6.71 panel / 5.04 surface-deep, ochre-text 6.17 paper / 4.99 surface-deep,
+     step-ink 5.37 surface-deep. All clear the 4.5:1 body floor. */
+  --sage-text: #4e6130;
+  --ochre-text: #7c5312;
+  --step-ink: #4d5b41;
+  --sand: #ead9bc;
 
-@media print{.contact-section{display:block;background:none;break-inside:avoid}.contact-inner{display:block;padding:10px 0}.contact-inner>div:first-child,.contact-actions button,.copy-status{display:none!important}.contact-actions{padding:0;display:block}.contact-actions #contact-address{font-size:10pt;margin:0}}
-/* Keep the artwork, rather than the whole room, inside miniature frames. */
-.frame-blue>img{width:100%;height:100%;object-fit:cover;object-position:24% 45%;transform:scale(1.8)}
-.frame-green>img{width:100%;height:100%;object-fit:cover;object-position:86% 46%;transform:scale(1.85)}
-.social-print>img{width:100%;height:100%;object-fit:cover;object-position:27% 44%;transform:scale(1.7)}
-.project-title h1{text-wrap:balance}
-@media(max-width:450px){.project-aside dd{font-size:18px;text-wrap:balance}}
+  /* Repeated hues promoted to roles. A hue drawn more than once is doing a job, and naming the job
+     is what keeps its fifth use from being a guess. --highlight is the selection and focus-on-dark
+     hue and deliberately not the brand green: a highlight that matches the brand disappears into it. */
+  --band-body: #c9d4c0;
+  --band-label: #b7c4ae;
+  --lilac-ink: #4c4878;
+  --ink-hover: #335243;
+  /* The press tone for targets that own no box. Paper does not travel under a thumb, so the wordmark
+     and the nav links answer by tone: the ink seats one step harder than rest and returns without
+     overshoot. #16261f on --paper is 13.4:1, so a pressed label is still a legible label — the change
+     is a seating, not a flash. */
+  --ink-press: #16261f;
+  --edge: #d4dbcb;
+  --hairline: #e0e5d6;
+  --row-rule: #e2e6d8;
+  --gutter: #eef1e6;
+  --thumb: #9aab86;
+  --highlight: #dfef85;
 
+  /* Control geometry. Every interactive control takes the same continuous pill, so the page's
+     personality is carried by that one decision plus the type, not by a different curve per
+     component. Surfaces take one of three tiers, and a nested element derives its radius from the
+     tier it sits inside instead of inventing a fourth value. The literal radii left in these sheets
+     draw physical objects — a paper note, a bottle cap — where the curve belongs to the object. */
+  --r-ctl: 12px;
+  --r-card: 18px;
+  --r-sheet: 26px;
+  --r-pill: 999px;
+
+  --header-h: 96px;
+  /* CJK display type is the one place a system stack can lie. Declaring `Georgia, … serif`
+     computes fine and then paints something else: on a machine where "Source Han Serif SC" is
+     registered only as its Heavy instance, a heading declared 400 comes out at 900 and splits
+     across three families in one line (Source Han Serif SC Heavy for the ideographs, Georgia for
+     the Latin, SimSun for 「」 and →). Read with CSS.getPlatformFontsForNode, not getComputedStyle —
+     the computed value always reports the stack as written. 'Noto Serif SC' is placed ahead of it
+     because it answers the weight that was asked for and covers CJK punctuation, so the same
+     heading renders as two matched serifs (Georgia + Noto Serif SC) at every weight from 400 to
+     700. Where Noto Serif SC is absent the list falls through to Source Han Serif SC unchanged. */
+  --serif: Georgia, 'Songti SC', 'Noto Serif SC', 'Source Han Serif SC', 'Noto Serif CJK SC', SimSun, serif;
+  --sans: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, sans-serif;
+
+  /* Type scale. Georgia carries display, Segoe UI carries text, and the steps are
+     spaced for a document that also holds data panels — so there is a deliberate
+     metric step between label and headline rather than one generic "big" size.
+     CJK body runs get their own, larger step; CJK display runs get a *smaller*
+     one, because the same measure already carries more per character.
+     Twelve steps, and the roles share them on purpose. This block used to hold nineteen
+     distinct pixel values, six of them packed between 20 and 24 — steps of 1.02 that no reader
+     can tell apart, so the size was paying the cost of a hierarchy it never delivered. */
+  --fs-micro: 12px;
+  --fs-label: 13px;
+  --fs-small: 13px;
+  --fs-ui: 14.5px;
+  --fs-para: 16px;
+  --fs-body: 17.5px;
+  --fs-body-lg: 19px;
+  --fs-sub: 21px;
+  --fs-lede: 21px;
+  --fs-sub-lg: 24px;
+  --fs-metric: 24px;
+  --fs-figure: 21px;
+  --fs-title-sm: 24px;
+  --fs-claim-lg: 24px;
+  --fs-demo: 28px;
+  --fs-claim: 28px;
+  --fs-title: 28px;
+  --fs-band: 32px;
+  --fs-strip: 32px;
+  --fs-quote: 32px;
+  --fs-h2: 32px;
+  --fs-quote-lg: 28px;
+  --fs-case: 40px;
+  --fs-invitation: 32px;
+  /* The h1 floor is set against --fs-case, not against the body: the case route's h1 is the page's
+     name and it sits directly above a 40px case headline, so the clamp's minimum has to clear that
+     rung at every width where the viewport term has already bottomed out. 4.6vw reaches 40px at an
+     870px viewport, so a 40px floor made `.page-title` and `h2.case-h2` tie at 768. The floor is now
+     46 — one rung of the ladder above --fs-case — and the cap and the viewport term are untouched,
+     so nothing changes above 1000px where 4.6vw carries the size. Arithmetic for all three measured
+     widths, English: 1440 → 64 over a 40 h2; 768 → 46 over 40; 390 → 29 over 24 (narrow block). */
+  --fs-h1: clamp(46px, 4.6vw, 64px);
+  /* Every negative tracking rule that can carry Chinese text is authored as
+     calc(<value> * var(--track-scale)). One switch, because the correction is script-specific rather
+     than size-specific: closing the gaps that word spaces open helps a Latin headline and crushes a
+     Chinese one, whose glyphs are fixed-width and already fill the em. Keeping it as a multiplier
+     means each rule still carries its own optical value — h1 tighter than h2 — instead of a flat reset
+     that would also flatten the scale. The two exceptions, .wordmark and .console-brand, hold strings
+     that are Latin in both locales ("alex.", "signal."), so scaling them would only weaken them. */
+  --track-scale: 1;
+}
+
+/* Chinese text needs its own small-size floor. The reading tokens below are what every
+   paragraph, table cell, caption and control label resolves to, and a 15px Chinese
+   paragraph is a legibility failure even on a deliberately dense page: Latin can read at
+   14.5px because word spaces give the eye a handle, CJK glyphs are fixed-width and fill
+   the em, so the same nominal size reads smaller and tighter. These steps put every CJK
+   run on the page at 15px or above, and the body/lede steps above already clear 19px.
+   The display steps go the other way and come *down*. A CJK glyph fills its em, so 64px of
+   Chinese occupies more of the line and reads heavier than 64px of Georgia at the same size —
+   the same headline set at ~90% is the one that looks the same weight on screen. These two
+   values are repeated in the narrow-width block below, because a `:root` rule inside a media
+   query cannot out-specify `:root[lang^="zh"]` outside one. */
+:root[lang^="zh"] {
+  --track-scale: 0;
+  /* Same ladder, one rung down, and the same arithmetic as the Latin floor: the Chinese case headline
+     is 36px, so the h1 minimum has to clear it at the widths where 4.2vw has already bottomed out
+     (4.2vw reaches 36px at an 857px viewport, which made the two tie at 768). 1440 → 56 over 36;
+     768 → 42 over 36; 390 → 28 over 24 (the h2 step in the narrow block, the case step is 20). */
+  --fs-h1: clamp(42px, 4.2vw, 56px);
+  --fs-case: 36px;
+  --fs-micro: 15px;
+  --fs-label: 15px;
+  --fs-small: 15px;
+  --fs-ui: 16px;
+  --fs-para: 17.5px;
+  --fs-invitation: 28px;
+}
+* { box-sizing: border-box; }
+/* One clearance rule for every in-page jump target, measured from the header the page actually
+   draws. A hand-written number here was 110px while the header was 96px, and went to 100px when the
+   header dropped to 84px — two records of one fact, and the list of targets has to stay complete for
+   the second one to be true. scroll-padding covers the whole scrollport, so nothing needs opting in.
+   Smooth is a motion, so it is not declared here: motion.css turns it on with the same
+   data-motion attribute that governs the depth layer, which means one control covers it. */
+html { scroll-behavior: auto; scroll-padding-top: calc(var(--header-h) + 14px); scrollbar-gutter: stable; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  /* Digits on this page are data, not prose. Georgia's default figures are old-style and
+     proportional — "0000" measured 1.43x the width of "1111" at 24px — and Segoe UI is
+     proportional too (1.38x at 21px), so weekly totals could not be compared by width and the
+     1s sat below the cap line. Set once at the root so no numeric component can forget it. */
+  font-variant-numeric: tabular-nums lining-nums;
+  -webkit-font-smoothing: antialiased;
+}
+:root[lang^="zh"] body { font-size: var(--fs-body-lg); line-height: 1.85; }
+a { color: inherit; text-decoration: none; }
+/* The reset above is what lets a card, a nav row and a footer invitation each carry their own
+   affordance instead of a default underline. Links set inside running prose are the exception that
+   has to be paid back: with the colour inherited, "read the sample résumé" in a sentence would be
+   told apart by colour alone, which fails WCAG 1.4.1. Scoped to unclassed anchors in text blocks so
+   the designed links — every one of which already has an arrow, a rule or a hover state — stay as
+   they are. */
+p a:not([class]), li a:not([class]), dd a:not([class]), blockquote a:not([class]) {
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
+}
+p a:not([class]):hover, li a:not([class]):hover, dd a:not([class]):hover, blockquote a:not([class]):hover {
+  text-decoration-thickness: 2px;
+}
+button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
+a, button, input, select, textarea, [tabindex] { -webkit-tap-highlight-color: transparent; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
+/* Three surfaces use the dark band as their background. --focus #14573f against band #20382f
+   measures 1.48:1 — under the 3:1 WCAG non-text floor, so the ring is invisible exactly where a
+   keyboard user needs it. --highlight on the same band measures 10.08:1. */
+.approach-section :focus-visible, .principle-band :focus-visible, .console-insight :focus-visible,
+.mobile-nav[data-static-open] :focus-visible { outline-color: var(--highlight); }
+::selection { background: var(--highlight); color: var(--ink); }
+[hidden] { display: none !important; }
+h1, h2, h3, h4, p, dl, dd, figure { margin: 0; }
+h1, h2, h3 { font-weight: 450; }
+h1 { font-family: var(--serif); font-size: var(--fs-h1); line-height: 1.15; letter-spacing: calc(-0.035em * var(--track-scale)); font-weight: 400; text-wrap: balance; }
+h2 { font-family: var(--serif); font-size: var(--fs-h2); line-height: 1.22; letter-spacing: calc(-0.022em * var(--track-scale)); font-weight: 400; }
+h3 { font-size: var(--fs-sub); line-height: 1.45; font-weight: 550; }
+/* Only the leading needs a Chinese override here; the tracking is already switched off by
+   --track-scale, and a second mechanism for the same decision would drift out of agreement. */
+:root[lang^="zh"] h1 { line-height: 1.28; }
+:root[lang^="zh"] h2, :root[lang^="zh"] h3 { line-height: 1.5; }
+svg { display: block; }
+.wrap { width: min(100% - 48px, 1240px); margin-inline: auto; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.skip-link { position: fixed; top: 12px; left: 16px; z-index: 120; background: var(--ink); color: var(--paper); padding: 14px 22px; min-height: 44px; display: inline-flex; align-items: center; clip-path: inset(50%); width: 1px; height: 1px; overflow: hidden; }
+.skip-link:focus-visible { clip-path: none; width: auto; height: auto; }
+/* Reading measure. Every block of running text on the page carries a max-width in ch, because the
+   column that a reader's eye has to cross back from is what makes a line easy or hard to follow.
+   The unit has to be ch, not px: ch scales with the block's own font size, so the same ceiling
+   holds for 13px footnotes and 19px case summaries. Two measured traps: a CSS `max-width: 74ch`
+   cap and a measured 73.6ch line agree, while the same line measured against the advance of a
+   lowercase letter reads 86ch — the ceiling is only checkable in the unit it is written in. And a
+   Range over an *element* returns a rect as wide as its container, so a line length measured that
+   way reports 837px of prose inside a list item whose longest actual line is 516px. Measure the
+   text nodes, not the boxes. Ceiling here is 66ch for body prose and 68ch for the small-text
+   notes; min() keeps both rules harmless on a phone, where the box is already narrower. */
+.demo-footnote, .demo-status, .demo-period, .scrub-hint, .rhythm-source { max-width: min(100%, 68ch); }
+.kicker { font-size: var(--fs-small); font-weight: 600; color: var(--muted); line-height: 1.6; margin-bottom: 10px; }
+.fiction-badge { display: inline-flex; align-items: center; gap: 7px; background: var(--surface-deep); border-radius: var(--r-pill); padding: 4px 12px; font-size: var(--fs-micro); line-height: 1.7; color: var(--ink); white-space: nowrap; }
+.fiction-badge i { width: 6px; height: 6px; border-radius: 50%; background: var(--sage); }
+.button { display: inline-flex; align-items: center; justify-content: space-between; gap: 22px; min-height: 52px; padding: 13px 24px; border-radius: var(--r-pill); font-size: var(--fs-para); line-height: 1.5; transition: background 0.18s, transform 0.18s; }
+.button-dark { background: var(--ink); color: var(--paper); }
+.button-dark:hover { background: var(--ink-hover); }
+.text-link { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: var(--fs-para); padding-block: 8px; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.text-link:hover { text-decoration-thickness: 2px; }
+.control-icon { display: inline-flex; transition: transform .2s cubic-bezier(.2,.8,.3,1); }
+.control-icon svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 1.7; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Press feedback. A control that commits an action answers inside the same frame —
+   a 1.5% scale plus a surface change, transform-only so it stays on the compositor.
+   Deliberately not behind data-motion: ambient motion is decoration, this is the
+   answer to an input, and taking it away from a keyboard or reduced-motion user
+   removes the one piece of feedback they were relying on. */
+.button, .filters button, .concept-controls button, .locale-switch, .motion-toggle,
+.menu-toggle, .project-card-link, .text-link, .wordmark, .desktop-nav a {
+  transition: background .18s, color .18s, box-shadow .18s, text-decoration-color .18s, transform .12s cubic-bezier(.2,.8,.3,1);
+}
+.button:active, .filters button:active, .concept-controls button:active, .demo-presets button:active,
+.locale-switch:active, .motion-toggle:active, .menu-toggle:active { transform: scale(.985); }
+/* A text-only target answers on the ink, not on the box: no travel, no scale, so the hit area cannot
+   move and the label cannot swim. interaction-states.md:28 holds the wordmark and the nav links to the
+   press; the prose row above it is what exempts a link with a sentence around it, and neither of these
+   has one. */
+.wordmark:active, .desktop-nav a:active { color: var(--ink-press); }
+.button:hover { box-shadow: 0 8px 20px -12px rgba(35,59,50,.6); }
+.button:hover .control-icon { transform: translate(3px, -3px); }
+.project-card-link:hover { transform: translateY(-3px); }
+.project-card-link:active { transform: translateY(-1px) scale(.996); }
+
+/* ---------- shell ---------- */
+.header-sentinel { position: absolute; top: 0; left: 0; width: 100%; height: 1px; pointer-events: none; }
+.site-header { height: var(--header-h); display: flex; align-items: center; justify-content: space-between; gap: 20px; position: sticky; top: 0; z-index: 60; background: var(--paper); transition: box-shadow 0.25s, background 0.25s; }
+.site-header.is-scrolled { background: var(--paper); box-shadow: 0 1px 0 var(--rule), 0 10px 24px #233b3212; }
+.wordmark { font-family: var(--serif); font-size: var(--fs-figure); font-weight: 700; letter-spacing: -0.04em; line-height: 1; display: inline-flex; align-items: center; min-height: 44px; }
+.header-actions { display: flex; align-items: center; gap: 14px; }
+.desktop-nav { display: flex; align-items: center; gap: 30px; font-size: var(--fs-para); }
+.desktop-nav a { padding-block: 12px; min-height: 44px; display: inline-flex; align-items: center; }
+.nav-contact { background: var(--surface); border-radius: var(--r-pill); padding: 10px 20px; gap: 12px; }
+.nav-contact:hover { background: var(--surface-deep); }
+.locale-switch { min-height: 44px; display: inline-flex; align-items: center; padding: 0 12px; border: 1px solid var(--rule); border-radius: var(--r-pill); font-size: var(--fs-ui); }
+.locale-switch:hover { background: var(--surface); }
+.motion-toggle { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; font-size: var(--fs-ui); color: var(--ink); border: 1px solid var(--rule); }
+.motion-toggle:hover { background: var(--surface); }
+.motion-toggle .play-mark { display: none; }
+/* The switch is driven by the attribute the controller owns; aria-pressed was never written, so an
+   icon keyed to it stayed on the pause mark after the reader had paused. The name already states the
+   action ("Play page motion" when it is off), so the icon follows data-motion and nothing else. */
+:root[data-motion="off"] .motion-toggle .pause-mark { display: none; }
+:root[data-motion="off"] .motion-toggle .play-mark { display: block; }
+:root:not([data-js]) .motion-toggle { display: none; }
+.menu-toggle { display: none; min-height: 44px; padding: 8px 16px; border-radius: var(--r-pill); font-size: var(--fs-para); gap: 10px; }
+.menu-toggle .menu-glyph { display: inline-block; transition: transform 0.2s ease; }
+.menu-toggle[aria-expanded="true"] .menu-glyph { transform: rotate(45deg); }
+.mobile-nav { display: none; }
+:root:not([data-js]) .menu-toggle { display: none; }
+@media (max-width: 860px) {
+  .desktop-nav { display: none; }
+  :root[data-js] .menu-toggle { display: inline-flex; }
+  .mobile-nav[data-static-open] { display: flex; position: absolute; top: var(--header-h); left: 0; right: 0; background: var(--band); color: var(--band-ink); flex-direction: column; padding: 14px 24px 22px; gap: 4px; z-index: 55; }
+  .mobile-nav[data-static-open] a { min-height: 48px; display: flex; align-items: center; font-size: var(--fs-body); }
+  /* Without JS there is nothing to toggle this panel with — the toggle is hidden two rules up —
+     so it is permanently open. Absolutely positioned, it sat over 188px of the first section with
+     no way to dismiss it. In flow, every link stays reachable and nothing is hidden. The header then
+     has to grow: at its fixed 84px the 188px panel was centred on it, clipped 52px above the
+     viewport (hiding its own "Selected work" link) and laid over the page heading. Static, auto
+     height, wrapped, it takes a row of its own and scrolls away with the header — a sticky 270px
+     band on a no-JS phone would cost the reader more than the nav gives back. */
+  :root:not([data-js]) .site-header { position: static; height: auto; padding-block: 20px; flex-wrap: wrap; row-gap: 10px; }
+  :root:not([data-js]) .mobile-nav[data-static-open] { position: static; flex: 1 0 100%; }
+}
+
+/* ---------- footer ---------- */
+.site-footer { padding-block: 70px 30px; border-top: 1px solid var(--rule); margin-top: 30px; }
+.footer-invitation { display: flex; align-items: center; justify-content: space-between; gap: 24px; font-family: var(--serif); font-size: var(--fs-invitation); line-height: 1.3; letter-spacing: calc(-0.025em * var(--track-scale)); padding-block: 20px; min-height: 64px; }
+.footer-invitation:hover .footer-arrow { transform: translate(4px, -4px); }
+.footer-arrow { transition: transform 0.25s; }
+.footer-arrow svg { width: 24px; height: 24px; }
+.footer-sub { color: var(--muted); font-size: var(--fs-para); margin-block: 8px 34px; max-width: 52ch; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 22px; flex-wrap: wrap; color: var(--muted); font-size: var(--fs-small); }
+.footer-bottom a { min-height: 44px; display: inline-flex; align-items: center; padding-inline: 4px; }
+.footer-bottom a:hover { text-decoration: underline; text-underline-offset: 4px; }
+/* A hiring reader's last question is how to write; every CTA on this site pointed at the build
+   instructions, which teaches a pattern while leaving the page without one. The address is a
+   reserved example.com mailbox, labelled as a sample at the point of use. */
+.footer-contact { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 24px; border-top: 1px solid var(--rule); margin-top: 26px; padding-top: 22px; }
+.footer-contact .kicker { margin: 0; }
+.footer-contact a { font-family: var(--serif); font-size: var(--fs-lede); text-decoration: underline; text-underline-offset: 5px; min-height: 44px; display: inline-flex; align-items: center; }
+.footer-contact-note { font-size: var(--fs-small); color: var(--muted); }
+.no-script-note { padding-block: 26px; }
+.no-script-note p { font-size: var(--fs-para); line-height: 1.8; max-width: 70ch; }
+
+/* ---------- home ---------- */
+.hero { display: grid; grid-template-columns: 1.02fr 1fr; gap: 56px; align-items: center; min-height: 600px; padding-block: 44px 90px; }
+.hero-role { font-size: var(--fs-label); font-weight: 600; color: var(--muted); margin-bottom: 22px; }
+.hero h1 { line-height: 1.2; }
+/* The mask that reveals each line clips at its own box, so the box has to be taller
+   than the type: Georgia's descenders on "Good" reach past a 1.15 line box at 64px. */
+.title-line { display: block; overflow: hidden; }
+.hero h1 em { font-style: normal; color: var(--sage-text); }
+.hero-intro { font-size: var(--fs-body); line-height: 1.8; max-width: 46ch; margin-block: 26px 30px; color: var(--muted); }
+:root[lang^="zh"] .hero-intro { font-size: var(--fs-body-lg); }
+.hero-buttons { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.hero-footnote { display: flex; align-items: flex-start; gap: 12px; margin-top: 34px; }
+.hero-footnote p { font-size: var(--fs-small); line-height: 1.7; color: var(--muted); max-width: 44ch; }
+.hero-visual { min-width: 0; }
+.hero-product-link { display: block; min-height: 44px; }
+/* clip, not hidden: an overflow:hidden box is a scroll container, and the parallax layers inside it
+   then resolve their view() timeline against this box instead of the page, so their progress never
+   moves and the depth reads as a permanent misalignment. */
+.hero-stage { display: block; padding: 40px 26px 46px; border-radius: var(--r-sheet); background: var(--surface); overflow: clip; }
+.stage-caption { display: block; font-family: var(--serif); font-size: var(--fs-body); letter-spacing: calc(-0.01em * var(--track-scale)); padding: 14px 6px 0; color: var(--ink); }
+.career-strip { display: grid; grid-template-columns: auto repeat(3, 1fr); gap: 26px; align-items: center; border-block: 1px solid var(--rule); padding-block: 26px; margin-bottom: 10px; }
+.strip-label { font-size: var(--fs-small); font-weight: 600; color: var(--muted); max-width: 12ch; line-height: 1.6; }
+.career-strip > div { display: flex; align-items: baseline; gap: 12px; min-width: 0; }
+.career-strip strong { font-family: var(--serif); font-size: var(--fs-strip); font-weight: 400; letter-spacing: calc(-0.03em * var(--track-scale)); line-height: 1; }
+.career-strip span { font-size: var(--fs-label); line-height: 1.5; color: var(--muted); }
+/* The strip quotes the résumé; the line that says so spans the row and stays one step quieter
+   than the figures, because it is provenance rather than a second set of numbers. */
+.strip-basis { grid-column: 1 / -1; font-size: var(--fs-small); line-height: 1.7; color: var(--muted); max-width: 68ch; }
+.work-section { padding-block: 74px 90px; }
+.section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; flex-wrap: wrap; margin-bottom: 22px; }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; background: var(--surface); border-radius: var(--r-pill); padding: 5px; }
+.filters button { border-radius: var(--r-pill); min-height: 44px; padding: 8px 20px; font-size: var(--fs-ui); transition: background 0.18s, color 0.18s; }
+.filters button:hover { background: var(--surface-deep); }
+.filters button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.work-intro { color: var(--muted); max-width: 60ch; margin-bottom: 44px; }
+/* The three cases do not carry equal weight, so the grid does not pretend they do:
+   Signal holds the dataset and the working dashboard, so it gets the widest column;
+   Briefly is the workflow; Fieldwork is the shortest, newest exercise. Equal thirds
+   would ask the reader to rank them, which is what this row exists to avoid. */
+.project-grid { display: grid; grid-template-columns: minmax(0, 1.24fr) minmax(0, 1fr) minmax(0, 0.86fr); gap: 34px 28px; align-items: start; }
+.project-card { min-width: 0; }
+.project-card-link { display: block; height: 100%; }
+.project-image { display: grid; place-items: center; position: relative; min-height: 250px; border-radius: var(--r-card); padding: 24px 24px 28px; overflow: hidden; background: var(--surface); }
+.project-image > * { min-width: 0; max-width: 100%; }
+.tone-sage { background: #dde6d0; }
+.tone-lilac { background: var(--lilac); }
+.tone-sand { background: var(--sand); }
+.project-open { position: absolute; right: 12px; top: 12px; width: 38px; height: 38px; border-radius: 50%; background: var(--panel); display: grid; place-items: center; }
+/* The Signal card's own artifact: four week-bars on the case's real totals, the last in the signal
+   colour, so the thumbnail is the rhythm the case is about rather than the hero console again. */
+/* The three cover mocks are one component read side by side, so all three take the same definite
+   height: the card's metadata line sits below them, and a thumbnail whose height comes from its own
+   text is what pushed `.card-meta` 13px out of line in Chinese, where the numbers and labels below
+   run at the larger CJK steps. The Signal mock keeps its caption, total and axis at their natural
+   height and lets the bar track absorb the difference — the bars are percentages of the track, so
+   the shape of the data is the same at any track height. */
+.ledger-mock { width: min(100%, 300px); height: 176px; display: grid; grid-template-rows: auto auto minmax(0, 1fr) auto; gap: 6px; padding: 10px 20px 10px; background: var(--panel); border: 1px solid var(--edge); border-radius: var(--r-card); }
+.ledger-mock .ledger-cap { margin: 0; font-size: var(--fs-micro); color: var(--muted); }
+.ledger-mock .ledger-total { margin: 0; font-family: var(--serif); font-size: var(--fs-figure); line-height: 1; letter-spacing: calc(-0.02em * var(--track-scale)); }
+.ledger-bars { list-style: none; margin: 0; padding: 0; display: flex; align-items: flex-end; gap: 8px; min-height: 0; border-bottom: 1px solid var(--row-rule); }
+.ledger-bars li { flex: 1; --h: 50%; height: var(--h); background: var(--surface-deep); border-radius: 4px 4px 0 0; }
+.ledger-bars li.is-last { background: var(--sage); }
+.ledger-axis { display: flex; gap: 8px; font-size: var(--fs-micro); color: var(--muted); font-variant-numeric: tabular-nums; }
+.ledger-axis span { flex: 1; text-align: center; }
+.card-meta { display: flex; justify-content: space-between; gap: 14px; font-size: var(--fs-small); color: var(--muted); margin-top: 20px; }
+.project-card h3 { margin-top: 8px; font-size: var(--fs-title-sm); }
+.project-card p { font-size: var(--fs-ui); line-height: 1.75; color: var(--muted); margin-top: 8px; max-width: 62ch; }
+.project-more { display: inline-flex; align-items: center; gap: 8px; font-size: var(--fs-ui); margin-top: 16px; min-height: 44px; }
+.approach-section { background: var(--band); color: var(--band-ink); padding-block: 84px; }
+.approach-heading { max-width: 60ch; }
+.approach-section .kicker { color: var(--band-label); }
+.approach-section h2 { color: var(--band-ink); }
+.approach-heading p { color: var(--band-body); margin-top: 18px; max-width: 52ch; }
+.approach-list { list-style: none; margin: 44px 0 0; padding: 0; max-width: 860px; }
+.approach-list li { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 8px 28px; border-top: 1px solid #3b544a; padding-block: 26px; }
+.approach-list h3 { grid-column: 1; font-family: var(--serif); font-weight: 400; font-size: var(--fs-sub-lg); color: var(--band-ink); }
+.approach-list p { grid-column: 2; color: var(--band-body); font-size: var(--fs-para); line-height: 1.8; max-width: 60ch; }
+:root[lang^="zh"] .approach-list h3 { font-size: var(--fs-title); }
+.approach-cta { color: var(--band-ink); margin-top: 34px; display: inline-flex; }
+
+/* ---------- hand-built cover artifacts ---------- */
+.console-mock { position: relative; background: var(--panel); border: 1px solid var(--edge); border-radius: var(--r-card); padding: 18px 18px 72px; max-width: 560px; color: var(--ink); }
+.console-layer { position: relative; }
+.console-bezel { position: absolute; inset: 7px -7px -7px 7px; border: 1px solid #c8d2b8; border-radius: calc(var(--r-card) + 4px); background: #e4e9da; z-index: 0; }
+.console-screen { z-index: 1; }
+.console-brand { font-size: var(--fs-body); font-weight: 650; letter-spacing: -0.02em; }
+.console-dot { color: var(--sage-text); }
+.console-period { font-size: var(--fs-micro); color: var(--muted); margin-bottom: 12px; }
+.console-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-bottom: 14px; }
+.console-stats span { display: block; font-size: var(--fs-micro); color: var(--muted); }
+.console-stats strong { display: block; font-size: var(--fs-lede); font-weight: 600; line-height: 1.35; white-space: nowrap; }
+.console-screen > svg { width: 100%; height: auto; }
+.console-screen > svg path { fill: none; stroke: var(--sage); stroke-width: 2.4; }
+.console-foot { font-size: var(--fs-micro); color: var(--muted); margin-top: 8px; }
+.console-insight { position: absolute; z-index: 2; right: -10px; bottom: -18px; background: var(--band); color: var(--band-ink); border-radius: calc(var(--r-card) - 6px); padding: 12px 16px; display: flex; flex-direction: column; gap: 2px; max-width: 74%; }
+.console-insight span { font-size: var(--fs-micro); color: var(--band-label); }
+.console-insight strong { font-size: var(--fs-ui); font-weight: 550; line-height: 1.4; }
+.brief-mock { position: relative; height: 176px; width: 100%; display: flex; align-items: center; justify-content: space-around; color: var(--ink); }
+.brief-bottle { width: 64px; height: 140px; border-radius: 14px 14px 20px 20px; background: linear-gradient(90deg, #798d69, #adc094 44%, #8eaa74 75%, #6a8356); position: relative; transform: rotate(-7deg); }
+.brief-bottle i { position: absolute; top: -14px; left: 14px; width: 36px; height: 16px; border-radius: 6px 6px 0 0; background: linear-gradient(90deg, #536248, #869778, #5a6a4c); }
+/* Every mock paper here is a sheet resting on a tinted card, so each one carries the two layers a
+   resting object owes: a wide penumbra and a tight contact layer whose offset is barely larger than
+   the sheet's own thickness. The light is the one the page already records — `.site-header.is-scrolled`
+   is its two-layer example, an edge then a 10px-over-24px penumbra falling below the surface — so both
+   layers here fall down and to the right of the sheet, the same quadrant as every offset on the card,
+   and the ratios rise: 0.54-0.61 penumbra, 0.75 contact, where the header's own penumbra sits at 0.42.
+   The hue is the ground each sheet falls on, not the neutral ink:
+   the brief scrap sits on `--lilac` and takes that violet's dark (#3a3760, the ink this palette
+   already uses on a lilac ground), the notes sit on `--sand` and keep the ochre-brown they already
+   cast. Layers are written penumbra first, contact last, so the shadow tightens as it approaches the
+   paper. */
+.brief-paper { background: var(--panel); border-radius: 10px; padding: 18px 16px; width: 52%; transform: rotate(4deg); box-shadow: 4px 10px 20px #3a376017, 1px 2px 3px #3a376029; display: grid; gap: 7px; }
+.brief-paper em { font-family: var(--serif); font-style: normal; font-size: var(--fs-label); margin-bottom: 4px; }
+.brief-paper b { height: 7px; border-radius: 4px; background: #e3e0eb; }
+.brief-paper b.short { width: 58%; }
+.notes-mock { position: relative; height: 176px; width: 100%; }
+.note { position: absolute; border-radius: 6px; }
+.note-back { background: #e8bd72; left: 44%; top: 16%; width: 48%; height: 58%; transform: rotate(9deg); box-shadow: 6px 12px 22px #735c3122, 1px 2px 3px #735c313d; }
+.note-front { background: #fff4d5; left: 12%; top: 30%; width: 56%; height: 60%; transform: rotate(-6deg); box-shadow: 4px 10px 18px #735c311a, 1px 2px 3px #735c3133; }
+
+/* ---------- cases (shared shell, per-case layouts below) ---------- */
+/* project.html renders its cases straight into #app; every other page section
+   carries .wrap, so these three are the ones that need the measure applied. */
+.page-title, .archive-note, .case { width: min(100% - 48px, 1240px); margin-inline: auto; }
+.case { padding-block: 10px 60px; }
+:root[data-case] .case { display: none; }
+:root[data-case="signal"] #case-signal, :root[data-case="briefly"] #case-briefly, :root[data-case="fieldwork"] #case-fieldwork { display: block; }
+:root[data-case] .archive-note { display: none; }
+/* The unknown-id panel is generated into every case page and stays folded until the route asks for
+   it, so an ?id= that matches nothing is a stylesheet decision rather than a download. */
+.project-missing { display: none; }
+:root[data-case-unknown] .project-missing { display: block; }
+:root[data-case-unknown] .case, :root[data-case-unknown] .archive-note { display: none; }
+.back-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: var(--fs-ui); color: var(--muted); }
+.back-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.case-title { padding-block: 22px 30px; max-width: 900px; }
+.case-h2 { font-size: var(--fs-case); line-height: 1.18; letter-spacing: calc(-0.03em * var(--track-scale)); font-weight: 400; }
+.case-type { font-size: var(--fs-label); color: var(--muted); font-weight: 600; margin-bottom: 16px; }
+.case-summary { font-size: var(--fs-body-lg); line-height: 1.75; color: var(--muted); margin-top: 22px; max-width: 66ch; }
+:root[lang^="zh"] .case-summary { font-size: var(--fs-sub); }
+.case-status { display: flex; align-items: center; gap: 14px; margin-top: 24px; }
+.case-status > span:last-child { font-size: var(--fs-small); color: var(--muted); }
+.case-contents { display: flex; flex-wrap: wrap; gap: 8px 26px; align-items: center; border-block: 1px solid var(--rule); padding-block: 14px; margin-block: 8px 44px; font-size: var(--fs-ui); }
+.case-contents > span { font-size: var(--fs-small); color: var(--muted); font-weight: 600; }
+.case-contents a { padding-block: 8px; min-height: 44px; display: inline-flex; }
+.case-contents a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.case section > h3 { margin-bottom: 20px; }
+/* The h1 owns the display role on every route: --fs-h1, at the case route as well as the archive.
+   It used to be set at body size and muted so it would read as an identifier rather than a second
+   headline competing with the case title — which is how the page ended up naming itself in 17.5px
+   under a 40px h2. The size ladder above puts the h1 a rung over --fs-case in both locales, and this
+   padding opens the air a display line needs under the sticky header while keeping it tight to the
+   case header it introduces. The archive route takes the same size — one h1 over three cases in
+   order still has to out-rank the largest of the three. */
+.page-title { font-size: var(--fs-h1); font-family: var(--serif); font-weight: 400; color: var(--ink); padding-block: 34px 6px; }
+.case-opening { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 54px; align-items: center; margin-bottom: 64px; }
+.detail-cover { border-radius: var(--r-sheet); padding: 46px 34px; min-height: 380px; display: grid; place-items: center; overflow: hidden; }
+.case-snapshot { margin-bottom: 60px; }
+.snapshot-pairs { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; max-width: 900px; }
+.snapshot-pairs p:not(.kicker) { font-size: var(--fs-lede); line-height: 1.8; }
+.case-facts { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); column-gap: 34px; row-gap: 16px; border-top: 1px solid var(--rule); margin-top: 34px; padding-top: 24px; max-width: 900px; }
+.case-facts dt { font-size: var(--fs-small); color: var(--muted); }
+.case-facts dd { font-size: var(--fs-para); font-weight: 550; margin-top: 6px; overflow-wrap: anywhere; }
+.case-artifact { margin-block: 64px; }
+.case-rhythm { margin-block: 64px; }
+.rhythm-intro { max-width: 68ch; color: var(--muted); margin-bottom: 30px; }
+.rhythm-source { font-size: var(--fs-small); color: var(--muted); margin-top: 18px; }
+.scrub-frame { background: var(--panel); border: 1px solid var(--edge); border-radius: var(--r-card); padding: 22px; }
+.scrub-frame h4 { font-size: var(--fs-ui); font-weight: 600; line-height: 1.5; margin-bottom: 14px; }
+/* The frame is scaled ~5x from its 120x40 viewBox, so a stroke written in user units arrives as a
+   12px bar. non-scaling-stroke keeps both lines at the weight they were drawn to read as. */
+.scrub-frame svg { width: 100%; height: auto; }
+.scrub-frame svg polyline { fill: none; vector-effect: non-scaling-stroke; stroke-linejoin: round; stroke-linecap: round; }
+.scrub-frame svg .month-trace { stroke: var(--edge); stroke-width: 1.5; }
+.scrub-frame svg .week-trace { stroke: var(--sage); stroke-width: 2.5; }
+.scrub-frame dl { display: grid; grid-template-columns: minmax(0, 1fr) max-content; column-gap: 14px; row-gap: 10px; margin-top: 14px; border-top: 1px solid var(--row-rule); padding-top: 14px; }
+.scrub-frame dt { font-size: var(--fs-micro); color: var(--muted); }
+.scrub-frame dd { font-size: var(--fs-para); font-weight: 600; margin-top: 4px; white-space: nowrap; }
+/* Both data tables keep a 560px floor so the columns stay readable, which means a phone
+   gets a horizontal scroller. A scroller with no visible affordance fails the table check —
+   the column that gets cut is usually the one carrying the argument — so the thumb is styled
+   wide enough to see and grab, and the region itself is focusable so the keyboard can reach it. */
+/* A table wider than its column has to say so. The two local gradients sit under the content and
+   scroll with it, the two scroll-attached shadows stay at the edges, so the shadow appears only
+   while there is more table in that direction — no permanent fade over content that already fits. */
+.table-scroll { overflow-x: auto; border: 1px solid var(--edge); border-radius: var(--r-card); padding: 6px; overscroll-behavior-x: contain; scrollbar-color: var(--thumb) var(--panel); scrollbar-width: thin; background: linear-gradient(to right, var(--panel) 40%, #0000) left / 40px 100% no-repeat local, linear-gradient(to left, var(--panel) 40%, #0000) right / 40px 100% no-repeat local, radial-gradient(farthest-side at 0 50%, #233b3226, #0000) left / 14px 100% no-repeat scroll, radial-gradient(farthest-side at 100% 50%, #233b3226, #0000) right / 14px 100% no-repeat scroll, var(--panel); }
+.table-scroll::-webkit-scrollbar { height: 12px; }
+.table-scroll::-webkit-scrollbar-track { background: var(--gutter); border-radius: 0 0 calc(var(--r-card) - 6px) calc(var(--r-card) - 6px); }
+.table-scroll::-webkit-scrollbar-thumb { background: var(--thumb); border-radius: var(--r-pill); border: 3px solid var(--gutter); }
+.table-scroll:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+table { width: 100%; border-collapse: collapse; font-size: var(--fs-ui); }
+caption { text-align: left; font-size: var(--fs-small); color: var(--muted); padding: 16px 14px 6px; }
+th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--row-rule); line-height: 1.5; }
+thead th { font-size: var(--fs-small); color: var(--muted); font-weight: 600; }
+tbody th { font-weight: 550; }
+tbody tr:last-child > * { border-bottom: 0; }
+.week-table, .concepts-table { min-width: 560px; }
+.notes-table { min-width: 620px; }
+.notes-table th[scope="row"] { font-weight: 600; }
+
+/* pinned context narrative (signal) */
+.narrative-layout { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 64px; align-items: start; max-width: 1100px; margin-inline: auto; }
+.narrative-context { border: 1px solid var(--rule); background: var(--surface); border-radius: var(--r-sheet); padding: 26px 26px 22px; }
+.narrative-claim { font-family: var(--serif); font-size: var(--fs-claim); line-height: 1.4; letter-spacing: calc(-0.015em * var(--track-scale)); }
+:root[lang^="zh"] .narrative-claim { font-size: var(--fs-claim-lg); }
+.context-metrics { display: grid; grid-template-columns: minmax(0, 1fr) max-content; column-gap: 16px; row-gap: 12px; align-items: baseline; margin-top: 22px; border-top: 1px solid var(--rule); padding-top: 18px; }
+.context-metrics dt { font-size: var(--fs-small); color: var(--muted); }
+.context-metrics dd { font-family: var(--serif); font-size: var(--fs-sub-lg); letter-spacing: calc(-0.02em * var(--track-scale)); }
+.context-source { font-size: var(--fs-micro); line-height: 1.7; color: var(--muted); margin-top: 14px; max-width: 40ch; }
+.narrative-stream { max-width: 68ch; }
+.challenge { font-size: var(--fs-body); line-height: 1.85; color: var(--ink); margin-bottom: 40px; }
+:root[lang^="zh"] .challenge { font-size: var(--fs-body-lg); }
+.decision-stack { max-width: 72ch; margin-inline: auto; }
+.decision-section { border-top: 1px solid var(--rule); padding-top: 26px; margin-top: 40px; }
+.decision-section h4 { display: flex; gap: 16px; align-items: baseline; font-size: var(--fs-title-sm); }
+.decision-number { font-family: var(--serif); font-size: var(--fs-para); color: var(--sage-text); }
+.decision-section p { margin-top: 14px; color: var(--muted); line-height: 1.85; }
+.case-results { background: var(--surface-deep); border-radius: var(--r-sheet); padding: 44px 46px; margin-block: 64px; max-width: 980px; }
+.case-results p:not(.kicker) { margin-top: 16px; max-width: 68ch; line-height: 1.85; color: var(--ink); }
+.case-browse { display: flex; align-items: flex-start; justify-content: space-between; gap: 30px; flex-wrap: wrap; border-top: 1px solid var(--rule); padding-top: 30px; margin-top: 40px; }
+.browse-links { display: flex; flex-direction: column; gap: 10px; text-align: right; }
+.case-browse a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: var(--fs-para); }
+.case-browse a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* briefly: editorial single column */
+.case-briefly { max-width: 820px; margin-inline: auto; }
+.case-briefly .case-snapshot { margin-block: 40px; }
+.case-storyboard { background: var(--lilac); border-radius: var(--r-sheet); padding: 40px 42px; margin-block: 60px; color: #3a3760; }
+.board-note { font-size: var(--fs-label); margin-bottom: 24px; color: var(--lilac-ink); }
+.shot-list { list-style: none; margin: 0; padding: 0; }
+.shot-list li { border-top: 1px solid #c9c5e6; padding-block: 20px; display: grid; grid-template-columns: 88px 1fr; gap: 4px 24px; }
+.shot-time { font-family: var(--serif); font-size: var(--fs-lede); grid-row: 1 / 3; }
+.shot-overlay { grid-column: 2; font-size: var(--fs-ui); color: var(--lilac-ink); font-style: italic; }
+.shot-list p { font-size: var(--fs-para); line-height: 1.75; }
+
+/* fieldwork: notebook with ruled rows */
+.case-fieldwork { max-width: 1000px; margin-inline: auto; }
+.research-journey { list-style: none; margin: 10px 0 0; padding: 0; max-width: 780px; }
+.research-journey li { display: grid; grid-template-columns: 48px 160px minmax(0, 1fr); gap: 6px 24px; border-top: 1px solid var(--rule); padding-block: 24px; align-items: baseline; }
+.journey-index { font-family: var(--serif); font-size: var(--fs-lede); color: var(--ochre-text); }
+.research-journey h4 { grid-column: 2; }
+.research-journey p { grid-column: 3; color: var(--muted); font-size: var(--fs-para); line-height: 1.8; }
+.journey-section { margin-block: 60px; }
+.concepts-intro { max-width: 68ch; color: var(--muted); margin-bottom: 26px; }
+.concept-controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.concept-controls button { border-radius: var(--r-pill); min-height: 44px; padding: 9px 18px; font-size: var(--fs-ui); background: var(--surface); transition: background 0.18s, color 0.18s; }
+.concept-controls button:hover { background: var(--surface-deep); }
+.concept-controls button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.concepts-table tr[data-concept-active] { background: #eef2df; }
+.concepts-table tr[data-concept-active] th { box-shadow: inset 4px 0 0 var(--sage); }
+.concepts-table td { color: var(--muted); }
+.artifact-limit { font-size: var(--fs-small); color: var(--muted); margin-top: 18px; max-width: 68ch; }
+
+/* project archive fallback + missing */
+.archive-note { color: var(--muted); font-size: var(--fs-ui); border: 1px dashed var(--rule); border-radius: var(--r-card); padding: 14px 18px; margin-bottom: 30px; }
+.project-missing { padding-block: 40px 90px; max-width: 700px; }
+.project-missing p { margin-top: 22px; color: var(--muted); }
+.missing-title { font-size: var(--fs-body-lg); line-height: 1.5; color: var(--ink); }
+.missing-list { margin: 30px 0 0; padding-left: 0; list-style: none; display: grid; gap: 10px; }
+.missing-list a { min-height: 44px; display: inline-flex; align-items: center; text-decoration: underline; text-underline-offset: 4px; }
+
+/* ---------- about ---------- */
+.about-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; padding-block: 60px 80px; }
+.about-identity { display: flex; align-items: center; gap: 18px; margin-top: 36px; }
+.profile-monogram { width: 62px; height: 62px; border-radius: 50%; display: grid; place-items: center; background: var(--surface-deep); font-family: var(--serif); font-size: var(--fs-claim-lg); }
+.about-name strong { display: block; font-size: var(--fs-lede); }
+.about-name span { display: block; font-size: var(--fs-label); color: var(--muted); }
+.about-lead-line { font-family: var(--serif); font-size: var(--fs-quote); line-height: 1.4; letter-spacing: calc(-0.015em * var(--track-scale)); }
+:root[lang^="zh"] .about-lead-line { font-size: var(--fs-quote-lg); }
+.about-lead p + p { margin-top: 22px; color: var(--muted); line-height: 1.85; }
+.about-disclosure { display: flex; gap: 12px; align-items: flex-start; margin-top: 30px; border-top: 1px solid var(--rule); padding-top: 22px; }
+.about-disclosure p { font-size: var(--fs-small); color: var(--muted); line-height: 1.7; max-width: 46ch; }
+.principle-band { background: var(--band); color: var(--band-ink); padding-block: 90px; margin-block: 30px; }
+.principle-inner { max-width: 900px; }
+.principle-band .kicker { color: var(--band-label); }
+.principle-band h2 { font-size: var(--fs-band); line-height: 1.28; }
+.principle-note { color: var(--band-body); margin-top: 24px; max-width: 64ch; line-height: 1.8; }
+.principle-band .text-link { color: var(--band-ink); }
+.experience-section { padding-block: 70px 80px; }
+.experience-section .section-heading { flex-direction: column; align-items: flex-start; margin-bottom: 30px; }
+.experience-row { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 40px; border-top: 1px solid var(--rule); padding-block: 30px; }
+.experience-row:nth-of-type(even) { background: var(--surface); margin-inline: -24px; padding-inline: 24px; border-radius: var(--r-card); }
+.experience-date { font-size: var(--fs-ui); color: var(--muted); padding-top: 4px; }
+.experience-role { font-size: var(--fs-ui); color: var(--muted); margin-block: 8px 14px; }
+.experience-row p:last-child { font-size: var(--fs-para); line-height: 1.85; max-width: 70ch; }
+.experience-note { font-size: var(--fs-small); color: var(--muted); border-top: 1px solid var(--rule); padding-top: 20px; margin-top: 26px; max-width: 68ch; }
+.build-section { background: var(--surface-deep); padding-block: 84px; margin-top: 40px; }
+.build-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start; }
+.build-inner h2 { white-space: pre-line; }
+.build-inner > div > p:not(.kicker) { color: var(--muted); margin-block: 22px 30px; max-width: 46ch; line-height: 1.85; }
+.build-steps { list-style: none; margin: 0; padding: 0; }
+.build-steps li { display: grid; grid-template-columns: 44px 1fr; gap: 6px 22px; border-top: 1px solid #c2c9b2; padding-block: 24px; }
+.step-index { font-family: var(--serif); font-size: var(--fs-lede); color: var(--step-ink); grid-row: 1 / 3; }
+.build-steps h3 { font-size: var(--fs-body-lg); }
+.build-steps p { color: #4a574c; font-size: var(--fs-ui); line-height: 1.8; max-width: 46ch; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 1080px) {
+  .narrative-layout { grid-template-columns: 1fr; gap: 34px; }
+  .about-hero { gap: 44px; }
+  .build-inner { gap: 44px; }
+}
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; gap: 42px; min-height: 0; padding-block: 24px 60px; }
+  .project-grid { grid-template-columns: 1fr 1fr; }
+  .case-opening { grid-template-columns: 1fr; }
+  .career-strip { grid-template-columns: 1fr 1fr; }
+  .approach-list li { grid-template-columns: 1fr; gap: 10px; }
+  .approach-list p { grid-column: 1; }
+  .research-journey li { grid-template-columns: 40px 1fr; }
+  .research-journey p { grid-column: 2; }
+}
+@media (max-width: 700px) {
+  /* Display sizes shrink faster than text ones: a 64px line over a 17.5px body is
+     3.7x, and that ratio is a two-column luxury. Here it comes down to ~1.6x.
+     Three steps only — 20, 24, 29 — because a narrow column cannot hold a wider
+     ladder without two of its rungs rendering identically. */
+  :root {
+    --fs-h1: 29px;
+    --fs-case: 24px;
+    --fs-h2: 24px;
+    --fs-quote: 24px;
+    --fs-quote-lg: 20px;
+    --fs-band: 20px;
+    --fs-strip: 24px;
+    --fs-title: 20px;
+    --fs-title-sm: 20px;
+    --fs-demo: 20px;
+    --fs-claim: 20px;
+    --fs-invitation: 24px;
+  }
+  /* Chinese display runs take one step down from the Latin ones at the same width — except the h1.
+     At 24px the h1 measured identical to the 24px h2 on a 390 phone, so the ladder had two rungs
+     where the comment above promises three. The one-step-down rule exists because a 64px CJK glyph
+     reads heavier than 64px of Georgia; at phone display sizes the 4.6vw clamp has already brought
+     the Latin h1 to 29px, where that weight difference no longer buys a whole rung. The zh h1 keeps
+     28px and the h2 keeps 24, so the ladder stays 28 / 24 / 20 in both locales. */
+  :root[lang^="zh"] { --fs-invitation: 20px; --fs-h1: 28px; --fs-case: 20px; }
+  .wrap { width: calc(100% - 40px); }
+  .snapshot-pairs, .about-hero, .build-inner { grid-template-columns: 1fr; gap: 30px; }
+  .project-grid { grid-template-columns: 1fr; }
+  .case-facts { grid-template-columns: 1fr 1fr; }
+  .experience-row { grid-template-columns: 1fr; gap: 10px; }
+  /* The tinted rows bleed 24px past the text column on desktop. Under 700px the wrap
+     gutter is only 20px, so the bleed measured -4px outside the viewport: no scrollbar,
+     but half a rule clipped at the edge. Below the break the rows stop bleeding. */
+  .experience-row:nth-of-type(even) { margin-inline: 0; padding-inline: 18px; }
+  :root { --header-h: 84px; }
+}
+@media (max-width: 560px) {
+  .hero-stage { padding: 26px 16px 30px; }
+  /* The four dashboard metrics go two-up here, and two-up puts the label column at ~113px — where
+     "Return on ad spend" wraps and its English route pushed the note under it 22.1px below its
+     neighbour's. The label is the fixed region of the card and the note is the flexible one, so the
+     label reserves the two lines its longest member needs and every note in a row lands on one
+     baseline. `2lh` is the element's own two lines, so the reservation is correct at the larger CJK
+     steps too; the calc is the fallback for a browser without the lh unit. */
+  .demo-metric-label { min-height: calc(var(--fs-small) * 1.7 * 2); min-height: 2lh; }
+  /* Under 561px the plate wrapped to three lines and its top reached 110px up into the card,
+     covering the whole provenance line. It joins the flow instead of overhanging: the overlap is
+     a desktop gesture, and on a phone the disclosure sentence matters more than the layering.
+     Still relative, not static: z-index only applies to a positioned box, and making this static
+     left the plate outside the stacking order while the absolute bezel (z-index 0, opaque
+     background) painted over the annotation text it was meant to sit above. */
+  .console-insight { position: relative; right: auto; bottom: auto; z-index: 2; max-width: 100%; margin-top: 14px; }
+  .console-mock { padding-bottom: 18px; }
+  .console-bezel { inset: 5px -5px -5px 5px; }
+  .case-results, .case-storyboard { padding: 28px 22px; }
+  .detail-cover { padding: 30px 18px; min-height: 300px; }
+  .career-strip { grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* No content-visibility here on purpose. These sections hold the case evidence, and skipping
+   their paint leaves a blank block in print and in any full-page capture. */
+
+@media print {
+  body { background: #fff; }
+  .site-header, .site-footer, .skip-link, .filters, .scrub-wrap, .motion-toggle { display: none; }
+}

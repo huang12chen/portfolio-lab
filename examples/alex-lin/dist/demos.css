@@ -1,272 +1,164 @@
-/* All demo styling stays inside these two roots. */
-.demo-growth,
-.demo-brief {
-  --demo-border: #e7eadf;
-  --demo-green: #233b32;
-  --demo-lime: #dfef85;
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 100%;
-  padding: clamp(16px, 3vw, 32px);
-  border: 1px solid var(--demo-border);
-  border-radius: 28px;
-  background: var(--surface, #f4f5ef);
-  color: var(--ink, #233b32);
-  font-family: inherit;
-  font-size: 14px;
-  line-height: 1.55;
-  text-align: left;
-  letter-spacing: normal;
-  overflow-wrap: anywhere;
-  isolation: isolate;
-}
-:is(.demo-growth, .demo-brief) *,
-:is(.demo-growth, .demo-brief) *::before,
-:is(.demo-growth, .demo-brief) *::after { box-sizing: border-box; }
-:is(.demo-growth, .demo-brief) [hidden] { display: none !important; }
-:is(.demo-growth, .demo-brief) :is(h3, h4, h5, p, fieldset) { margin: 0; }
-:is(.demo-growth, .demo-brief) :is(button, input, textarea, select) {
-  max-width: 100%;
-  font: inherit;
-  letter-spacing: normal;
-  text-transform: none;
-}
-:is(.demo-growth, .demo-brief) :is(button, input, textarea, select, summary):focus-visible {
-  outline: 2px solid var(--demo-green);
-  outline-offset: 3px;
-}
-:is(.demo-growth, .demo-brief) .demo-top {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-:is(.demo-growth, .demo-brief) .demo-top > div { flex: 1 1 340px; min-width: 0; }
-:is(.demo-growth, .demo-brief) .demo-eyebrow {
-  color: var(--muted, #233b32);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .08em;
-  line-height: 1.45;
-  text-transform: uppercase;
-}
-:is(.demo-growth, .demo-brief) h3 {
-  margin-top: 9px;
-  font: inherit;
-  font-size: clamp(25px, 3vw, 34px);
-  font-weight: 600;
-  letter-spacing: -.035em;
-  line-height: 1.15;
-}
-:is(.demo-growth, .demo-brief) .demo-subtitle { margin-top: 10px; color: var(--muted, #233b32); max-width: 58ch; }
-:is(.demo-growth, .demo-brief) .demo-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  border: 1px solid var(--demo-border);
-  border-radius: 100px;
-  background: #fff;
-  color: var(--demo-green);
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 1.5;
-}
-:is(.demo-growth, .demo-brief) .demo-badge > span { flex: 0 0 6px; height: 6px; border-radius: 50%; background: var(--demo-green); }
-:is(.demo-growth, .demo-brief) .demo-provenance {
-  margin-bottom: 24px;
-  padding: 12px 16px;
-  border-left: 3px solid var(--accent, var(--demo-lime));
-  border-radius: 0 10px 10px 0;
-  background: #fff;
-  color: var(--muted, #233b32);
-  font-size: 12px;
-  line-height: 1.6;
-}
-:is(.demo-growth, .demo-brief) .demo-control { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
-:is(.demo-growth, .demo-brief) .demo-control > span { font-size: 12px; font-weight: 600; }
-:is(.demo-growth, .demo-brief) .demo-control :is(select, input, textarea) {
-  display: block;
-  width: 100%;
-  min-width: 0;
-  min-height: 46px;
-  margin: 0;
-  padding: 11px 13px;
-  border: 1px solid var(--demo-border);
-  border-radius: 10px;
-  box-shadow: none;
-  background: #fff;
-  color: var(--ink, #233b32);
-  font-size: 14px;
-  line-height: 1.5;
-}
-:is(.demo-growth, .demo-brief) .demo-control select { padding-right: 28px; cursor: pointer; }
-:is(.demo-growth, .demo-brief) .demo-control textarea { min-height: 78px; resize: vertical; }
-:is(.demo-growth, .demo-brief) .demo-control > small { color: var(--muted, #233b32); font-size: 11px; line-height: 1.5; }
-:is(.demo-growth, .demo-brief) .demo-button {
-  display: inline-flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 46px;
-  padding: 10px 16px;
-  border: 1px solid var(--demo-border);
-  border-radius: 10px;
-  box-shadow: none;
-  background: #fff;
-  color: var(--demo-green);
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.5;
-  text-decoration: none;
-  cursor: pointer;
-}
-:is(.demo-growth, .demo-brief) .demo-button:hover { background: #f4f5ef; border-color: var(--demo-green); }
-:is(.demo-growth, .demo-brief) .demo-button-primary { background: var(--demo-green); border-color: var(--demo-green); color: #fff; }
-:is(.demo-growth, .demo-brief) .demo-button-primary:hover { background: var(--demo-green); color: var(--demo-lime); }
-:is(.demo-growth, .demo-brief) .demo-button:disabled { opacity: .5; cursor: not-allowed; }
-:is(.demo-growth, .demo-brief) .demo-button-small { min-height: 44px; padding: 9px 12px; font-size: 12px; }
-:is(.demo-growth, .demo-brief) .demo-card { min-width: 0; padding: 24px; border: 1px solid var(--demo-border); border-radius: 20px; background: #fff; }
-:is(.demo-growth, .demo-brief) .demo-card-heading { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 20px; }
-:is(.demo-growth, .demo-brief) .demo-card-heading > div { min-width: 0; }
-:is(.demo-growth, .demo-brief) h4 { font: inherit; font-size: 17px; font-weight: 600; letter-spacing: -.02em; line-height: 1.4; }
-:is(.demo-growth, .demo-brief) .demo-card-heading p { margin-top: 4px; color: var(--muted, #233b32); font-size: 11px; }
-:is(.demo-growth, .demo-brief) .demo-status { min-height: 22px; margin-top: 12px; color: var(--demo-green); font-size: 12px; }
-:is(.demo-growth, .demo-brief) .demo-sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+/* Demo components (growth dashboard + brief builder). Rendered by demos.js in static markup,
+   bound at runtime. Smallest declared step here is --fs-micro (12px), and no glyph in this file
+   sits inside a scaled viewBox any more, so what the stylesheet says is what the reader is shown. */
+.demo-growth, .demo-brief { background: var(--panel); border: 1px solid var(--edge); border-radius: var(--r-sheet); padding: 34px 34px 28px; }
+/* A reader with JavaScript off gets the archive: the head script never runs, so no `data-case` is
+   stamped, all three case articles stay on screen, and neither application can bind to its host.
+   A scripted route always names a case — the recognised `?id=`, otherwise the first one — so the host
+   below is visible on every route the reader can actually operate, and Signal's dashboard and Briefly's
+   builder are mounted by app.js against the case in view. Out-of-the-layout here means the dead slider
+   and the form that answers nothing are removed from the page and the accessibility tree (`display:
+   none`, not `inert` wearing a lie), and the one static line below says which capability is missing. */
+:root:not([data-case]) [data-growth-demo], :root:not([data-case]) [data-brief-demo] { display: none; }
+.demo-static-note { display: none; font-size: var(--fs-small); color: var(--muted); line-height: 1.7; max-width: 68ch; }
+:root:not([data-case]) .demo-static-note { display: block; }
+.demo-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 18px; }
+.demo-top h3 { font-family: var(--serif); font-size: var(--fs-demo); font-weight: 400; letter-spacing: calc(-0.02em * var(--track-scale)); }
+:root[lang^="zh"] .demo-top h3 { font-size: var(--fs-quote); }
+.demo-eyebrow { font-size: var(--fs-small); font-weight: 600; color: var(--muted); margin-bottom: 8px; }
+.demo-subtitle { color: var(--muted); font-size: var(--fs-ui); margin-top: 6px; }
+.demo-badge { display: inline-flex; align-items: center; gap: 8px; font-size: var(--fs-small); background: var(--surface-deep); border-radius: var(--r-pill); padding: 6px 14px; white-space: nowrap; }
+.demo-badge > span { width: 7px; height: 7px; border-radius: 50%; background: var(--sage); }
+.demo-provenance { font-size: var(--fs-small); line-height: 1.7; color: var(--muted); background: var(--surface); border-radius: var(--r-ctl); padding: 10px 16px; margin-bottom: 24px; max-width: 68ch; }
+.demo-toolbar { display: flex; align-items: flex-end; gap: 18px; flex-wrap: wrap; margin-bottom: 20px; }
+.demo-control { display: flex; flex-direction: column; gap: 6px; font-size: var(--fs-label); color: var(--muted); flex: 1 1 180px; }
+.demo-control select, .demo-control input, .demo-control textarea { font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: var(--r-ctl); min-height: 46px; padding: 10px 14px; width: 100%; }
+.demo-control textarea { min-height: 74px; resize: vertical; line-height: 1.6; }
+.demo-control select:focus-visible, .demo-control input:focus-visible, .demo-control textarea:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.demo-control small { font-size: var(--fs-small); line-height: 1.6; }
+.demo-toolbar-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.demo-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 10px 20px; border-radius: var(--r-pill); font-size: var(--fs-ui); transition: background 0.18s, transform 0.18s; }
+.demo-button:active { transform: translateY(1px); }
+.demo-button-primary { background: var(--ink); color: var(--paper); }
+.demo-button-primary:hover { background: var(--ink-hover); }
+.demo-button-secondary { background: var(--surface); }
+.demo-button-secondary:hover { background: var(--surface-deep); }
+.demo-button-small { padding: 8px 16px; font-size: var(--fs-label); background: var(--surface); }
+.demo-button:disabled { opacity: 0.45; cursor: default; }
+.demo-period { font-size: var(--fs-label); color: var(--muted); margin-bottom: 16px; }
+.demo-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-bottom: 22px; }
+.demo-metric { background: var(--surface); border-radius: var(--r-card); padding: 16px 18px; min-width: 0; }
+.demo-metric-featured { background: var(--ink); color: var(--paper); }
+.demo-metric-featured .demo-metric-label, .demo-metric-featured .demo-metric-note { color: #c2cfba; }
+.demo-metric-label { display: block; font-size: var(--fs-small); color: var(--muted); }
+.demo-metric strong { display: block; font-size: var(--fs-metric); font-weight: 600; line-height: 1.3; letter-spacing: calc(-0.02em * var(--track-scale)); white-space: nowrap; }
+.demo-metric-note { display: block; font-size: var(--fs-micro); color: var(--muted); margin-top: 4px; }
+.demo-growth-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; margin-bottom: 16px; }
+.demo-card { background: var(--paper); border: 1px solid var(--hairline); border-radius: var(--r-card); padding: 20px; min-width: 0; }
+.demo-card-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; }
+.demo-card-heading h4 { font-size: var(--fs-body); font-weight: 600; }
+.demo-card-heading p { font-size: var(--fs-small); color: var(--muted); }
+.demo-chart-key { display: inline-flex; align-items: center; gap: 7px; font-size: var(--fs-small); color: var(--muted); }
+.demo-chart-key i { width: 14px; height: 4px; border-radius: 2px; background: var(--sage); }
+/* The plot keeps the viewBox; the labels live outside it, in real px. See chartMarkup in
+   demo-views.js for the measured reason. padding-bottom reserves the row under the field for the
+   date labels, which are positioned from the field's own bottom edge. */
+.demo-chart-plot { display: grid; grid-template-columns: 46px minmax(0, 1fr); padding-bottom: 24px; }
+.demo-chart-ticks { position: relative; }
+.demo-chart-field { position: relative; }
+.demo-chart-field svg { display: block; width: 100%; height: auto; }
+.demo-chart-label { font-size: var(--fs-small); font-family: var(--sans); line-height: 1; color: var(--muted); white-space: nowrap; }
+.demo-chart-ticks .demo-chart-label { position: absolute; right: 8px; transform: translateY(-50%); font-variant-numeric: tabular-nums lining-nums; }
+.demo-chart-x { position: absolute; top: 100%; margin-top: 7px; }
+.demo-chart-x-first { left: 0; }
+.demo-chart-x-middle { transform: translateX(-50%); }
+.demo-chart-x-last { right: 0; }
+.demo-chart-grid { stroke: #e2e7d9; stroke-width: 1; vector-effect: non-scaling-stroke; }
+.demo-chart-area { fill: #b3c68133; }
+.demo-chart-line { fill: none; stroke: var(--sage); stroke-width: 2.4; vector-effect: non-scaling-stroke; }
+.demo-chart-dot { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: var(--sage); transform: translate(-50%, -50%); }
+.demo-chart-summary { font-size: var(--fs-label); color: var(--muted); line-height: 1.7; margin-top: 10px; }
+.demo-budget span { display: flex; justify-content: space-between; gap: 12px; font-size: var(--fs-label); color: var(--muted); }
+.demo-budget output { color: var(--ink); font-weight: 600; }
+.demo-budget input[type="range"] { width: 100%; min-height: 44px; accent-color: var(--ink); background: transparent; border: 0; padding: 0; }
+.demo-budget-ends { display: flex; justify-content: space-between; font-size: var(--fs-small); color: var(--muted); }
+.demo-forecast-label { display: block; font-size: var(--fs-small); color: var(--muted); margin-top: 16px; }
+.demo-forecast-value { display: block; font-family: var(--serif); font-size: var(--fs-figure); font-weight: 400; letter-spacing: calc(-0.03em * var(--track-scale)); line-height: 1.2; }
+.demo-forecast-orders { font-size: var(--fs-ui); color: var(--muted); margin-top: 4px; }
+.demo-forecast-rule { display: flex; justify-content: space-between; gap: 14px; font-size: var(--fs-label); border-top: 1px solid var(--hairline); margin-top: 12px; padding-top: 10px; color: var(--muted); }
+.demo-assumption { font-size: var(--fs-small); line-height: 1.7; color: var(--muted); margin-top: 16px; max-width: 66ch; }
+/* The product table is the one artifact in the dashboard whose columns cannot wrap:
+   a four-column row with a product name, two money values and a ratio needs ~470px.
+   At a phone width it becomes a horizontal scroller, so it gets the same visible thumb
+   as the case tables instead of a silent clip. */
+.demo-table-card:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.demo-table-card { margin-bottom: 14px; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-color: var(--thumb) var(--paper); scrollbar-width: thin; background: linear-gradient(to right, var(--paper) 40%, #0000) left / 40px 100% no-repeat local, linear-gradient(to left, var(--paper) 40%, #0000) right / 40px 100% no-repeat local, radial-gradient(farthest-side at 0 50%, #233b3226, #0000) left / 14px 100% no-repeat scroll, radial-gradient(farthest-side at 100% 50%, #233b3226, #0000) right / 14px 100% no-repeat scroll; }
+.demo-table-card::-webkit-scrollbar { height: 12px; }
+.demo-table-card::-webkit-scrollbar-track { background: var(--gutter); }
+.demo-table-card::-webkit-scrollbar-thumb { background: var(--thumb); border-radius: var(--r-pill); border: 3px solid var(--gutter); }
+.demo-table-card table { font-size: var(--fs-ui); min-width: 440px; }
+.demo-sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.demo-product-name { display: flex; align-items: center; gap: 12px; }
+.demo-product-name > span { min-width: 0; overflow-wrap: anywhere; }
+.demo-product-dot { width: 30px; height: 30px; border-radius: 50%; background: var(--surface-deep); display: inline-grid; place-items: center; font-size: var(--fs-micro); font-weight: 600; flex-shrink: 0; }
+.demo-product-name small { display: block; font-size: var(--fs-micro); color: var(--muted); font-weight: 400; }
+.demo-footnote, .demo-status { font-size: var(--fs-small); color: var(--muted); line-height: 1.7; margin-top: 10px; }
+.demo-status { min-height: 20px; }
 
-.demo-growth .demo-toolbar { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px; }
-.demo-growth .demo-toolbar > .demo-control:first-child { flex: 1 1 170px; }
-.demo-growth .demo-toolbar > .demo-control:nth-child(2) { flex: 1 1 210px; }
-.demo-growth .demo-toolbar-actions { display: flex; flex: 1 1 auto; justify-content: flex-end; gap: 8px; }
-.demo-growth .demo-period { margin: 16px 0; color: var(--muted, #233b32); font-size: 12px; }
-.demo-growth .demo-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 20px; }
-.demo-growth .demo-metric { display: flex; flex-direction: column; min-width: 0; padding: 19px 20px; border: 1px solid var(--demo-border); border-radius: 16px; background: #fff; }
-.demo-growth .demo-metric-label { min-height: 19px; font-size: 11px; font-weight: 500; }
-.demo-growth .demo-metric strong { margin-top: 12px; font-size: clamp(24px, 3vw, 34px); font-weight: 600; letter-spacing: -.04em; line-height: 1.2; font-variant-numeric: tabular-nums; }
-.demo-growth .demo-metric-note { margin-top: 10px; color: var(--muted, #233b32); font-size: 10px; line-height: 1.45; }
-.demo-growth .demo-metric-featured { background: var(--demo-green); border-color: var(--demo-green); color: #fff; }
-.demo-growth .demo-metric-featured .demo-metric-note { color: #e7eadf; }
-.demo-growth .demo-growth-grid { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(260px, 1fr); align-items: stretch; gap: 20px; margin-bottom: 20px; }
-.demo-growth .demo-chart-card { display: flex; flex-direction: column; }
-.demo-growth .demo-chart-card [data-growth-chart] { margin-top: auto; margin-bottom: auto; min-width: 0; }
-.demo-growth .demo-chart-key { display: inline-flex; align-items: center; gap: 6px; padding-top: 3px; color: var(--muted, #233b32); font-size: 10px; }
-.demo-growth .demo-chart-key i { width: 6px; height: 6px; border-radius: 50%; background: var(--demo-green); }
-.demo-growth [data-growth-chart] svg { display: block; width: 100%; height: auto; overflow: visible; }
-.demo-growth .demo-chart-grid { stroke: #e7eadf; stroke-width: 1; }
-.demo-growth .demo-chart-label { fill: var(--muted, #233b32); font-family: inherit; font-size: 12px; }
-.demo-growth .demo-chart-area { fill: #dfef85; fill-opacity: .42; }
-.demo-growth .demo-chart-line { fill: none; stroke: #233b32; stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; vector-effect: non-scaling-stroke; }
-.demo-growth .demo-chart-dot { fill: #233b32; stroke: #fff; stroke-width: 2; }
-.demo-growth .demo-chart-summary { margin: 12px 0 0; color: var(--muted, #233b32); font-size: 11px; line-height: 1.6; }
-.demo-growth .demo-forecast { background: var(--paper, #f4f5ef); }
-.demo-growth .demo-forecast .demo-card-heading .demo-eyebrow { margin-bottom: 7px; color: var(--demo-green); }
-.demo-growth .demo-forecast h4 { max-width: 27ch; font-size: 19px; line-height: 1.35; }
-.demo-growth .demo-budget { display: block; margin: 0 0 22px; }
-.demo-growth .demo-budget > span:first-child { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px; font-size: 11px; font-weight: 500; }
-.demo-growth .demo-budget output { font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; }
-.demo-growth .demo-budget input { display: block; width: 100%; height: 44px; margin: 0; padding: 0; accent-color: var(--demo-green); cursor: pointer; touch-action: pan-y; }
-.demo-growth .demo-budget-ends { display: flex; justify-content: space-between; color: var(--muted, #233b32); font-size: 10px; }
-.demo-growth .demo-forecast-label { display: block; font-size: 11px; }
-.demo-growth .demo-forecast-value { display: block; margin-top: 4px; color: var(--demo-green); font-size: 35px; font-weight: 600; letter-spacing: -.04em; line-height: 1.2; font-variant-numeric: tabular-nums; }
-.demo-growth .demo-forecast-orders { margin: 4px 0 16px; color: var(--muted, #233b32); font-size: 12px; }
-.demo-growth .demo-forecast-rule { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px solid var(--demo-border); font-size: 11px; }
-.demo-growth .demo-forecast-rule strong { font-weight: 600; }
-.demo-growth .demo-assumption { margin-top: 15px; color: var(--muted, #233b32); font-size: 10px; line-height: 1.6; }
-.demo-growth .demo-table-card table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 12px; }
-.demo-growth .demo-table-card th { width: 20%; padding: 0 8px 12px; color: var(--muted, #233b32); font-size: 10px; font-weight: 500; text-align: right; vertical-align: bottom; }
-.demo-growth .demo-table-card th:first-child { width: 40%; padding-left: 0; text-align: left; }
-.demo-growth .demo-table-card td { padding: 16px 8px; border-top: 1px solid var(--demo-border); text-align: right; vertical-align: middle; font-variant-numeric: tabular-nums; }
-.demo-growth .demo-table-card td:first-child { padding-left: 0; text-align: left; }
-.demo-growth .demo-table-card :is(th, td):last-child { padding-right: 0; }
-.demo-growth .demo-product-name { display: flex; align-items: center; gap: 12px; font-weight: 600; }
-.demo-growth .demo-product-name small { display: block; margin-top: 3px; color: var(--muted, #233b32); font-size: 10px; font-weight: 400; }
-.demo-growth .demo-product-dot { display: grid; flex: 0 0 32px; place-items: center; width: 32px; height: 32px; border-radius: 9px; background: #f4f5ef; color: var(--demo-green); font-size: 10px; font-weight: 500; }
-.demo-growth .demo-footnote { margin: 14px 0 0; color: var(--muted, #233b32); font-size: 10px; line-height: 1.6; }
+/* brief demo */
+.demo-brief-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 18px; }
+.demo-brief-form, .demo-brief-output { background: var(--paper); border: 1px solid var(--hairline); border-radius: var(--r-card); padding: 22px; min-width: 0; }
+.demo-presets { border: 1px solid var(--hairline); border-radius: var(--r-card); padding: 14px 16px 16px; margin: 0 0 18px; }
+.demo-presets legend { font-size: var(--fs-small); color: var(--muted); padding-inline: 6px; }
+.demo-presets div { display: flex; gap: 8px; flex-wrap: wrap; }
+/* These chips are the same object as .filters button and .concept-controls button — a row of
+   single-select presets that paints its own pill — so they answer an input the same way: the
+   hovered rest lifts to --surface-deep, and the press takes the one scale the whole site uses for
+   :active (styles.css, transform-only so it stays on the compositor). Written here rather than added
+   to that sheet because demos.css loads after it and would override the transition either way.
+   Declared before the [aria-pressed] rule so the selected chip keeps the ink fill under the cursor,
+   exactly as the filter row does. */
+.demo-presets button { border-radius: var(--r-pill); min-height: 44px; padding: 8px 16px; font-size: var(--fs-label); background: var(--surface); transition: background .18s, color .18s, transform .12s cubic-bezier(.2,.8,.3,1); }
+.demo-presets button:hover { background: var(--surface-deep); }
+.demo-presets button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.demo-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.demo-form-error { background: #f3e4d9; border-left: 4px solid #8a5a2b; color: #4e3a24; font-size: var(--fs-label); line-height: 1.7; padding: 12px 16px; border-radius: var(--r-ctl); margin-top: 16px; }
+.demo-form-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+.demo-method { margin-top: 18px; border-top: 1px solid var(--hairline); padding-top: 12px; }
+/* `display: inline-flex` drops the native disclosure marker, so the summary read as static bold
+   text. The plus/minus is the replacement, and it flips with the open state. */
+.demo-method summary { min-height: 44px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: var(--fs-label); font-weight: 600; cursor: pointer; }
+.demo-method summary::-webkit-details-marker { display: none; }
+.demo-method summary::after { content: '+'; font-size: var(--fs-body-lg); line-height: 1; color: var(--muted); }
+.demo-method[open] summary::after { content: '−'; }
+.demo-method p { font-size: var(--fs-label); line-height: 1.8; color: var(--muted); }
+.demo-brief-output .demo-card-heading { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+.demo-result-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.demo-section-label { display: block; font-size: var(--fs-small); font-weight: 600; color: var(--muted); margin-bottom: 6px; }
+.demo-brief-hook p { font-family: var(--serif); font-size: var(--fs-title); line-height: 1.4; letter-spacing: calc(-0.015em * var(--track-scale)); }
+.demo-shot-list { margin-top: 20px; }
+.demo-shot-list ol { list-style: none; margin: 0; padding: 0; }
+.demo-shot-list li { display: grid; grid-template-columns: 72px 1fr; gap: 4px 16px; border-top: 1px solid var(--hairline); padding-block: 12px; font-size: var(--fs-ui); line-height: 1.7; }
+.demo-shot-time { font-size: var(--fs-label); color: var(--muted); font-weight: 600; padding-top: 2px; }
+.demo-shot-list small { grid-column: 2; font-size: var(--fs-small); color: var(--muted); }
+.demo-brief-cta, .demo-brief-rationale { margin-top: 18px; }
+.demo-brief-cta p { font-size: var(--fs-para); font-weight: 550; }
+.demo-brief-rationale p { font-size: var(--fs-label); line-height: 1.8; color: var(--muted); }
+.demo-brief-output h4[tabindex="-1"]:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
 
-.demo-brief .demo-brief-grid { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: start; gap: 20px; }
-.demo-brief .demo-brief-form { display: flex; flex-direction: column; gap: 20px; }
-.demo-brief .demo-presets { min-width: 0; padding: 0 0 20px; border: 0; border-bottom: 1px solid var(--demo-border); }
-.demo-brief .demo-presets legend { margin-bottom: 10px; padding: 0; font-size: 12px; font-weight: 600; }
-.demo-brief .demo-presets > div { display: flex; flex-wrap: wrap; gap: 6px; }
-.demo-brief .demo-presets button { flex: 1 1 90px; min-width: 0; min-height: 44px; padding: 8px 10px; border: 1px solid var(--demo-border); border-radius: 10px; background: #fff; color: var(--demo-green); font-size: 11px; font-weight: 500; line-height: 1.4; cursor: pointer; }
-.demo-brief .demo-presets button[aria-pressed="true"] { border-color: var(--demo-green); background: var(--demo-green); color: #fff; }
-.demo-brief .demo-presets button:hover { border-color: var(--demo-green); }
-.demo-brief .demo-form-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
-.demo-brief .demo-form-actions { display: flex; flex-wrap: wrap; gap: 8px; }
-.demo-brief .demo-form-actions > .demo-button-primary { flex: 1 1 auto; }
-.demo-brief .demo-form-error { padding: 12px; border: 1px solid var(--demo-green); border-radius: 10px; background: #f4f5ef; color: var(--demo-green); font-size: 12px; }
-.demo-brief [aria-invalid="true"] { border: 2px solid var(--demo-green); background: #f4f5ef; }
-.demo-brief .demo-method { border-top: 1px solid var(--demo-border); padding-top: 16px; color: var(--muted, #233b32); font-size: 11px; }
-.demo-brief .demo-method summary { min-height: 44px; padding: 12px 0; color: var(--demo-green); cursor: pointer; }
-.demo-brief .demo-method p { margin-top: 8px; line-height: 1.7; }
-.demo-brief .demo-result-actions { display: flex; flex-wrap: wrap; gap: 6px; }
-.demo-brief .demo-section-label { display: block; color: var(--muted, #233b32); font-size: 10px; font-weight: 600; letter-spacing: .04em; }
-.demo-brief .demo-brief-hook { padding: 20px; border-radius: 14px; background: #f4f5ef; }
-.demo-brief .demo-brief-hook p { margin-top: 10px; font-size: 21px; font-weight: 500; letter-spacing: -.02em; line-height: 1.4; }
-.demo-brief h5 { font: inherit; font-size: 12px; font-weight: 600; }
-.demo-brief .demo-shot-list { margin-top: 24px; }
-.demo-brief .demo-shot-list ol { margin: 14px 0 0; padding: 0; list-style: none; }
-.demo-brief .demo-shot-list li { display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 12px; padding: 17px 0; border-top: 1px solid var(--demo-border); }
-.demo-brief .demo-shot-time { display: inline-flex; align-items: center; justify-content: center; align-self: start; min-height: 28px; padding: 4px 6px; border-radius: 6px; background: #f4f5ef; color: var(--demo-green); font-size: 10px; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.demo-brief .demo-shot-list li p { font-size: 12px; line-height: 1.65; }
-.demo-brief .demo-shot-list li small { display: block; margin-top: 9px; color: var(--muted, #233b32); font-size: 10px; line-height: 1.6; }
-.demo-brief .demo-shot-list li small span { color: var(--demo-green); }
-.demo-brief .demo-brief-cta { margin-top: 8px; padding: 18px 20px; border: 1px solid var(--demo-border); border-radius: 14px; }
-.demo-brief .demo-brief-cta p { margin-top: 7px; font-size: 14px; font-weight: 500; line-height: 1.6; }
-.demo-brief .demo-brief-rationale { margin-top: 24px; }
-.demo-brief .demo-brief-rationale p { margin-top: 9px; color: var(--muted, #233b32); font-size: 11px; line-height: 1.75; }
-.demo-brief[data-brief-state="dirty"] [data-brief-version] { color: var(--demo-green); font-weight: 600; }
-
-@media (max-width: 960px) {
-  .demo-growth .demo-growth-grid { grid-template-columns: minmax(0, 1fr); }
-  .demo-growth .demo-chart-card { min-height: 280px; }
-  .demo-growth .demo-forecast { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 32px; }
-  .demo-growth .demo-forecast .demo-card-heading { grid-column: 1; margin-bottom: 10px; }
-  .demo-growth .demo-budget { grid-column: 1; grid-row: 2; }
-  .demo-growth [data-growth-forecast] { grid-column: 2; grid-row: 1 / span 2; }
-  .demo-growth .demo-assumption { grid-column: 1 / -1; }
-  .demo-brief .demo-brief-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-  .demo-brief .demo-brief-output .demo-card-heading { flex-direction: column; }
+@media (max-width: 900px) {
+  .demo-growth-grid, .demo-brief-grid { grid-template-columns: 1fr; }
+  .demo-metrics { grid-template-columns: 1fr 1fr; }
 }
-@media (max-width: 720px) {
-  :is(.demo-growth, .demo-brief) { border-radius: 20px; }
-  :is(.demo-growth, .demo-brief) .demo-card { padding: 20px; border-radius: 16px; }
-  :is(.demo-growth, .demo-brief) .demo-top { gap: 14px; }
-  :is(.demo-growth, .demo-brief) .demo-top > div { flex-basis: 100%; }
-  .demo-growth .demo-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .demo-growth .demo-toolbar > .demo-control:first-child { flex-basis: 160px; }
-  .demo-growth .demo-toolbar > .demo-control:nth-child(2) { flex-basis: 180px; }
-  .demo-growth .demo-toolbar-actions { justify-content: flex-start; }
-  .demo-brief .demo-brief-grid { grid-template-columns: minmax(0, 1fr); }
-  .demo-brief .demo-brief-output .demo-card-heading { flex-direction: row; }
+@media (max-width: 430px) {
+  /* Labels are real px now, so the constraint inverts: a 46px tick column plus three date labels
+     would leave a 141px by 51px plot at 320px — a shape too small to read. The ticks and the middle
+     dates go, and the plot keeps the card's whole width. Nothing is lost: the summary sentence under
+     the chart already names the low, the high, and the day the high falls on. */
+  .demo-chart-plot { grid-template-columns: minmax(0, 1fr); padding-bottom: 20px; }
+  .demo-chart-ticks { display: none; }
+  .demo-chart-x-middle { display: none; }
 }
-@media (max-width: 480px) {
-  :is(.demo-growth, .demo-brief) .demo-card { padding: 16px; }
-  :is(.demo-growth, .demo-brief) .demo-provenance { padding: 10px 12px; }
-  .demo-growth .demo-metrics { gap: 8px; }
-  .demo-growth .demo-metric { padding: 15px 13px; border-radius: 12px; }
-  .demo-growth .demo-metric strong { font-size: 27px; }
-  .demo-growth .demo-metric-label { min-height: 34px; }
-  .demo-growth .demo-metric-note { min-height: 29px; }
-  .demo-growth .demo-growth-grid { gap: 12px; }
-  .demo-growth .demo-chart-card { min-height: 240px; }
-  .demo-growth .demo-chart-key { display: none; }
-  .demo-growth .demo-chart-label { font-size: 15px; }
-  .demo-growth .demo-forecast { display: block; }
-  .demo-growth .demo-forecast .demo-card-heading { margin-bottom: 20px; }
-  .demo-growth .demo-forecast h4 { max-width: none; }
-  .demo-growth .demo-table-card table { font-size: 11px; }
-  .demo-growth .demo-table-card :is(th, td) { padding-right: 3px; padding-left: 3px; }
-  .demo-growth .demo-table-card th:first-child { width: 36%; }
-  .demo-growth .demo-table-card th:nth-child(2) { width: 17%; }
-  .demo-growth .demo-table-card th:nth-child(3) { width: 27%; }
-  .demo-growth .demo-table-card th:nth-child(4) { width: 20%; }
-  .demo-growth .demo-product-dot { display: none; }
-  .demo-brief .demo-brief-output .demo-card-heading { flex-direction: column; }
-  .demo-brief .demo-shot-list li { grid-template-columns: 48px minmax(0, 1fr); gap: 10px; }
-  .demo-brief .demo-brief-hook { padding: 16px; }
-  .demo-brief .demo-brief-hook p { font-size: 19px; }
+@media (max-width: 560px) {
+  .demo-growth, .demo-brief { padding: 22px 16px 18px; border-radius: var(--r-card); }
+  .demo-metrics { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .demo-form-row { grid-template-columns: 1fr; }
+  /* The four metric cards are one component read as rows of two, and the note is the last line of a
+     three-line stack. Above it sit the label and the value, and only one of them can wrap: the value
+     is `white-space: nowrap`, so at phone width the label is the line that breaks — "Return on ad
+     spend" takes two lines in a 130px card and drops its note 22.1px below the note of the card
+     beside it. The label therefore carries a two-line box here (2lh is the element's own line-height,
+     so the reservation is right in both locales, where CJK runs at 1.85 and Latin at 1.7). That holds
+     every note to the same offset inside its card without moving any number onto the label's line. */
+  .demo-metric-label { min-height: 2lh; }
 }

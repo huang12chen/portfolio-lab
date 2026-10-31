@@ -1,89 +1,108 @@
-/* Motion layer: the same gallery, with one shared rhythm and physics. */
-:root{--motion-ease:cubic-bezier(.22,.75,.18,1)}
-.hero-copy,.hero-visual{animation:none}
-.title-line{display:block;overflow:hidden;line-height:1.3;padding-bottom:.08em;margin-bottom:-.08em}
-.title-line>span{display:block;transform-origin:0 100%}
-.header-actions{display:flex;align-items:center;gap:22px}
-.site-header{position:sticky;top:0;transition:background .3s var(--motion-ease)}
-.site-header.is-scrolled{background:rgba(244,245,239,.96);backdrop-filter:blur(12px)}
-.motion-toggle{width:44px;height:44px;display:grid;place-items:center;position:relative;background:transparent;color:var(--ink);border-radius:50%;transition:background .2s}
-.motion-toggle:hover{background:var(--surface)}
-.motion-toggle>span{grid-area:1/1;font-family:Georgia,serif;font-size:22px;line-height:1}
-.motion-toggle .play-mark{display:none;font-size:27px}
-.motion-toggle[aria-pressed=true] .pause-mark{display:none}
-.motion-toggle[aria-pressed=true] .play-mark{display:block}
-.motion-toggle:disabled{opacity:.45;cursor:default}
-.reading-progress{position:fixed;z-index:100;left:0;top:0;width:100%;height:3px;background:var(--ink);transform:scaleX(0);transform-origin:left;pointer-events:none}
-.particle-artwork{position:relative;isolation:isolate;aspect-ratio:1.5;background:var(--paper);overflow:hidden}
-.particle-artwork>img{width:100%;height:100%;object-fit:cover;object-position:48% 50%}
-.particle-artwork.particles-ready>img{opacity:0}
-.art-particles{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.artwork-hint{display:none;font-size:11px;letter-spacing:.02em;padding:6px 6px 3px;color:inherit;opacity:.72}
-html[data-motion=on] .artwork-hint{display:block}
-.hint-touch{display:none}
-.visual-controls{flex-wrap:wrap;gap:4px 12px}
-.art-replay{display:inline-flex;min-height:44px;align-items:center;gap:15px;padding:7px 8px;background:transparent;font-size:12px;white-space:nowrap}
-.art-replay>span{font-family:Georgia,serif;font-size:24px;line-height:1;transition:transform .6s var(--motion-ease)}
-.art-replay:hover>span{transform:rotate(-180deg)}
-.visual-note{margin-left:auto}
-.project-card{perspective:1100px}
-.project-image{transform-style:preserve-3d;transform-origin:center}
-.project-image:after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0;background:radial-gradient(circle at var(--pointer-x,50%) var(--pointer-y,50%),rgba(255,255,255,.25),transparent 56%);transition:opacity .35s}
-.cursor-enabled .project-image:hover:after{opacity:1}
-.project-open{transition:transform .3s var(--ease),opacity .2s}
-html.cursor-enabled,html.cursor-enabled body,html.cursor-enabled body *{cursor:none!important}
-html.cursor-enabled :is(input,textarea,select,[contenteditable]:not([contenteditable=false]),iframe,video,audio){cursor:auto!important}
-.site-cursor{position:fixed;inset:0;z-index:1000;pointer-events:none;opacity:0;mix-blend-mode:difference;transition:opacity .15s}
-.site-cursor.is-active{opacity:1}
-.cursor-dot{position:absolute;left:-4px;top:-4px;width:8px;height:8px}
-.cursor-dot:before{content:'';display:block;width:100%;height:100%;border-radius:50%;background:#fff;transition:transform .2s var(--motion-ease)}
-.cursor-ring{position:absolute;left:-16px;top:-16px;width:32px;height:32px}
-.cursor-ring>div{width:100%;height:100%;border:1px solid rgba(255,255,255,.7);border-radius:50%;opacity:.4;transform:scale(.85);transition:transform .28s var(--motion-ease),opacity .2s,background .2s}
-.site-cursor.is-link .cursor-dot:before{transform:scale(.65)}
-.site-cursor.is-link .cursor-ring>div{transform:scale(1.3);opacity:.85;background:rgba(255,255,255,.06)}
-.site-cursor.is-pressed .cursor-dot:before{transform:scale(.4)}
-.site-cursor.is-pressed .cursor-ring>div{transform:scale(.7);opacity:.9}
-.motion-ready .will-reveal{transform:none;transition:none}
-@media(max-width:1100px){.header-actions{gap:15px}.desktop-nav{gap:32px}}
-@media(max-width:900px){.particle-artwork{aspect-ratio:1.65}}
-@media(max-width:700px){.header-actions{gap:9px}.motion-toggle{width:44px;height:44px}.site-header.is-scrolled{backdrop-filter:blur(8px)}}
-@media(max-width:450px){.particle-artwork{aspect-ratio:1.18}.visual-controls{gap:0 6px}.art-replay{gap:9px;padding-inline:3px;font-size:11px}.artwork-hint{font-size:10px;padding-top:4px}.visual-note{font-size:10px}.header-actions{gap:4px}}
-@media(hover:none),(pointer:coarse){.hint-pointer{display:none}.hint-touch{display:inline}.project-image:after{display:none}}
-html[data-motion=off] *,html[data-motion=off] *:before,html[data-motion=off] *:after{animation:none!important;transition:none!important}
-::view-transition-group(*){animation-duration:.65s;animation-timing-function:var(--motion-ease)}
-::view-transition-old(root){animation:folio-leave .25s ease both}
-::view-transition-new(root){animation:folio-enter .4s ease both}
-::view-transition-group(site-header){animation:none}
-@keyframes folio-leave{to{opacity:0}}
-@keyframes folio-enter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-html[data-motion=off]::view-transition-group(*),html[data-motion=off]::view-transition-old(*),html[data-motion=off]::view-transition-new(*){animation:none!important}
-@media(prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}.artwork-hint{display:none!important}.reading-progress{display:none}}
-@media print{.motion-toggle,.reading-progress,.artwork-hint,.art-replay,.work-cursor{display:none!important}.site-header{position:static}.particle-artwork.particles-ready>img{opacity:1}.art-particles{display:none}.motion-ready *{transform:none!important;opacity:1!important;clip-path:none!important}}
+/* Depth and motion layer. Everything here is CSS-driven and removable, and exactly one thing
+   decides whether it is: the data-motion attribute on <html>. motion.js seeds that attribute from
+   prefers-reduced-motion, so a reader who has asked the system for stillness lands on the static
+   arrangement — which is the final state, not a hidden one — and the header control can move them
+   off it deliberately. There is deliberately no second prefers-reduced-motion gate in the rules
+   below: gating the same decision twice made the two mechanisms disagree, and the pause control's
+   play half was a lie — clicking it set data-motion="on" while the media query kept every rule
+   switched off, so the button promised motion and delivered none. */
 
-/* Quiet motion connects opening, reading, and the final invitation. */
-.section-heading,.site-footer,.project-story,.credits-section{position:relative}
-.section-heading:before,.site-footer:before,.project-story:before,.credits-section:before{content:'';position:absolute;left:0;right:0;top:0;height:1px;background:var(--ink);opacity:.15;transform-origin:left;pointer-events:none}
-.section-heading:before{top:auto;bottom:-20px}
-html[data-motion=on] .motion-rule:before{transform:scaleX(0);transition:transform 1.1s var(--motion-ease)}
-html[data-motion=on] .motion-rule.is-line-visible:before{transform:scaleX(1)}
-.hero-role:before{content:'';display:inline-block;width:5px;height:5px;margin-right:10px;vertical-align:.15em;background:currentColor;border-radius:50%}
-html[data-motion=on] .hero-role:before{animation:quiet-pulse 4.6s ease-in-out infinite}
-@keyframes quiet-pulse{0%,100%{opacity:.5;transform:scale(.9)}50%{opacity:.9;transform:scale(1.15)}}
-.wordmark{transition:opacity .25s}
-.wordmark:hover{opacity:.72}
-.button>span,.nav-contact>span,.text-link>span{display:inline-block;transition:transform .3s var(--motion-ease)}
-.button:hover>span,.nav-contact:hover>span,.text-link:hover>span{transform:translate(2px,-2px)}
-.text-link,.footer-bottom>a,.footer-invitation{background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:0 100%;background-size:0% 1px;transition:background-size .45s var(--motion-ease),color .25s}
-.text-link:hover,.text-link:focus-visible,.footer-bottom>a:hover,.footer-bottom>a:focus-visible,.footer-invitation:hover,.footer-invitation:focus-visible{background-size:100% 1px}
-.footer-bottom>a:hover{text-decoration:none}
-.filters button{transition:background .22s,color .22s,transform .18s}
-.filters button:active{transform:scale(.96)}
-.menu-toggle>span{display:inline-block;transition:transform .35s var(--motion-ease)}
-.menu-toggle[aria-expanded=true]>span{transform:rotate(45deg)}
-.next-project{transition:background .35s var(--motion-ease)}
-.next-project:hover{background:#dfe5d5}
-.copy-status:not(:empty){animation:status-arrive .35s var(--motion-ease) both}
-@keyframes status-arrive{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
-@media(hover:none),(pointer:coarse){.site-cursor{display:none!important}.wordmark:hover{opacity:1}}
-@media(prefers-reduced-motion:reduce){.site-cursor{display:none!important}}
-@media print{.site-cursor{display:none!important}.hero-role:before{animation:none}.section-heading:before,.site-footer:before,.project-story:before,.credits-section:before{display:none}}
+/* --- pinned context column: sticky is layout, not animation; always available --- */
+@media (min-width: 1081px) {
+  .narrative-context { position: sticky; top: calc(var(--header-h) + 24px); }
+}
+
+/* --- scroll-scrubbed week sequence over the real synthetic dataset --- */
+.scrub-wrap { margin-block: 30px; }
+.scrub-stage { overflow: hidden; border-radius: var(--r-card); }
+.scrub-track { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin: 0; padding: 4px; }
+.scrub-hint, .scrub-rail { display: none; }
+@supports (animation-timeline: view()) and (view-timeline: --x block) {
+  @media (min-width: 900px) {
+    /* The pinned stage is one viewport, and the scroll corridor is three. Measured before this
+       change: a 258px card inside a 340vh wrap left 532px of blank paper under it for the whole
+       pin, and the animation ran on `cover`, which starts while the wrap is still entering and
+       ends after it has left — the last state changed after the stage had already scrolled away.
+       A 100vh stage with `animation-range: contain` makes the timeline and the pin the same
+       interval by construction: the wrap fully covers the viewport exactly while its 100vh child
+       is stuck, so every step happens on screen. 300vh leaves 200vh of corridor, four steps of
+       50vh. Below 900px the pin is off; the four frames are the static arrangement. */
+    :root[data-motion="on"] .scrub-wrap { position: relative; height: 300vh; view-timeline: --scrub block; }
+    :root[data-motion="on"] .scrub-stage { position: sticky; top: 0; display: grid; grid-template-rows: auto auto minmax(0, 1fr); gap: 14px 0; height: 100vh; padding: calc(var(--header-h) + 22px) 0 34px; background: var(--paper); }
+    /* One week fills the pinned spread: the track is exactly four stage-widths, so a 75% shift lands
+       the fourth frame dead centre. The frame is a dashboard, not a card: week label, a chart that
+       takes the flexible middle row, and the three figures in one row underneath. */
+    :root[data-motion="on"] .scrub-track { grid-template-columns: repeat(4, 1fr); gap: 0; padding: 0; width: 400%; height: 100%; animation: scrub-slide steps(4, jump-none) both; animation-timeline: --scrub; animation-range: contain; }
+    :root[data-motion="on"] .scrub-frame { width: 100%; height: 100%; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: clamp(14px, 2.2vh, 24px); padding: clamp(24px, 2.8vw, 40px); }
+    :root[data-motion="on"] .scrub-frame h4 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: var(--fs-sub); line-height: 1.3; }
+    :root[data-motion="on"] .scrub-frame svg { grid-row: 2; place-self: center; width: 100%; height: auto; max-height: 100%; min-height: 0; }
+    /* Three figures read across, not down: column flow puts each dt/dd pair in its own column. */
+    :root[data-motion="on"] .scrub-frame dl { grid-row: 3; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto auto; grid-auto-flow: column; column-gap: 24px; row-gap: 4px; margin: 0; padding-top: 16px; }
+    :root[data-motion="on"] .scrub-frame dt { font-size: var(--fs-label); }
+    :root[data-motion="on"] .scrub-frame dd { margin: 0; font-size: var(--fs-title); font-weight: 600; font-variant-numeric: tabular-nums; }
+    :root[data-motion="on"] .scrub-wrap[data-depth-idle] .scrub-track, :root[data-motion="on"] .scrub-wrap[data-depth-idle] .scrub-rail i { animation-play-state: paused; }
+    :root[data-motion="on"] .scrub-hint { display: block; margin: 0; font-size: var(--fs-small); color: var(--muted); }
+    /* The rail is the continuous read: the frames step, but the fill proves the scroll position
+       maps to progress, so four states read as a scrubbed sequence rather than a slideshow. */
+    :root[data-motion="on"] .scrub-rail { display: block; height: 3px; border-radius: 999px; background: var(--surface-deep); overflow: hidden; }
+    :root[data-motion="on"] .scrub-rail i { display: block; height: 100%; background: var(--ink); transform-origin: 0 50%; animation: scrub-fill linear both; animation-timeline: --scrub; animation-range: contain; }
+    @keyframes scrub-slide { from { transform: translateX(0); } to { transform: translateX(-75%); } }
+    @keyframes scrub-fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  }
+}
+
+/* --- parallax only on the console artifact's own layers (bezel / screen / annotation) --- */
+@supports (animation-timeline: view()) {
+  :root[data-motion="on"] [data-parallax-root] .console-mock { animation: mock-shift linear both; animation-timeline: view(block); animation-range: cover; }
+  :root[data-motion="on"] [data-parallax-root] .console-bezel { animation: bezel-shift linear both; animation-timeline: view(block); animation-range: cover; }
+  :root[data-motion="on"] [data-parallax-root] .console-insight { animation: insight-shift linear both; animation-timeline: view(block); animation-range: cover; }
+  :root[data-motion="on"] [data-parallax-root][data-depth-idle] .console-mock,
+  :root[data-motion="on"] [data-parallax-root][data-depth-idle] .console-bezel,
+  :root[data-motion="on"] [data-parallax-root][data-depth-idle] .console-insight { animation-play-state: paused; }
+  /* Displacement stays within 8% of viewport and only transform is touched. Three layers at three
+     rates, because two plates drifting over a stationary card reads as a wobble rather than as
+     depth. The rates are read off the artifact instead of chosen for feel: at rest the bezel sits
+     7px below the card's bottom edge and the annotation plate 18px below it, so the bezel travels
+     twice its own offset (14px), the annotation twice its own (36px), and the screen rides the card
+     at half the annotation's offset (9px). The gaps between the layers therefore open by exactly the
+     distance that separates them, and the depth is the mock's own geometry. */
+  /* All three layers travel upward only. The stage caption is the mock's next sibling in normal flow,
+     so its first line begins 14px under the card's bottom edge. A symmetric ± excursion spent half of
+     every scroll cycle pushing a plate down into the caption: measured at 390px, the bezel covered
+     "Growth has a rhythm —" and "so the next move shows." by more than a fifth of their line boxes, in
+     both locales, at one scroll offset. Upward-only keeps the separation the depth needs and nothing
+     reaches below its laid-out position, where the type is. */
+  @keyframes mock-shift { from { transform: translateY(0); } to { transform: translateY(-9px); } }
+  @keyframes bezel-shift { from { transform: translateY(0); } to { transform: translateY(-14px); } }
+  @keyframes insight-shift { from { transform: translateY(0); } to { transform: translateY(-36px); } }
+}
+
+/* --- route transitions: cross-document view transitions, no JS required.
+   This block stays gated on the system preference because @view-transition is the only declaration
+   here that is not keyed to data-motion: with no JS the attribute never appears, so keying it to
+   the attribute would hand every no-JS reader a cross-fade they could not decline. With
+   prefers-reduced-motion the block is skipped entirely and navigation is an ordinary page load that
+   keeps reading position through the scroll anchor in the URL. */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  :root[data-motion="on"] .wordmark { view-transition-name: wordmark; }
+  :root[data-motion="on"] .site-header { view-transition-name: header; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.3s; }
+}
+
+/* --- control feedback: immediate, transform/opacity only --- */
+:root[data-motion="on"] { scroll-behavior: smooth; }
+:root[data-motion="on"] .project-image .console-mock { transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1); }
+:root[data-motion="on"] .project-card:hover .console-mock { transform: translateY(-4px); }
+:root[data-motion="on"] .note-back, :root[data-motion="on"] .note-front { transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1); }
+:root[data-motion="on"] .project-card:hover .note-front { transform: rotate(-3deg) translateY(-3px); }
+:root[data-motion="on"] .project-card:hover .note-back { transform: rotate(6deg) translateY(-6px); }
+:root[data-motion="on"] .brief-bottle { transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1); }
+:root[data-motion="on"] .project-card:hover .brief-bottle { transform: rotate(-3deg) translateY(-3px); }
+
+/* --- the teardown path: the pause control, or a system that already asked for stillness --- */
+:root[data-motion="off"] .scrub-wrap { height: auto; }
+:root[data-motion="off"] .scrub-stage { position: static; height: auto; }
+:root[data-motion="off"] .scrub-track { animation: none; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); width: auto; height: auto; }
+:root[data-motion="off"] .console-mock, :root[data-motion="off"] .console-bezel, :root[data-motion="off"] .console-insight { animation: none; transform: none; }
+:root[data-motion="off"] .site-header { transition: none; }
