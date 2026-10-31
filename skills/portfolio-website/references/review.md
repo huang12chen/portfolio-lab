@@ -40,5 +40,7 @@ Use these problem-and-response pairs to improve a portfolio. Choose the relevant
 | The opening did not communicate the available work | Combine position and overview with concrete names, role, material, and outcome at case entry |
 | One desktop size worked but mobile or wide screens did not | Include the reported size, representative widths, long copy, and real media; no overflow does not mean no cropping |
 | A control-looking label was only an illustration | Make illustrations descriptive; primary actions must actually work |
+| A fictional case shipped invented numbers with nothing saying they are invented | Overall disclosure above the fold plus a specific label beside each invented metric; name the element that carries it, because an unverified instruction is the one that gets skipped |
+| A build reported a `DESIGN.md` that was never written | Point at the file and quote the direction out of it; a direction that cannot be read back was never recorded, and the build was improvised |
 
 Use these lessons to spot related risks, then choose the implementation for the current reader and material. They do not make one person's layout, palette, project count, or motion preferences a universal template. For authorized fictional demos and public sample releases, use the separately scoped [demo and release reference](demo-projects.md).

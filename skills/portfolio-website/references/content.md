@@ -29,6 +29,7 @@ Do not infer authorship from an asset's presence in a project: organizing produc
 - A count snapshot does not establish growth. Views are not followers, and platform follower counts do not add up to unique people. Preserve a screenshot's measurement window.
 - Date historical screenshots. A record saved before leaving a role does not establish an account's current size. If the exact date is unknown, retain a user-confirmed relative time.
 - Distinguish revenue or GMV, profit, order-profit rate, gross margin, and net margin. Without attribution evidence, do not credit a specific post with sales.
+- Check the scope a figure carries, not only the figure itself. A number placed at the top of the page speaks for the whole person, so one case's dataset cannot appear there as a career-wide claim. Name the document it came from beside the number and link it: relabelling "cumulative portfolio GMV" as "GMV claimed in the résumé" does not soften the claim, it moves it onto the thing the material can actually support.
 - Separate workflow descriptions, concept diagrams, real software recordings, and benchmarks. Do not invent time savings without a timing record.
 - Attribute client, employer, and team work and describe the person's role. Reuse confirmed usage scope; clarify only an actual unresolved publication restriction and continue other work.
 - Preserve originals when redacting. Export a presentation copy and record cropping or masking; do not alter metrics or reconstruct screenshots. Unrelated notifications, birthdays, or recommendations need not appear.
